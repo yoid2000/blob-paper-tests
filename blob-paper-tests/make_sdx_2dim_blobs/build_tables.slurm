@@ -7,4 +7,4 @@
 #SBATCH --array=0-1000
 arrayNum="${SLURM_ARRAY_TASK_ID}"
 source ${BLOB_TEST_DIR}/.venv/bin/activate
-python build_tables.py $arrayNum
+python ${BLOB_TEST_CODE}/blob-paper-tests/make_sdx_2dim_blobs/build_tables.py $arrayNum
