@@ -1,0 +1,1 @@
+The code here is used to generate syndiffix blobs with up to 2 columns per synthetic table

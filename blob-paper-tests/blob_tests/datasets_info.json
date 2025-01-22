@@ -1,0 +1,6016 @@
+{
+    "datasets": [
+        {
+            "dataset": "amiralimadadi/tehran-housing",
+            "rows": 18088,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "davidsenra/dados-de-credito-do-exercicio",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "aikath/dataset-for-bta-419-2023",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/bot-activity-and-credibility-scores-on-social-me",
+            "rows": 11190,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "sureshgupta/health-insurance-data-set",
+            "rows": 15000,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "haithemhermessi/breast-cancer-screening-data-set",
+            "rows": 39998,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "sukhmandeepsinghbrar/house-prices-india",
+            "rows": 14619,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/peak-global",
+            "rows": 20220,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "arpitpandey2704/procesed-test-data-1",
+            "rows": 15594,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "caesarmario/application-data",
+            "rows": 25128,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "lainguyn123/data-science-salary-landscape",
+            "rows": 37234,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "jssunmathi/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "khusheekapoor/vehicle-insurance-fraud-detection",
+            "rows": 15420,
+            "columns": 33,
+            "datetime": false
+        },
+        {
+            "dataset": "cedricaubin/ai-ml-salaries",
+            "rows": 73148,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "arslanali4343/sales-of-video-games",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "sharanharsoor/bank-customers-and-their-churn-behavior",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "umerhaddii/walmart-stock-data-2024",
+            "rows": 13145,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "ajithbharadwaj/migration-data",
+            "rows": 16561,
+            "columns": 43,
+            "datetime": false
+        },
+        {
+            "dataset": "prasertk/inflation-interest-and-unemployment-rate",
+            "rows": 13832,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "ranjeetshrivastav/customer-churn",
+            "rows": 10000,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "hoorqasim/credit-card-users-churn-prediction",
+            "rows": 10127,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "sambelkacem/covid19-algeria-and-world-dataset",
+            "rows": 38472,
+            "columns": 15,
+            "datetime": true
+        },
+        {
+            "dataset": "mohammedaltet/egypt-houses-price",
+            "rows": 27361,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "claurin1/five-hour-friday-2-jersey-city-traffic-forecasts",
+            "rows": 51813,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "shriyanshmessi/road-accident-severity-in-india",
+            "rows": 12316,
+            "columns": 32,
+            "datetime": true
+        },
+        {
+            "dataset": "muhammadumarjan/enterprise-survey-2021",
+            "rows": 41715,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "inancigdem/carbon-nanotubes",
+            "rows": 10721,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "muklisin/datatrain",
+            "rows": 28075,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "ulrikthygepedersen/video-games-sales",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "ankanhore545/world-suicide-rates-20002019",
+            "rows": 10980,
+            "columns": 34,
+            "datetime": true
+        },
+        {
+            "dataset": "juliasuzuki/waze-dataset-to-predict-user-churn",
+            "rows": 14999,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "raosuny/e-commerce-purchase-dataset",
+            "rows": 24999,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "rjmanoj/credit-card-customer-churn-prediction",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "parsahshariatpanahi/mos-qoe-including-5g",
+            "rows": 21870,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "rakeshpanigrahy/playstore-dataset",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "bruiser0311/bananabyte-employee-salary",
+            "rows": 11514,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "sayedmahmoud/effect-of-climate-on-crops",
+            "rows": 28242,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "varpit94/ford-stock-data",
+            "rows": 12563,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "shantanudhakadd/bank-customer-churn-prediction",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "amirma/indoor-location-determination-with-rssi",
+            "rows": 119968,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "deepikaarikesavan/reservation-of-hostel",
+            "rows": 36275,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "brijbhushannanda1979/bank-data",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "khushipitroda/stock-market-historical-data-of-top-10-companies",
+            "rows": 25160,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "majedalhulayel/riyadh-marathon-2023-results-saudi-arabia",
+            "rows": 12009,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "utkarshx27/general-social-survey",
+            "rows": 28867,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "urvishvekariya/credit-risk-assessment",
+            "rows": 32581,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "mahdiehhajian/roadway-markings-jobs",
+            "rows": 11141,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "mattop/nhl-draft-hockey-player-data-1963-2022",
+            "rows": 12250,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/global-video-game-sales",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "kashyapankush/housing-dataset",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "pralabhpoudel/alcohol-consumption-by-country",
+            "rows": 57084,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "rebeccaamoahaddae/employee-attrition-job-change-prediction",
+            "rows": 19158,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "kendallgillies/video-game-sales-and-ratings",
+            "rows": 17416,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "ujwal06/california-housing-train-csv",
+            "rows": 17000,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "emmanuelfwerr/london-weather-data",
+            "rows": 15341,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/age-structure-v4",
+            "rows": 38656,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "rober2598/madrid-weather-dataset-by-hours-20192022",
+            "rows": 27024,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "usman49/adultdataset",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "vanthanadevi08/hotel-reservation-dataset",
+            "rows": 36275,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "sriharipramod/gap-minder-gdpgrowth",
+            "rows": 10111,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "waitasecant/delhi-ambient-air-quality-data",
+            "rows": 28098,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "mahnumzahid/stock-market",
+            "rows": 25160,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "jonscheaffer/worldwide-gdp-history-19602016",
+            "rows": 15048,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "adityayadav01/scraped-ambitionbox-companies-data",
+            "rows": 10000,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "bharxhav/us-city-populations-and-coordinates",
+            "rows": 19317,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/courses-usage",
+            "rows": 10000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "ruthgn/bank-marketing-data-set",
+            "rows": 41188,
+            "columns": 20,
+            "datetime": false
+        },
+        {
+            "dataset": "lucasdraichi/2024-miami-grand-prix-verstappen-telemetry",
+            "rows": 20655,
+            "columns": 11,
+            "datetime": true
+        },
+        {
+            "dataset": "abdallahabuelftouh/adult-salary-clean",
+            "rows": 32561,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "vardhansiramdasu/income",
+            "rows": 31978,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "dhafer/census-income-data-big-data-class",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "varpit94/pfizer-stock-data",
+            "rows": 12563,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "queensaikia/dataset",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "atulmittal199174/bigbazaar-sales-data",
+            "rows": 14204,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "cdc/foodborne-diseases",
+            "rows": 19119,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "danieliusv/app-id-info",
+            "rows": 17783,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "smasifulislamsaky/credit-risk",
+            "rows": 32581,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "mohammadbahmanabadi/ab-test",
+            "rows": 90189,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "camnugent/faa-laser-with-days-of-week",
+            "rows": 17683,
+            "columns": 14,
+            "datetime": true
+        },
+        {
+            "dataset": "soumyakantipanda/bank-churn-modelling-dataset",
+            "rows": 10000,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "emanuelferera/ecommercesaleanalysis",
+            "rows": 47015,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "hikarilu/socail-network-in-schools",
+            "rows": 10000,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/the-relationship-between-crop-production-and-cli",
+            "rows": 20566,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "mdferojahmed178/12000-house-price-list-from-10-states-of-usa",
+            "rows": 12075,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "bharathtoutireddy/advanced-driver-assistance-systems-mobility-data",
+            "rows": 21325,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "rm1000/fortune-500-companies",
+            "rows": 13940,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/conflict-watchlist",
+            "rows": 49184,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "prajapatirishabh/air-quality-data2012-to-2024",
+            "rows": 23745,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "guillemservera/us-treasury-yields-daily",
+            "rows": 16299,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "heresjohnnyv/congress-investments",
+            "rows": 15666,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "varpit94/intel-stock-data",
+            "rows": 10597,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "deepaksirohiwal/delhi-air-quality",
+            "rows": 18776,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "mumtazbano/bank-marketing-term-deposit-subscription-dataset",
+            "rows": 45211,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "whenamancodes/credit-card-customers-prediction",
+            "rows": 10127,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "gokhanergul/house-price-data",
+            "rows": 14320,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "ryanjt/us-foreign-aid-country-foreign-assistance",
+            "rows": 21973,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "sahirmaharajj/popular-baby-names",
+            "rows": 57582,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "amoghjrules/covid-19-enriched-dataset-week-2",
+            "rows": 18816,
+            "columns": 38,
+            "datetime": true
+        },
+        {
+            "dataset": "akinozcift/melbournefiyattahmini",
+            "rows": 13580,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "jrw2200/fedselectedinterestrates",
+            "rows": 15036,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "shubh0799/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "sohaibanwaar1203/adultscsv",
+            "rows": 32560,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "ziya07/employee-churn-data",
+            "rows": 10000,
+            "columns": 22,
+            "datetime": false
+        },
+        {
+            "dataset": "mitul1999/online-courses-usage-and-history-dataset",
+            "rows": 10000,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "mrwild/failure-prediction-of-elevator-component",
+            "rows": 20009,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "sawadatsuyoshi/japanese-population-year-prefecture-age-gender",
+            "rows": 33454,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "hamzajabbarkhan/bike-rental-hour",
+            "rows": 17379,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "nicapotato/pollution-in-atchison-village-richmond-ca",
+            "rows": 31642,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "stealthtechnologies/predict-new-york-dog-bites",
+            "rows": 22663,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "aemyjutt/salary-binary-classifier",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "bhaweshsinha07/income-classification",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "resendeacm/covid19-rj",
+            "rows": 37272,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "deepcontractor/seasonal-variation-in-births",
+            "rows": 53409,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "abdalrhamnhebishy/train-csv",
+            "rows": 45211,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "emreevik/master",
+            "rows": 27820,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "mhdzahier/travel-insurance",
+            "rows": 63326,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "alicanpayasli/customerdata",
+            "rows": 30000,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "abeerelmorshedy/climate-change-effect-crop",
+            "rows": 28242,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "rohithbc/crime-data",
+            "rows": 24596,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "harshwardhanfartale/census-data",
+            "rows": 32561,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "jaberimohamedhabib/car-insurance",
+            "rows": 10000,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "yaseraziz7347/online-shoppers-intention",
+            "rows": 12330,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "canggih/badminton-game-data-bwf-super-series-20152017",
+            "rows": 11872,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "thaddeussegura/us-teen-birth-rates-ages-1519-20032018",
+            "rows": 50192,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "abdulrahmankhaled1/hotel-booking-dataset",
+            "rows": 36275,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "gdabhishek/covid19india",
+            "rows": 27891,
+            "columns": 20,
+            "datetime": true
+        },
+        {
+            "dataset": "billcampos/online-shoppers",
+            "rows": 12330,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "harisalikhan/hourcsv",
+            "rows": 17379,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "jackksoncsie/emobank",
+            "rows": 10062,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "fatemehsheybani/waze-dataset",
+            "rows": 14999,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "zeshanali/googleplaystore",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "cnitin25/ictm331-assignment-dataset",
+            "rows": 15000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "arunprathap/unicef-immunisation-data",
+            "rows": 58317,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "henryhan117/sp-500-historical-data",
+            "rows": 23323,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "manualrg/spanish-electricity-market-demand-gen-price",
+            "rows": 40212,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "msjahid/delaware-restaurant-inspection-violations-records",
+            "rows": 30586,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "lokanath2019/adult-dataset",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "anaghapaul/waze-user-churn-data",
+            "rows": 14999,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "dhirajbembade/melbourne-housing-snapshot",
+            "rows": 13580,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "gawas2inspire/online-shoppers-intention-turkey",
+            "rows": 12330,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "sgus1318/bank-marketing-propensity-data",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "hasibalmuzdadid/global-air-pollution-dataset",
+            "rows": 23463,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "guiferreira1997/clientes",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "tavoglc/vih-sequences-metadata",
+            "rows": 21696,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "sazidthe1/global-air-pollution-data",
+            "rows": 23463,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "binduvr/pro-mma-fights",
+            "rows": 10448,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "enockmokua/financial-dataset",
+            "rows": 23524,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "ayushchandramaurya/credit-card-spendings",
+            "rows": 26052,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "davinwijaya/customer-retention",
+            "rows": 64000,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "ozgurdogan646/water-quality-dataset",
+            "rows": 20000,
+            "columns": 29,
+            "datetime": false
+        },
+        {
+            "dataset": "ddosad/customer-behaviour-tourism-portal",
+            "rows": 11760,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "afraakbas/eye-state-data",
+            "rows": 14979,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "researcher1548/livestock-symptoms-and-diseases",
+            "rows": 43778,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "swatikhedekar/rental-bike-share",
+            "rows": 17379,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "starlitlolith/diabetescsv",
+            "rows": 15000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/behavioral-risk-factors-tobacco",
+            "rows": 11676,
+            "columns": 32,
+            "datetime": false
+        },
+        {
+            "dataset": "mattop/local-air-quality-in-north-carolina",
+            "rows": 12489,
+            "columns": 22,
+            "datetime": true
+        },
+        {
+            "dataset": "saurabhshahane/northern-hemisphere-horizontal-photovoltaic",
+            "rows": 21045,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "shashwatwork/insurance-company-complaints",
+            "rows": 14509,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "fema/federal-disasters",
+            "rows": 46185,
+            "columns": 14,
+            "datetime": true
+        },
+        {
+            "dataset": "fivosl/olympics",
+            "rows": 29220,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "octopusteam/full-apple-tv-dataset",
+            "rows": 18047,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "joselopezvalencia/ingresospersonasadultas",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "shreyaspj/restaurants-in-bangalore",
+            "rows": 15023,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "r3w0p4/recorded-crime-data-at-police-force-area-level",
+            "rows": 46469,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "pedroisrael/avocado-sales",
+            "rows": 14869,
+            "columns": 13,
+            "datetime": true
+        },
+        {
+            "dataset": "egorkainov/moscow-housing-price-dataset",
+            "rows": 22676,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "amrithagk/preowned-cars-dataset",
+            "rows": 19197,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "aiswaryasivakumar/rain-dataset",
+            "rows": 16743,
+            "columns": 14,
+            "datetime": true
+        },
+        {
+            "dataset": "tosinabase/intel-stock-prices-historical-data-intc",
+            "rows": 10361,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "prasertk/population-pyramid-by-country-from-19502022",
+            "rows": 44604,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "nayanack/online-game-dataset",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "anandaramg/liquor-sales",
+            "rows": 15000,
+            "columns": 22,
+            "datetime": true
+        },
+        {
+            "dataset": "aceeedev/hackathons",
+            "rows": 10179,
+            "columns": 11,
+            "datetime": true
+        },
+        {
+            "dataset": "amirhoseinmousavian/total-number-of-international-immigrants-2020",
+            "rows": 16561,
+            "columns": 43,
+            "datetime": false
+        },
+        {
+            "dataset": "rumbleftw/iit-nit-data",
+            "rows": 64958,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "subhadipsaha05/apple-stock-dataset",
+            "rows": 11107,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "nishan192/letterrecognition-using-svm",
+            "rows": 20000,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "whenamancodes/alphabet-inc-google-founding-years-analysis",
+            "rows": 10530,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "alyhassanshehata/houseing",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "umeradnaan/prediction-of-disaster-management-in-2024",
+            "rows": 10000,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "nikhil1e9/comic-characters",
+            "rows": 21144,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "shreyjain601/framingham-heart-study",
+            "rows": 11627,
+            "columns": 39,
+            "datetime": false
+        },
+        {
+            "dataset": "sobhanmohammadids/downhole-well-production",
+            "rows": 15634,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "thedevastator/predicting-credit-card-customer-attrition-with-m",
+            "rows": 10127,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "marvinachinasaawunor/avocado-sales-in-bags-across-different-us-regions",
+            "rows": 18249,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "hashemialii/churnmodelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "satvshr/top-4-used-car-sales-datasets-combined",
+            "rows": 32200,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "mateusscheper/flappy-bird-gymnasium",
+            "rows": 40486,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "nethasha/audio-sample-file-category-dataset",
+            "rows": 34110,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "adnanpic2000/city-cleaned-by-books",
+            "rows": 33255,
+            "columns": 11,
+            "datetime": true
+        },
+        {
+            "dataset": "brsdincer/schooldata",
+            "rows": 16508,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "bryanb/applicants-for-a-gold-digger-position",
+            "rows": 20000,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/olympics-2024",
+            "rows": 11115,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "mianazeemshahzad/cwur-2014-2024",
+            "rows": 11000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "sobhanmohammadids/drilling-well-production-data",
+            "rows": 15634,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "hasibur013/phishing-data",
+            "rows": 11055,
+            "columns": 32,
+            "datetime": false
+        },
+        {
+            "dataset": "fmendes/diabetes-from-dat263x-lab01",
+            "rows": 15000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "armangrigoryan96/banking",
+            "rows": 45211,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "dhirajnirne/california-housing-data",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "mafzal19/electric-vehicle-sales-by-state-in-india",
+            "rows": 96845,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "soumik11/case-study-loss-given",
+            "rows": 15290,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "prasadahirekar/soft-drink-sales",
+            "rows": 10000,
+            "columns": 13,
+            "datetime": true
+        },
+        {
+            "dataset": "brsahan/google-play-store-dataset",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "zero101010/boston-houses",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "surajpatnaik/covid19-cases-india",
+            "rows": 14552,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "kimpilso/global-air-polution-dataset",
+            "rows": 23463,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "kanyaweechomming101/australia-monthly-retail-turnover-data",
+            "rows": 64532,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "hosammhmdali/house-price-dataset",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "wawajahat/diabetes-dataset-by-age-standardized-countries",
+            "rows": 14000,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/bigmart-product-sales-factors",
+            "rows": 14204,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "adepvenugopal/airbnb-price",
+            "rows": 10000,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "jerickshi/aida-athletes-freediving-rcords",
+            "rows": 15510,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "patilsaransh/textile-company-dataset",
+            "rows": 10000,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "adammaus/predicting-churn-for-bank-customers",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "caesarlupum/betsstrategy",
+            "rows": 25979,
+            "columns": 18,
+            "datetime": true
+        },
+        {
+            "dataset": "paritosh712/cricket-every-single-ipl-inning-20082022",
+            "rows": 20922,
+            "columns": 13,
+            "datetime": true
+        },
+        {
+            "dataset": "zain280/data-science-job",
+            "rows": 19158,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "ahmedmohameddawoud/bank-customers-segmentation",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "pooriamst/air-traffic-landings-statistics",
+            "rows": 42709,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "prasertk/historical-commodity-prices-from-20002022",
+            "rows": 29935,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "varpit94/apple-stock-data-updated-till-22jun2021",
+            "rows": 10409,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "chewye/manila-accident-datasets",
+            "rows": 13967,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "sivabalana/h1n1-flu-vaccine",
+            "rows": 26707,
+            "columns": 34,
+            "datetime": false
+        },
+        {
+            "dataset": "shrutimechlearn/eye-movement-data-eeg",
+            "rows": 14980,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "gokhanergul/france-and-germany-football-leagues-dataset",
+            "rows": 38596,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "chrisjohn12351/video-game-sales-analysis",
+            "rows": 16539,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "prasertk/military-expenditure-by-country-from-19702020",
+            "rows": 13566,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "lucasprado/all-nhl-fights-from-regular-seasons-9900-to-2324",
+            "rows": 11535,
+            "columns": 14,
+            "datetime": true
+        },
+        {
+            "dataset": "serdarsozturk/customer-segmentationrfmclvchurn",
+            "rows": 25953,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "jurk06/delhi-crime-data",
+            "rows": 75748,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "vishalvishwa/incomecsv",
+            "rows": 48842,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "andreylovyagin/outgassing-db",
+            "rows": 12859,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "szamil/who-suicide-statistics",
+            "rows": 43776,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "nimishsawant/bankfull",
+            "rows": 45211,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "gauravtopre/apple-inc-stock-historical-prices",
+            "rows": 10791,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "ashydv/bank-marketing",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "aakashverma8900/portuguese-bank-marketing",
+            "rows": 45211,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "kingabzpro/candy-crush",
+            "rows": 16865,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "akshaybandgar/car-price-dataset",
+            "rows": 19237,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "tahmidmir/dark-triad-data-csv",
+            "rows": 18192,
+            "columns": 29,
+            "datetime": false
+        },
+        {
+            "dataset": "prasertk/historical-daily-oil-and-natural-gas-prices",
+            "rows": 23024,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "raniajaberi/customer-train",
+            "rows": 19158,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "raminhuseyn/wase-navigation-app-dataset",
+            "rows": 14999,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "jocelyndumlao/web-mining-for-collaborative-food-delivery",
+            "rows": 19934,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "mustafatozlu/housepricecsv",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "imtkaggleteam/annual-births-and-deaths-of-humans",
+            "rows": 38505,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "successdavid/sales-data",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "amritaratnani/bike-data-rent",
+            "rows": 17379,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "rushirdx/suicide-rates-from-1986-to-2016",
+            "rows": 27820,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "ranitradas/churn-prediction",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "unanimad/the-oscar-award",
+            "rows": 10889,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "nileshthonte/churn-modellingcsv",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "smilikasangam/node-status-in-wsn",
+            "rows": 10000,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "misbahkhan0009/nsu-advising-dataset",
+            "rows": 61101,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "mridulsyed/data-science-job",
+            "rows": 19158,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "suryasodhi/romanian-water-potability-dataset",
+            "rows": 12305,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "abilashcheruvathur/airplane-accident-history",
+            "rows": 10000,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "asjad99/bihar-data",
+            "rows": 39553,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "paulohlaraujo/public",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "khaledsharf/seasonal-influenza-dataset",
+            "rows": 50011,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "pritkalariya/fcc-demographic-data-analyzer-data",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "keatonproud/poland-volleyball-stats",
+            "rows": 10480,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/moscowhomes-dynamic-dataset",
+            "rows": 22676,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "arsalandafedar/melb-data",
+            "rows": 13580,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "jehanbhathena/political-parties-of-india19622021",
+            "rows": 10153,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "muhammadwajeeharif/wolt-delivery-dataset",
+            "rows": 18706,
+            "columns": 14,
+            "datetime": true
+        },
+        {
+            "dataset": "santiago123678/evolution-of-humans-datasets-for-clasification",
+            "rows": 12000,
+            "columns": 28,
+            "datetime": false
+        },
+        {
+            "dataset": "caiodesiderio/modulo",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "abhishek14398/stock-prediction-dataset-adp",
+            "rows": 10752,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "trysuharso/market-basket-analysis",
+            "rows": 44693,
+            "columns": 11,
+            "datetime": true
+        },
+        {
+            "dataset": "sahirmaharajj/electric-vehicle-population-size-2024",
+            "rows": 20819,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "liewyousheng/productrelevance",
+            "rows": 11385,
+            "columns": 22,
+            "datetime": false
+        },
+        {
+            "dataset": "chasewillden/linuxcommits",
+            "rows": 22372,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "akram24/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "mssmartypants/paris-housing-price-prediction",
+            "rows": 10000,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "ashaychoudhary/anxiety-attack-factors-symptoms-and-severity",
+            "rows": 12000,
+            "columns": 20,
+            "datetime": false
+        },
+        {
+            "dataset": "fekihmea/metro-interstate-traffic-volume",
+            "rows": 48204,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "pratiksatpati05/diwali-sales",
+            "rows": 11251,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "amandam1/walmart-stock-20122016",
+            "rows": 12566,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "chinmaygope/churn-model",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "tarique7/product-backorder-dataset",
+            "rows": 19053,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "si4728/nplt-02",
+            "rows": 11567,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "robertjoseph2001/effects-of-covid19-on-trade",
+            "rows": 41412,
+            "columns": 11,
+            "datetime": true
+        },
+        {
+            "dataset": "thenethprabashwara/network-traffic-data-for-gps-spoofing",
+            "rows": 25192,
+            "columns": 42,
+            "datetime": false
+        },
+        {
+            "dataset": "zsinghrahulk/rice-pest-and-diseases",
+            "rows": 19404,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "teesoong/customer-churn-with-explainable-ai",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "sakibulhasan2004043/cloud-data",
+            "rows": 10000,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "swekerr/water-quality-metrics-and-filter-performance-dataset",
+            "rows": 19656,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "yufengsui/online-shoppers-purchasing-intention",
+            "rows": 12330,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "xiaomengsun/car-insurance-claim-data",
+            "rows": 10302,
+            "columns": 27,
+            "datetime": true
+        },
+        {
+            "dataset": "souradippal/student-performance-prediction",
+            "rows": 40000,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "lovishbansal123/adult-census-income",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "chaandsheikh/upper-confidence-bound-dataset",
+            "rows": 50000,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "mnarsaad/alex-only",
+            "rows": 15705,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "avikumart/road-traffic-severity-classification",
+            "rows": 12316,
+            "columns": 32,
+            "datetime": true
+        },
+        {
+            "dataset": "fedesoriano/air-quality-data-in-india",
+            "rows": 36192,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "timileyinoladayo/fao-global-food-loss-2000-to-2021",
+            "rows": 27773,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "asaniczka/fatalities-in-the-israeli-palestinian-conflict",
+            "rows": 11124,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "dumanmesut/individual-carbon-footprint-calculation",
+            "rows": 10000,
+            "columns": 20,
+            "datetime": false
+        },
+        {
+            "dataset": "kryusufkaya/climate-change-impact-on-agriculture-2024",
+            "rows": 10000,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "moro23/easyvisa-dataset",
+            "rows": 25480,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "kevinmh/fifa-18-calculated-ratings",
+            "rows": 17994,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "ajetkharbri/romania-aqi-2022-1-to-2023-5",
+            "rows": 14940,
+            "columns": 15,
+            "datetime": true
+        },
+        {
+            "dataset": "willianoliveiragibin/fatalities-in-the-israeli-palestinian",
+            "rows": 11124,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "shivan118/churn-modeling-dataset",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "ulrikthygepedersen/pizza-place-sales",
+            "rows": 49574,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "dark06thunder/credit-card-dataset",
+            "rows": 25134,
+            "columns": 20,
+            "datetime": false
+        },
+        {
+            "dataset": "nashaduni/data-science-jobs-salaries",
+            "rows": 36314,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "raniajaberi/rental-informations",
+            "rows": 15861,
+            "columns": 15,
+            "datetime": true
+        },
+        {
+            "dataset": "everydaycodings/produce-prices-dataset",
+            "rows": 15766,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "ziya07/financial-transaction-dataset-for-risk-prediction",
+            "rows": 10000,
+            "columns": 15,
+            "datetime": true
+        },
+        {
+            "dataset": "simranjain17/housing-handsonml-chapter2",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "sayalikhot21/synthetic-dataset-for-e-commerce-return-analysis",
+            "rows": 10000,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "ybifoundation/pharma-drug-sales",
+            "rows": 50532,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "josephmakaumunyao/churn-modellingcsv",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "tavoglc/new-york-weather-1869-2023",
+            "rows": 55933,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "isabbaggin/transaction-fraudulent-financial-syntheticdata",
+            "rows": 10000,
+            "columns": 11,
+            "datetime": true
+        },
+        {
+            "dataset": "saincoder404/crop-yield-data-india",
+            "rows": 19689,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "tahminashoaib86/gps-coordinates-and-geo-coordinates-of-pakistan",
+            "rows": 11844,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "figolm10/easy-visa",
+            "rows": 25480,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "mwaterman/manhattan-nyc-building-energy-data-2022",
+            "rows": 10974,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "ahmed2892/finding-donors-for-charityml",
+            "rows": 45222,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "hemachandiranmurugan/bank-customer-churn",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "ahmedeinshouka/fatalities-isr-pse-conflict-2000-to-2023",
+            "rows": 11124,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "anandshaw2001/customer-churn-dataset",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "sakshigoyal7/credit-card-customers",
+            "rows": 10127,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "ppb00x/eeg-neuroheadset",
+            "rows": 14980,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "mrityunjaykumar879/spruce-tree-type-detection",
+            "rows": 15120,
+            "columns": 45,
+            "datetime": false
+        },
+        {
+            "dataset": "alfonsonoguera/ingresos",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "mittvin/world-economic-indicators-1960-2022-dataset",
+            "rows": 16758,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "jazidesigns/demographic-data-analyzer",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "cid007/pizza-restaurants-us",
+            "rows": 10000,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "danishjmeo/popular-baby-names-new-york",
+            "rows": 57582,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "nilaychauhan/finding-donors-for-charity",
+            "rows": 45222,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "shubhammeshram579/bank-customer-churn-prediction",
+            "rows": 10002,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "csafrit2/steel-industry-energy-consumption",
+            "rows": 35040,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "open-flights/airports-train-stations-and-ferry-terminals",
+            "rows": 10667,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "samsonqian/california-housing",
+            "rows": 17000,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "avhikj/churn-predictions-personal",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "usamaraheem/googleplaystoredataset",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "prakashraushan/loan-dataset",
+            "rows": 32586,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "akash481/c-hurn-small",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "nimrazeeshan/google-playstore-dataset",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": true
+        },
+        {
+            "dataset": "yaminh/bank-marketing-campaign-dataset",
+            "rows": 45211,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "hanageofani/tanaman-hias-toko",
+            "rows": 38006,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "iyadelwy/egypt-housing-prices",
+            "rows": 11418,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "chicago/chicago-citywide-payroll-data",
+            "rows": 32658,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "djordjejov/serbian-real-estate-dataset",
+            "rows": 11704,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "sushantbmujagule/big-sales-prediction-dataset",
+            "rows": 14204,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "danbraswell/new-york-city-weather-18692022",
+            "rows": 56245,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "mikkelbjohansen/metacritic-game-score-scrape-2024-13301-rows",
+            "rows": 13301,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "ivanhrek/uci-adult",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "aznprox/vgasales",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "mapmeld/datafails201",
+            "rows": 73548,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "shashwatwork/phishing-dataset-for-machine-learning",
+            "rows": 10000,
+            "columns": 50,
+            "datetime": false
+        },
+        {
+            "dataset": "rishidamarla/worldwide-video-game-sales",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "aadimator/nyc-brooklyn-bridge-automated-pedestrian-counts",
+            "rows": 16057,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "willianoliveiragibin/malaria-adding-danger",
+            "rows": 59122,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "divu2001/customer-churn-rate",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "abdulrhmansalama/egypt-house-prices",
+            "rows": 27361,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "sayeedmohammad/house-rent-in-indian-cities-and-localities",
+            "rows": 10692,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "vivovinco/san-francisco-air-traffic-cargo-statistics",
+            "rows": 35599,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "davidregan/greyhound-racing-uk-predict-finish-position",
+            "rows": 12006,
+            "columns": 28,
+            "datetime": false
+        },
+        {
+            "dataset": "manishmathias/swiggy-bangalore",
+            "rows": 10297,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "maso0dahmed/gun-deaths-in-america-cdc",
+            "rows": 100798,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "paveljurke/s-and-p-500-gspc-historical-data",
+            "rows": 24377,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "yukeshmarudhasalam/bankmarketing",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "shagnikmitra/h1n1-flu-vaccine",
+            "rows": 26707,
+            "columns": 34,
+            "datetime": false
+        },
+        {
+            "dataset": "papercool/organics-purchase-indicator",
+            "rows": 22223,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "estebanmarcelloni/liga-argentina-futbol",
+            "rows": 32854,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "anwarsan/credit-card-bank-churn",
+            "rows": 10127,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "joshuadottavio/videogamesales",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "michaelanietie/endometriosis-dataset",
+            "rows": 10000,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "mattop/snowcrab",
+            "rows": 17927,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "walacedatasci/hands-on-machine-learning-housing-dataset",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "kurianbenoy/location-visited-by-travller-in-india-fake",
+            "rows": 10000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "mikkelnei/california",
+            "rows": 17000,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "mavihs08/customers-exited",
+            "rows": 10000,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "akshatgupta7/crop-yield-in-indian-states-dataset",
+            "rows": 19689,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "reihanenamdari/toronto-bus-delay-2022",
+            "rows": 27351,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "faisalawan/training",
+            "rows": 35500,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "rituparnaghosh18/diamond-data",
+            "rows": 53940,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "haniefwidyawardhana/bmi-dataset",
+            "rows": 10000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "subho117/calories-burnt-prediction-using-machine-learning",
+            "rows": 15000,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "ambrishanandaranis/carbon-emission-forecasting",
+            "rows": 17155,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "mexwell/biggest-tomato-and-potato-producers",
+            "rows": 52937,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "pooriamst/metro-interstate-traffic-volume",
+            "rows": 48204,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "aaronschlegel/petfinder-animal-shelters-database",
+            "rows": 10136,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "akprodromou/stop-and-search-by-ethnicity-uk",
+            "rows": 17748,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "kukuroo3/room-occupancy-detection-data-iot-sensor",
+            "rows": 20560,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "tuzz1205/city-day-20152017",
+            "rows": 10956,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "kanchana1990/uber-customer-reviews-dataset-2024",
+            "rows": 12000,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "ramjasmaurya/drug-seizues-annually-since-1970s",
+            "rows": 51201,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "valchovalev/lifeexpectancyofwomenvslifeexpectancyofman",
+            "rows": 49980,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "nitanttyagi/bank-customer-churn",
+            "rows": 10000,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "imanemag/bankchurnerscsv",
+            "rows": 10127,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/uncovering-wage-disparities-in-pennsylvania-s-hi",
+            "rows": 12632,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "utkarshx27/popular-baby-names",
+            "rows": 49509,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "waqi786/ai-generated-art-trends",
+            "rows": 10000,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "mayankanand2701/apple-stock-price-dataset",
+            "rows": 10954,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "mrtechnical011/classification-dataset",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "saurabhbadole/bank-customer-churn-prediction-dataset",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "ubaidurrehmantopg/depression-dataset",
+            "rows": 27901,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "duygujones/pen-based-handwritten-digit",
+            "rows": 10992,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "alexreddy/visa-dataset",
+            "rows": 25480,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "rayhan32/trip-advisor-newyork-city-restaurants-dataset-10k",
+            "rows": 10397,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "lukebrumby/australian-income-data-by-region-summarized",
+            "rows": 23272,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "amirmotefaker/churn-modeling-bank",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "mehmetyavuzgndz/pendigits",
+            "rows": 10992,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "sweety18/kddtttttt",
+            "rows": 22543,
+            "columns": 42,
+            "datetime": false
+        },
+        {
+            "dataset": "kanchana1990/un-global-water-data-2012-2022",
+            "rows": 36519,
+            "columns": 22,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/waterloo-enrolment",
+            "rows": 61953,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "aakash50897/churn-modellingcsv",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "mehdibouchene/tetuan",
+            "rows": 13248,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "sunilsethi25/california-housing",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "negmgh/hospital-utilization-trends",
+            "rows": 52880,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "abdullatiffaqeeri/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "shivd24coder/decoding-the-stock-picks-of-american-lawmakers",
+            "rows": 17170,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "nicholasliusontag/nfl-contract-and-draft-data",
+            "rows": 12629,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "bleedingrock/california-housing-prices-dataset",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "subramaniansubi/exploratory-data-analysis-churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "noeyislearning/value-of-imports-by-commodity-group-and-country",
+            "rows": 31980,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/maximizing-profits-with-mlb-player-salaries-and",
+            "rows": 22836,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "nischallal/bank-and-financial-institutions-dataset-of-nepal",
+            "rows": 11958,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "willianoliveiragibin/customer-churn",
+            "rows": 10000,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "anaghakp/adult-income-census",
+            "rows": 31947,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "anshulkataria/marvel-comic-character",
+            "rows": 16377,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/portuguese-banking-blitz",
+            "rows": 45211,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "krupalpatel07/apple-stock-data",
+            "rows": 10987,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "mukuljh2/car-insurance-claim",
+            "rows": 10302,
+            "columns": 25,
+            "datetime": false
+        },
+        {
+            "dataset": "ybifoundation/adult-income",
+            "rows": 32561,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "dheerajpranav/google-plasystore-data",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "tunguz/open-financial-data-demand-nanosurvey-responses",
+            "rows": 17791,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "shanks3895/gamesales",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "mannmann2/economic-indicators-for-oecd-metropolitan-areas",
+            "rows": 46168,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "arielbar/housing-bgu",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "ihormuliar/ukraine-food-prices",
+            "rows": 29091,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "gman21626/final-data",
+            "rows": 10561,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "henryshan/apple-stock-price",
+            "rows": 10836,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "raohamzatariq/random-sample-sales-dataset",
+            "rows": 10000,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "willianoliveiragibin/auto-real-world",
+            "rows": 15915,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "meetnagadia/coco-cola-stock-data-19622021",
+            "rows": 15096,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "tugbatandogan/epl-summer-transfers-2000-2024-from-transfermarkt",
+            "rows": 10534,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "shrutimechlearn/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "kryusufkaya/adult-dataset",
+            "rows": 32560,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "mathchi/churn-for-bank-customers",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "pornsakkamchan/thailand-road-accident-fatalities-2024",
+            "rows": 12762,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/wildfires",
+            "rows": 13416,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "yeganehbavafa/mental-health-in-the-pregnancy-during-the-covid-19",
+            "rows": 10772,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "acareren/houseware-retail-sales-dataset",
+            "rows": 51424,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "hassan78610/suicides-data-set-by-world-development-indicator",
+            "rows": 15110,
+            "columns": 26,
+            "datetime": false
+        },
+        {
+            "dataset": "mlnchkdv/snsdata",
+            "rows": 30000,
+            "columns": 40,
+            "datetime": false
+        },
+        {
+            "dataset": "scientificstephen/demographic-data-analyzer-dataset",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "gregorut/videogamesales",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "anand8krishna/sdss-14",
+            "rows": 10000,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "joshuaquahshousing/snp500-max",
+            "rows": 23305,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "soundslikedata/movies-rating-dataset",
+            "rows": 10000,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "souradippal/fridge-price-prediction-dataset",
+            "rows": 20000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "cameronseamons/electronic-sales-sep2023-sep2024",
+            "rows": 20000,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "adeolaadesina/factors-affecting-children-anemia-level",
+            "rows": 33924,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "a3zzamtoo/consumers-price",
+            "rows": 21395,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "praneshchowdhury/top-10000-anime-dataset-2024",
+            "rows": 10000,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "ghassenkhaled/video-games-data",
+            "rows": 16719,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "hakim11/churn-model1",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "utkarshx27/noaa-atlantic-hurricane-database",
+            "rows": 19066,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "mariapushkareva/nyc-beach-water-quality-data",
+            "rows": 21043,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "tamilselvanarjunan/mediumdata",
+            "rows": 10000,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/mcdonalds-ice-cream-machines-broken-timeseries",
+            "rows": 16671,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "pankajsharma127/nykaa-products-2023",
+            "rows": 12000,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "chenywen/cqjtu-438",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "atifmasih/factors-affecting-university-student-grades",
+            "rows": 10064,
+            "columns": 35,
+            "datetime": false
+        },
+        {
+            "dataset": "anubhavtyagi1212/google-play-store",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": true
+        },
+        {
+            "dataset": "harshvir04/cleaned-google-play-store-dataset",
+            "rows": 10840,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "zongaobian/london-weather-data-from-1979-to-2023",
+            "rows": 16436,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "vannjot/summer-olympics-dataset-18962012",
+            "rows": 31165,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "murilozangari/customer-churn-from-a-bank",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "himasharanaweera/monkeypox-dataset",
+            "rows": 25000,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "danielfernandon/web-page-phishing-dataset",
+            "rows": 100077,
+            "columns": 20,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/us-e-cig-tax-regulations",
+            "rows": 23329,
+            "columns": 24,
+            "datetime": false
+        },
+        {
+            "dataset": "amarjitsingh1/ola-cab-dataset",
+            "rows": 16067,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "musti12/sharing-race-by-city",
+            "rows": 29268,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "louishgy/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "ankushrautcu/food-loss-snapshot-december-2023-un",
+            "rows": 27743,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "tolstoyjustin/takeaway-dataset-for-predictive-analytics",
+            "rows": 10000,
+            "columns": 15,
+            "datetime": true
+        },
+        {
+            "dataset": "thawatchai2018/california-housing-dataset",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "zeesolver/uber-customer-reviews-dataset-2024",
+            "rows": 12000,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "xtyscut/video-games-sales-as-at-22-dec-2016csv",
+            "rows": 16719,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "imtkaggleteam/air-traffic-landings",
+            "rows": 22047,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "quantumkaze/f1-weather-dataset-2018-2023",
+            "rows": 18214,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "vechoo/diet-plan-recommendation",
+            "rows": 10726,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "datacertlaboratoria/proyecto-3-segmentacin-de-clientes-en-ecommerce",
+            "rows": 25953,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "arjitdsce/churn-modelling",
+            "rows": 10002,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "santoshd3/bank-customers",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "shivamkushwah0411/top-universitiescollages-of-india",
+            "rows": 13443,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "boneacrabonjac/bitcoin-alpha",
+            "rows": 24185,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "nadezhda2019/adultdatacsv",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "ikjotsingh221/rural-credit-dataset-cleaned",
+            "rows": 37198,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "jinbonnie/animal-data",
+            "rows": 10290,
+            "columns": 23,
+            "datetime": true
+        },
+        {
+            "dataset": "ziya07/hajj-and-umrah-crowd-management-dataset",
+            "rows": 10000,
+            "columns": 30,
+            "datetime": true
+        },
+        {
+            "dataset": "umairabbasi6/diwali-sales-data-e-commerce-dataset",
+            "rows": 11251,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "alexeyleshchenko/moscow-apartment-listings",
+            "rows": 12181,
+            "columns": 22,
+            "datetime": false
+        },
+        {
+            "dataset": "vaishnavichoudhari/zmumu-dataset",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "veronicr/selected-states-easternhalfus",
+            "rows": 18267,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "orkunaktas/eurusd-1h-2020-2024-september-forex",
+            "rows": 29050,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "ulrikthygepedersen/baseball-salaries",
+            "rows": 28293,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "ayushparwal2026/steel-industry-datasets",
+            "rows": 35041,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "rakkesharv/spotify-top-10000-streamed-songs",
+            "rows": 11084,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "abbotpatcher/respiratory-symptoms-and-treatment",
+            "rows": 38537,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "barelydedicated/bank-customer-churn-modeling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "mohammadeskandari7/marketing-of-the-portuguese-banking-institute",
+            "rows": 41188,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "mikekzan/who-alcohol-total-per-capita-consumption-rate",
+            "rows": 11238,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "lostinworlds/sf-air-traffic-landing-statistics",
+            "rows": 26842,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "altadata/covid19",
+            "rows": 32611,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "carollavecchia/olimpiadas",
+            "rows": 11115,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "kukuroo3/body-performance-data",
+            "rows": 13393,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "asmaaabdelazizradwan/climate-change-impact-on-agriculture-2024",
+            "rows": 10000,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "aarushikamboj/bank-customer-churn-prediction",
+            "rows": 10002,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "gokhanergul/spain-and-turkey-football-scores",
+            "rows": 35322,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "davidaniel/censuscsv",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "aadarshvelu/liver-cirrhosis-stage-classification",
+            "rows": 25000,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "saimondahal/life-expectancy-trends-for-males-and-females",
+            "rows": 17003,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "nxhong93/vietnam-flight-airfare-042021",
+            "rows": 19846,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "captaingee/livestock-disease-diagnosis-dataset",
+            "rows": 43778,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "shriyasingh900/covid19-dataset",
+            "rows": 49068,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "kkhandekar/statewise-rainfall-1901-to-2015",
+            "rows": 12348,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/credit-card-transicts",
+            "rows": 19963,
+            "columns": 15,
+            "datetime": true
+        },
+        {
+            "dataset": "felipessm/import",
+            "rows": 10096,
+            "columns": 18,
+            "datetime": true
+        },
+        {
+            "dataset": "primospade/car-failure",
+            "rows": 10081,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "sandibaressiegota/robot-kinematics-dataset",
+            "rows": 15000,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "shubamsumbria/traffic-violations-dataset",
+            "rows": 52966,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "joudalnsour/vgsalescsv",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "reddynitin/aug-train",
+            "rows": 19158,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "richardlwalters/housing-csv",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "phenomsg/housing-csv",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "mianbilal12/apple-stock-market-data-19802024",
+            "rows": 11094,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "sagnik1511/car-insurance-data",
+            "rows": 10000,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "puspakmeher/networkslicing",
+            "rows": 63167,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "jrw2200/japan-interest-rates",
+            "rows": 11570,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "ayushish12/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "shaunakmandal/mellbourne-data-of-house-prices-for-example",
+            "rows": 13580,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "vibhavrai/video-game-sales-data",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "mhassansaboor/intel-stock-data-1980-2024",
+            "rows": 11289,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "asaumya/customer-order-data",
+            "rows": 10000,
+            "columns": 11,
+            "datetime": true
+        },
+        {
+            "dataset": "s3programmer/road-accident-severity-in-india",
+            "rows": 12316,
+            "columns": 32,
+            "datetime": true
+        },
+        {
+            "dataset": "omnamahshivai/surgical-dataset-binary-classification",
+            "rows": 14635,
+            "columns": 25,
+            "datetime": false
+        },
+        {
+            "dataset": "vaibhavshinde97/mutual-fund-dataset",
+            "rows": 14964,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "sanjanchaudhari/accelerometer-casestudy-dataset",
+            "rows": 27937,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "halimedogan/churn-dataset",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "ministerjohn/detecting-anomalies-in-smart-home-iot-devices",
+            "rows": 10000,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "kolheinsights/credit-card-transaction",
+            "rows": 10108,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "hamza256/bodyperformance",
+            "rows": 13393,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "joaofilipemarques/google-advanced-data-analytics-waze-user-data",
+            "rows": 14999,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "ulrikthygepedersen/fps-benchmark",
+            "rows": 24624,
+            "columns": 44,
+            "datetime": false
+        },
+        {
+            "dataset": "busrapehlivan/credit-risk-dataset",
+            "rows": 32581,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "dhruvshan/johnson-and-johnson-stock-data-all-time",
+            "rows": 15698,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "camnugent/california-housing-prices",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "jamescorden/nonalcohol-fatty-liver-disease",
+            "rows": 17549,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "ericngui/rpg-steam-clean",
+            "rows": 10477,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "usmannaziiir/covid-19-india",
+            "rows": 18110,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "pavan9065/covid-variants",
+            "rows": 41837,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "mouathalmansour/real-estate-rental-prices",
+            "rows": 16913,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "tunguz/world-bank-ibrd-bonds-1947present",
+            "rows": 12058,
+            "columns": 11,
+            "datetime": true
+        },
+        {
+            "dataset": "melissamonfared/indicators-of-anxiety-or-depression",
+            "rows": 16092,
+            "columns": 14,
+            "datetime": true
+        },
+        {
+            "dataset": "akeats97/f1-2019-data",
+            "rows": 24419,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "rregmi1993/google-play-stores-data",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/covid-19-pandemic",
+            "rows": 49068,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "mukhazarahmad/apple-stock-data-12121980-1132022",
+            "rows": 10564,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "sandhyaprajapathi/credit-card",
+            "rows": 25128,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "gabrielfigaterribile/cliente-banco",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "anakpindahan/indonesia-national-science-olympiad-osn",
+            "rows": 19327,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "edgargulay/secondary-school-student-dropout",
+            "rows": 62739,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "muhammedabdelrasoul/bank-marketing",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "gcreatives/impact-of-covid-19-on-working-professionals",
+            "rows": 10000,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "loveall/human-happiness-indicators",
+            "rows": 17137,
+            "columns": 34,
+            "datetime": false
+        },
+        {
+            "dataset": "darinhawley/us-2021-census-cities-populations-coordinates",
+            "rows": 21397,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "winterpierre91/covid19-global-weather-data",
+            "rows": 16556,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "rajatkumar30/monkeypox",
+            "rows": 79045,
+            "columns": 15,
+            "datetime": true
+        },
+        {
+            "dataset": "tusharvij/online-shoppers-intention",
+            "rows": 12330,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "zazazaza/istanbul-ev-fiyatlar-bingl-stem",
+            "rows": 58107,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "kausthubkannan/laws-and-acts-of-india",
+            "rows": 10612,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "kunalnehete/condition-based-monitoring-cbm-in-marine-system",
+            "rows": 12434,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "ibikunlegabriel/christmas-sales-and-trends",
+            "rows": 10000,
+            "columns": 25,
+            "datetime": true
+        },
+        {
+            "dataset": "emonreza/65-years-of-weather-data-bangladesh-preprocessed",
+            "rows": 21120,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "sanamps/stock-price-prediction-with-rnn",
+            "rows": 19586,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "kallolnath1/california-housing-prices-dataset",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "amirmotefaker/accelerometer-dataset",
+            "rows": 27937,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "usharengaraju/ecological-footprint",
+            "rows": 47729,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "dubradave/hospital-readmissions",
+            "rows": 25000,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "darjand/domestic-german-air-fares",
+            "rows": 62627,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "shayanshahid997/police-arrest-from-2021-2023",
+            "rows": 23510,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "youssifhassan/iobes-data",
+            "rows": 62506,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "jaberimohamedhabib/dvd-rental-info",
+            "rows": 15861,
+            "columns": 15,
+            "datetime": true
+        },
+        {
+            "dataset": "peterkmutua/housing-dataset",
+            "rows": 13580,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "tandavala/housing-price-prediction",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "rishidamarla/employee-data-from-the-city-of-chicago",
+            "rows": 33183,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "sxdtlili/melb-data-csv",
+            "rows": 13580,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "idiaye/scaled-iris-dataset-100k-rows",
+            "rows": 100000,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "jshndeep/soil-moisture-levels",
+            "rows": 20166,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "danishjmeo/petrol-stations-in-pakistan",
+            "rows": 10660,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "priyamchoksi/adult-census-income-dataset",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "nsidcorg/daily-sea-ice-extent-data",
+            "rows": 26354,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "probinkumarsah/housing-price-prediction",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "babuyashwanth/bank-customer-churn",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "davidboules/clean-house-prices",
+            "rows": 24755,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "arnikaer/googleplaystore",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "hj5992/bank-churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "konradb/netflix-engagement-report",
+            "rows": 18220,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "raddar/smoking-related-lung-cancers",
+            "rows": 53427,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "noeyislearning/housing-price-indexes",
+            "rows": 63120,
+            "columns": 15,
+            "datetime": true
+        },
+        {
+            "dataset": "theerfanyousefi/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "pouyaaskari/google",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "wjshenggggg/omiv1",
+            "rows": 13479,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "abimon04alex/acc-2c-3f-ds",
+            "rows": 31991,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "shreekant009/google-analytics",
+            "rows": 12410,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "kumarun91/banking-subscription",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "rdataenthusiast/stress-level-prediction-in-sleep",
+            "rows": 19200,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "brsdincer/20002020-mugla-wildfire-data-nasa",
+            "rows": 15450,
+            "columns": 13,
+            "datetime": true
+        },
+        {
+            "dataset": "lorenzovzquez/pens-and-printers-product-sales",
+            "rows": 15000,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "zubairmustafa/shopping-mall-customer-segmentation-data",
+            "rows": 15079,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "anji2705/melb-data-csv",
+            "rows": 13580,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "krantiswalke/bankfullcsv",
+            "rows": 45211,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "shubhamshrimant/indicators-of-compromise-shared-on-twitter",
+            "rows": 10000,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "sonalidasgupta95/churn-prediction-of-bank-customers",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "michaellight/usda-coffee-data-06-2020",
+            "rows": 74309,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "markusschmitz/playstore",
+            "rows": 10841,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "hypron/suicide-dataset-19852016",
+            "rows": 27820,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "hassanfiguigui/housing-csv",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "datahmifitb/ds-bootcamp-curah-hujan",
+            "rows": 13258,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "hindy51/hong-kong-weather-20082016",
+            "rows": 18600,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "freego1/bmi-data",
+            "rows": 25000,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "ahmettyilmazz/fuel-consumption",
+            "rows": 22556,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "deepakb5256/textiles-demand-forecasting-and-prediction",
+            "rows": 21041,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "figolm10/yield-dataset",
+            "rows": 28242,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "shabareesharyan/adultsalary",
+            "rows": 32560,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "kmldas/loan-default-prediction",
+            "rows": 10000,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "pranav28/metrointerstate",
+            "rows": 48204,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "atifmasih/kids-nightmare-patterns-and-psychological-impact",
+            "rows": 20000,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "yash16jr/snp500-dataset",
+            "rows": 23970,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "rizqi01/ps4e9-original-data-loan-approval-prediction",
+            "rows": 32581,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "heathcliffexe/adult-census-income",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "nileshade/cubic-zirconia",
+            "rows": 26967,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "ivanchvez/ny-rental-properties-pricing",
+            "rows": 17614,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "ghassenkhaled/invoices-data",
+            "rows": 10000,
+            "columns": 11,
+            "datetime": true
+        },
+        {
+            "dataset": "noeyislearning/delaware-deaths",
+            "rows": 69349,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "anandhuh/data-science-jobs-in-india",
+            "rows": 12000,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "hinepo/pesquisa-nacional-por-amostra-de-domiclios-pnad",
+            "rows": 76840,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "eugeniyosetrov/national-generation-capacity",
+            "rows": 37279,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "ignaciovinuales/battery-remaining-useful-life-rul",
+            "rows": 15064,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "ricardomoya/football-matches-of-spanish-league",
+            "rows": 37147,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "jaberimohamedhabib/olympic-athlete-performance-dataset",
+            "rows": 29220,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "ayushkumar0801/utk-face-extracted-info",
+            "rows": 24088,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "figolm10/dataset-1",
+            "rows": 11124,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "pythonafroz/real-time-ancillary-service-hourly",
+            "rows": 73233,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "kkhandekar/hourly-fidas-measurement",
+            "rows": 14138,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "divanshu22/payment-fraud-dataset",
+            "rows": 39221,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "sakibpatel/employee-data",
+            "rows": 10823,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "ltx1171135686/googleplaystore-acsv",
+            "rows": 10779,
+            "columns": 13,
+            "datetime": true
+        },
+        {
+            "dataset": "harmanbhutani/churndata2",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "vasanthgx/dirty-metro-interstate-traffic-volume-dataset",
+            "rows": 38563,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "aleshagavrilov/parishousing",
+            "rows": 10000,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "joseelisei/fixed-term-credits",
+            "rows": 71596,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/births-and-deaths-per-year",
+            "rows": 18360,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "anthonytherrien/extended-dataset-for-used-car-prices-regression",
+            "rows": 28143,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "ahmedeltom/nchs-weekly-counts-of-deaths-by-state-20202022",
+            "rows": 10476,
+            "columns": 36,
+            "datetime": true
+        },
+        {
+            "dataset": "nextbigwhat/loan-data",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": true
+        },
+        {
+            "dataset": "chrisnorrie/wowclassicauctions",
+            "rows": 37496,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/unlocking-credit-card-offer-acceptance-trends-in",
+            "rows": 18000,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "ibriiee/video-games-sales-dataset-2022-updated-extra-feat",
+            "rows": 16719,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "matviyamchislavskiy/1990-2019-depression-rates-male-v-female",
+            "rows": 58420,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "mikhail1681/salmon-catch-statistics-for-scotland-19522022",
+            "rows": 23143,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "meetnagadia/apple-stock-price-from-19802021",
+            "rows": 10468,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "denyszvarych/analysis-of-hotels-on-bookingcom",
+            "rows": 16142,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "alexsandercorrealima/projeto-python-curso-cientista-de-dados-ebac",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "dimakyn/vehicles-price-2020-ukraine",
+            "rows": 22867,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "manishkr1754/cardekho-used-car-data",
+            "rows": 15411,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "prasanna03spidey/meta-data",
+            "rows": 33126,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "sahirmaharajj/youth-tobacco-survey",
+            "rows": 10600,
+            "columns": 31,
+            "datetime": false
+        },
+        {
+            "dataset": "man0007/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "isabelocastillo/jugadores-de-futbol-de-la-rfef-temporada-2023-2024",
+            "rows": 10107,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "sandey/brazilian-vehicle-prices-june-2018-fipe",
+            "rows": 21797,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/get-your-game-on-metacritic-recommendations-and",
+            "rows": 12624,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "swish9/synthetic-indian-automobile-crash-data",
+            "rows": 10000,
+            "columns": 25,
+            "datetime": false
+        },
+        {
+            "dataset": "mehmetyavuzgndz/google-play-store",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "syedhaideralizaidi/online-shoppers-intention",
+            "rows": 12330,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "gauravduttakiit/sp-global",
+            "rows": 23398,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "rad1509/bankchurners",
+            "rows": 10127,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "henrysue/online-shoppers-intention",
+            "rows": 12330,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "marcomarchetti/20162017-nyc-class-size-report",
+            "rows": 31713,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/phq-9-depression-assessment",
+            "rows": 16150,
+            "columns": 36,
+            "datetime": true
+        },
+        {
+            "dataset": "concyclics/chinesetyphoon",
+            "rows": 14998,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "alexlau203/sydney-house-prices",
+            "rows": 11160,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "stevepalley/2016uspresidentialvotebycounty",
+            "rows": 18475,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "mmajhi/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "mohamedjamyl/car-price-dataset",
+            "rows": 19237,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "simeondee/body-fitness-exercises-and-body-measurement-data",
+            "rows": 15000,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "ankitpatel2100/indian-food-choices-their-impact-and-significance",
+            "rows": 17686,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "omidsakaki1370/data-preparation-example",
+            "rows": 32581,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "marius2303/medical-condition-prediction-dataset",
+            "rows": 10000,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "quannguyen135/cleaned-online-sex-work",
+            "rows": 28831,
+            "columns": 30,
+            "datetime": false
+        },
+        {
+            "dataset": "hamdallak/police-fatalities-from-2000-to-2016",
+            "rows": 12479,
+            "columns": 19,
+            "datetime": true
+        },
+        {
+            "dataset": "vijayjoshi17/housing-dataset-in-metropolitan-combined-dataset",
+            "rows": 32963,
+            "columns": 41,
+            "datetime": false
+        },
+        {
+            "dataset": "laotse/credit-risk-dataset",
+            "rows": 32581,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "lucidlenn/sloan-digital-sky-survey",
+            "rows": 10000,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "alicanpayasli/housingprice",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "xyznihal/adult-data",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "chilledwanker/loan-approval-prediction",
+            "rows": 32581,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "loganlauton/nfl-player-data",
+            "rows": 27945,
+            "columns": 26,
+            "datetime": false
+        },
+        {
+            "dataset": "polymokashi/alphabets-data",
+            "rows": 20000,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/metamorphosis-of-land-use",
+            "rows": 26838,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/individuals-in-the-holy-bible",
+            "rows": 34516,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "eduardopalmieri/nba-player-stats-season-2425",
+            "rows": 12487,
+            "columns": 25,
+            "datetime": true
+        },
+        {
+            "dataset": "neerajkumarpaikra/bank-term-deposit-subscription-dataset",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "syedjaferk/delhi-weather-dataset",
+            "rows": 15246,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "jxtz518/churndata",
+            "rows": 45236,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "shtrausslearning/calihouse",
+            "rows": 20640,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "harriethanyujie/churnmodelling",
+            "rows": 10002,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "amritraj1296/california-housing",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "lucaspaulinocabral/avocado-prices",
+            "rows": 18249,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "jyotmakadiya/popular-movies-and-tv-shows-amazon-prime-netflix",
+            "rows": 24664,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "sagravela/cars-price-spain-2017",
+            "rows": 41773,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "ahmedsamirafattah/egypt-houses-price",
+            "rows": 27361,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "grandeurkoe/google-play-store-app-data",
+            "rows": 10841,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "giraldosn/finding-donors",
+            "rows": 45222,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "bonginstates/bank-churn-prediction",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "henryshan/coca-cola-stock-price",
+            "rows": 15589,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "devaanshpuri/ann-churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "judechristensenesq/practicum-bank-data",
+            "rows": 21525,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "kryusufkaya/melb-data",
+            "rows": 13580,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "joyshil0599/multi-decade-video-game-review-dataset",
+            "rows": 12593,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/airlines-traffic-passenger-statistics",
+            "rows": 15007,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "amirhosseinmirzaie/americancitizenincome",
+            "rows": 25000,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "aman1py/gapminder",
+            "rows": 10111,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "irynatokarchuk/top-streamed-spotify-songs-by-year-2010-2023",
+            "rows": 10441,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "deepcontractor/car-price-prediction-challenge",
+            "rows": 19237,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "srgiolutzer/limite-de-crdito-bancrio",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "bhavikjikadara/google-play-store-applications",
+            "rows": 10841,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "rohanvarma9187/hyderabad-weather1950-2020-temp-and-rainfall",
+            "rows": 25500,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "mrhainguyen/employee-names-salaries-and-position-titles",
+            "rows": 30859,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "harshg97/credit-risk-dataset",
+            "rows": 32581,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "minhnguyendichnhat/etth-dataset",
+            "rows": 17420,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "hmtessier/regularseasonpointspreads",
+            "rows": 25769,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "cpluzshrijayan/chrun-prediction",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "kapturovalexander/ign-games-from-best-to-worst",
+            "rows": 18625,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "unajtheb/homesteadus-electricity-consumption",
+            "rows": 22201,
+            "columns": 18,
+            "datetime": true
+        },
+        {
+            "dataset": "nikitakalmodiya/bank-fraud",
+            "rows": 10127,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "manojvinod/adult-income",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "laudiomachadopaulo/solar-flare-list-over-12-years",
+            "rows": 13870,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "shibumohapatra/house-price",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "aamirai/online-shopper-intension",
+            "rows": 12330,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "walterconway/covid-flu-cold-symptoms",
+            "rows": 44453,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "muralisaichandd/ipl-2008-2022-batting-scorecards",
+            "rows": 15940,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "achmadbauravindah/general-electric-company-dataset",
+            "rows": 10737,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "noordeen/big-city-health-data",
+            "rows": 13512,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "niketchauhan/covid-19-time-series-data",
+            "rows": 72090,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "breadnbu22er/or-cr-2016-to-2024",
+            "rows": 20834,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "ayessa/salary-prediction-classification",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "swekerr/click-through-rate-prediction",
+            "rows": 10000,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "jcp3599/educacion-dataset",
+            "rows": 30641,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "chakreshkrsingh/pendigits",
+            "rows": 10992,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "ahmedwaelnasef/hotel-booking",
+            "rows": 36275,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "kedokedokedo/vgsales",
+            "rows": 16324,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "noorsaeed/crop-yield-prediction-dataset",
+            "rows": 28242,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "antoine62/hired",
+            "rows": 20000,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "danielprazeres/acd2b94f1c-csv",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "ggsri123/co2-emissions-from-fossil-fuels",
+            "rows": 17232,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "nimapourmoradi/steel-dataset",
+            "rows": 35041,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "averkiyoliabev/home-equity-line-of-creditheloc",
+            "rows": 10459,
+            "columns": 24,
+            "datetime": false
+        },
+        {
+            "dataset": "krupalpatel07/pepsico-daily-data",
+            "rows": 13167,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "sgwood/biden-and-trump-tweets-201720",
+            "rows": 17897,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "jackstryker/combined-ncaa-fbs-rosters-2023-2024",
+            "rows": 15884,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "ashkangoharfar/drowsiness-dataset-of-drozy-database",
+            "rows": 21078,
+            "columns": 14,
+            "datetime": true
+        },
+        {
+            "dataset": "dangquangvu/vietnam-flights-in-1st-quarter-of-2020",
+            "rows": 19846,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "ahsan81/hotel-reservations-classification-dataset",
+            "rows": 36275,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "rahmadadeakbar/california-housing-train",
+            "rows": 17000,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "michaelbryantds/dog-bite-incidents",
+            "rows": 22663,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "israelsastre/combat-pokemon-dataset-for-training",
+            "rows": 74700,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/cumulative-area-burnt",
+            "rows": 13416,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "csepython/signature-malware",
+            "rows": 100000,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "samaffolter/fred-interest-rate-spreads",
+            "rows": 22787,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "totoro29/air-pollution-level",
+            "rows": 32191,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "bhavikjikadara/top-worlds-companies",
+            "rows": 10000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "berkayalan/bank-marketing-data-set",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "datajameson/letter-recognition-dataset",
+            "rows": 20000,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "krupalpatel07/intel-stock-data",
+            "rows": 11175,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "itsrohithere/e-commerce-giants-comparison-2010-2020",
+            "rows": 12054,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "curiel/chicago-weather-database",
+            "rows": 32148,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "imranalishahh/sales-and-customer-insights",
+            "rows": 10000,
+            "columns": 15,
+            "datetime": true
+        },
+        {
+            "dataset": "andresjramos/covid19-mexico-clean-order-by-states",
+            "rows": 92320,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "zeeshanyounas001/texas-instruments-leading-in-electronics",
+            "rows": 13106,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "yaaryiitturan/pendigits",
+            "rows": 10992,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "deveshchaudhary7606/arla-foods-data-driven-decarbonization-a",
+            "rows": 10000,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "radheshyamkollipara/bank-customer-churn",
+            "rows": 10000,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "rahulmenon1758/car-resale-prices",
+            "rows": 17446,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "overload10/adult-census-dataset",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "dermisfit/lyft-inc-dataset",
+            "rows": 17379,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "shivangisafai/project1-dataset",
+            "rows": 10000,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "mahmoudshaheen1134/trades-dataset",
+            "rows": 39221,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "tmishinev/world-country-gdp-19602021",
+            "rows": 16492,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "kanuriviveknag/road-accidents-severity-dataset",
+            "rows": 12316,
+            "columns": 32,
+            "datetime": true
+        },
+        {
+            "dataset": "surekharamireddy/credit-data",
+            "rows": 13444,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "wmgama/dataset-analise-de-credito",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "jasmeet0516/air-quality",
+            "rows": 18025,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "mikhail1681/youth-tobacco-survey-yts-data-usa",
+            "rows": 10600,
+            "columns": 31,
+            "datetime": false
+        },
+        {
+            "dataset": "hoandan/penbased-recognition-of-handwritten-digits",
+            "rows": 10991,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "lodetomasi1995/income-classification",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "mrigaankjaswal/crop-yield-prediction-dataset",
+            "rows": 28242,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "rohitamalnerkar/adult-dataset",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "sahirmaharajj/air-pollution-dataset",
+            "rows": 16218,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "mdzubayer/storms-dataset-a-subset-of-the-noaa-dataset",
+            "rows": 19537,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "mariasaif/predictive-analytics-in-hotel-booking-management",
+            "rows": 36275,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "daniboy370/boston-marathon-2019",
+            "rows": 26651,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "anuvrat29/california-housing-value",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "pragyanaianddsschool/bits-bank-customers",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "tumulgupta/waze-dataset",
+            "rows": 14999,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "dandanjia/vgsales-csv",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "tajamulkhan/fraud-oracle",
+            "rows": 15420,
+            "columns": 33,
+            "datetime": false
+        },
+        {
+            "dataset": "ranugadisansagamage/hp-stocks",
+            "rows": 15202,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "intellabhi/employee-dataset",
+            "rows": 13232,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "usmanlovescode/somalia-food-prices-dataset",
+            "rows": 26083,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "sadiqshah/suicides-rate-1985-to-2016",
+            "rows": 27820,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "madhav000/playstore-analysis",
+            "rows": 10840,
+            "columns": 13,
+            "datetime": true
+        },
+        {
+            "dataset": "nanditapore/credit-risk-analysis",
+            "rows": 32581,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "ricardoh15/vivino-pre-mid-cleaned-dataset",
+            "rows": 13171,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "stealthtechnologies/earthquakes-dataset",
+            "rows": 14726,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "thedevastator/analyzing-credit-card-spending-habits-in-india",
+            "rows": 26052,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "atultiwari01/hiv-occurrence-in-india",
+            "rows": 17686,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "marwanmohammedsayed/california-housing-data",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "hassanraof/housing-prices",
+            "rows": 27361,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "umerhaddii/james-beard-awards-dataset-2024",
+            "rows": 14922,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "sagayaabinesh/videogames",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "mickey1968/individual-company-sales-data",
+            "rows": 40000,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "mehdigoldoust/adoult-income",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "vanshkhandelwal5627/customer-churn",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "crxxom/fifa2023-all-cards",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "yashsrivastava51213/revenue-and-profit-of-fortune-500-companies",
+            "rows": 29500,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "dogugun/churn-data",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "heliodata/instruments-solarflares",
+            "rows": 12455,
+            "columns": 18,
+            "datetime": true
+        },
+        {
+            "dataset": "talhachoudary/global-agriculture-climate-impact-dataset",
+            "rows": 10000,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "mysterymeatie/protests-from-1990-to-march-2020",
+            "rows": 12652,
+            "columns": 25,
+            "datetime": false
+        },
+        {
+            "dataset": "dhruvildave/google-trends-dataset",
+            "rows": 26955,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "surendra365/recruitement-dataset",
+            "rows": 10000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "caioflor/adimplencia-credit",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "sachithrukshan/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "qizarafzaal/adult-dataset",
+            "rows": 32560,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "aakashshinde1507/resorts-in-thailand",
+            "rows": 30005,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "esravo/hand-written-digits-project",
+            "rows": 10992,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "rabailanees/adult-income-dataset",
+            "rows": 32560,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "kidoen/bank-customers-data",
+            "rows": 42639,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "noeyislearning/delaware-restaurant-inspection-violations",
+            "rows": 31713,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "thedevastator/improving-naval-vessel-condition-through-machine",
+            "rows": 11934,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "gurpreetsinghindia/sales-data-with-natural-language",
+            "rows": 10000,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "datascienceespanol/premios-oscar-actualizado-hasta-2023",
+            "rows": 10759,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "drrayislam/50k-synthetic-iris-data-set-49736-observations",
+            "rows": 49741,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "marslinoedward/bank-customer-churn-prediction",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "holoong9291/gdp-of-all-countries19602020",
+            "rows": 10134,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "arpit2712/climate-change",
+            "rows": 10000,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "jnikhilsai/income-data-dt",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "kannan1314/apple-stock-price-all-time",
+            "rows": 10307,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "aahanmehra/surgery",
+            "rows": 14635,
+            "columns": 25,
+            "datetime": false
+        },
+        {
+            "dataset": "azadshahvaladov/apartment-prices-for-azerbaijan-market",
+            "rows": 39302,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "sahityasetu/new-york-city-air-quality",
+            "rows": 16218,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "ujjwalaggarwal402/medicine-dataset",
+            "rows": 50000,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/synthetic-of-medicines",
+            "rows": 50000,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "shreydan/stanford-dogs-csv",
+            "rows": 20580,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "likhari/waze-user-dataset",
+            "rows": 14999,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "jazidesigns/accenture-dataset",
+            "rows": 24573,
+            "columns": 13,
+            "datetime": true
+        },
+        {
+            "dataset": "ahmedhazemelabady/top-ranked-animes-in-2024",
+            "rows": 20050,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "mikedev/metro-traffic-volume",
+            "rows": 48204,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "omarvivas/complete-kaggle-ranking-competitions-19-mar-2023",
+            "rows": 10810,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "ohallao/credit-csv",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "mikhailtiurin/vehicle-pricing-data-israel",
+            "rows": 15290,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "heberrossi/banco-de-dados-trabalhofinal",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "sinananu/pharmaceutical-data-both-machine-learning-and-nlp",
+            "rows": 20000,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "kinguniverse129/churnmodelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "mhassansaboor/toyota-motors-stock-data-2980-2024",
+            "rows": 11291,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "renatosn/sao-paulo-housing-prices",
+            "rows": 11657,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "mohammadmahdiyousefi/car-prices-10k",
+            "rows": 10919,
+            "columns": 16,
+            "datetime": true
+        },
+        {
+            "dataset": "ajaxianazarenka/premier-league",
+            "rows": 11979,
+            "columns": 43,
+            "datetime": true
+        },
+        {
+            "dataset": "hosseinah1/stock-market-eth-1h-data",
+            "rows": 23674,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "mursideyarkin/mobile-games-ab-testing-cookie-cats",
+            "rows": 90189,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "shivamvadalia27/video-games",
+            "rows": 20580,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "akhileshdkapse/nih-dataframe",
+            "rows": 51759,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "thedevastator/unlocking-the-energy-consumption-of-united-state",
+            "rows": 12713,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "shahzaibshazoo/earthquake-dataset",
+            "rows": 14202,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "fatmanur12/new-york-air-quality",
+            "rows": 18016,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "galibce003/churn-modelling",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "balamogallapu/hp-laptop-sales",
+            "rows": 49836,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "ashtonboffa/housing",
+            "rows": 20640,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "syedasimalishah/marvel-chracters",
+            "rows": 16376,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "kanchana1990/despacito-insights-decoding-youtube-buzz",
+            "rows": 10011,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "indra90/us-1994-census",
+            "rows": 31978,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "tolgaik/marvel-comic-list",
+            "rows": 11049,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "adityaramachandran27/world-air-quality-index-by-city-and-coordinates",
+            "rows": 16695,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "loganlauton/nba-injury-stats-1951-2023",
+            "rows": 37667,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "willianoliveiragibin/oecd-revenue-statistics",
+            "rows": 53912,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "amriyasmina/reservations-hotel",
+            "rows": 36275,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "pranjalbahore/adult-income-eda",
+            "rows": 32560,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "rishidamarla/video-game-sales",
+            "rows": 16719,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "marcosgois07/brazilian-stock-exchange-shares-for-forecast",
+            "rows": 29905,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "kanchana1990/e-commerce-womens-clothing-data-2024",
+            "rows": 10947,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "raphaelwallsberger/xai-drilling-dataset",
+            "rows": 20000,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "ziya07/financial-transaction-and-risk-management-dataset",
+            "rows": 10000,
+            "columns": 18,
+            "datetime": true
+        },
+        {
+            "dataset": "robertotambunan/data-about-home-prices-in-melbourne",
+            "rows": 13580,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "jkraak/lego-sets-and-themes-database",
+            "rows": 21503,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "jonathanpilafas/zip-to-fips",
+            "rows": 57608,
+            "columns": 9,
+            "datetime": true
+        },
+        {
+            "dataset": "muhammadbilalhaneef/-apple-stock-prices-from-1981-to-2023",
+            "rows": 10608,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "argonalyst/sao-paulo-real-estate-sale-rent-april-2019",
+            "rows": 13640,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "benjibb/sp500-since-1950",
+            "rows": 17218,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "georgejnr/uk-rental-properties-dataset",
+            "rows": 39039,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "menesakpinar/eda-project-analyze-us-citizens",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "makofe/housesclean",
+            "rows": 21739,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "josephw20/uk-met-office-weather-data",
+            "rows": 37049,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "vedantkhapekar/top-10000-companies-dataset",
+            "rows": 10000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "thiagoskq/dados-dos-clientes",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "jojoyin/bilibili-users-10k",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "darrylljk/london-bus-safety-performance",
+            "rows": 23158,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "dryad/baboon-mating",
+            "rows": 12141,
+            "columns": 20,
+            "datetime": false
+        },
+        {
+            "dataset": "floatingcoder/tmdb-20000-movies-dataset",
+            "rows": 20000,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "subinium/movie-character-mbti-dataset",
+            "rows": 18741,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "bhaweshsinha07/california-house-price-dataset",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "ydalat/lifestyle-and-wellbeing-data",
+            "rows": 15972,
+            "columns": 24,
+            "datetime": true
+        },
+        {
+            "dataset": "russellyates88/suicide-rates-overview-1985-to-2016",
+            "rows": 27820,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "msjahid/global-ai-ml-and-data-science-salaries",
+            "rows": 40332,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "ryandinh/data-carpentrys-rodent-dataset",
+            "rows": 34786,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "austinreese/minneapolis-st-paul-weather-data",
+            "rows": 54776,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "nitsbat/data-of-atm-transaction-of-xyz-bank",
+            "rows": 11589,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "sandralincosta09/dados-credito",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "ojshavsaxena/appscsv",
+            "rows": 10841,
+            "columns": 12,
+            "datetime": true
+        },
+        {
+            "dataset": "isathyam31/adult-income-prediction-classification",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "mohamedmoslemani/archetype-health-and-productivity-dataset",
+            "rows": 10000,
+            "columns": 24,
+            "datetime": false
+        },
+        {
+            "dataset": "boonpalipatana/nba-playoff-shots-2018",
+            "rows": 13470,
+            "columns": 24,
+            "datetime": false
+        },
+        {
+            "dataset": "sanjanchaudhari/employees-performance-for-hr-analytics",
+            "rows": 17417,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "sonalanand/london-weather-dataset-for-data-viz-practise",
+            "rows": 15341,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "sakurapuare/mushroom-classification-enhanced",
+            "rows": 25986,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "filippoo/deep-learning-az-ann",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "anshtanwar/current-daily-price-of-various-commodities-india",
+            "rows": 23093,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "laoliulaoliu/digital-coin-trx-1hour-2019-2021",
+            "rows": 14011,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "sukhmandeepsinghbrar/migration-data",
+            "rows": 16561,
+            "columns": 33,
+            "datetime": false
+        },
+        {
+            "dataset": "godparticle12/company-insights-comprehensive-dataset",
+            "rows": 10000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "saurabhshahane/fbi-criminal-background",
+            "rows": 16445,
+            "columns": 27,
+            "datetime": true
+        },
+        {
+            "dataset": "timoboz/migration-nz",
+            "rows": 86526,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "mushfiqurrobin/network-coverage",
+            "rows": 22360,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "parsahshariatpanahi/mos-qoe",
+            "rows": 20411,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "krystianadammolenda/refugees-from-ukraine-poland",
+            "rows": 54233,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "ayyuce/turkey-earthquakes",
+            "rows": 19248,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "shivamtyagiofficial/apple-stock-price-ipo-to-date",
+            "rows": 11110,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "hungwenchen0306/diabetes-mortality-1999-2016",
+            "rows": 15102,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "mohamedyaman/california-housing-prices",
+            "rows": 20640,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "anyasorc/valentine-dataset",
+            "rows": 20000,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "ghosh153/internshala-internship-dataset",
+            "rows": 12001,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "mohamedmustafashaban/bank-marketing",
+            "rows": 41188,
+            "columns": 21,
+            "datetime": false
+        },
+        {
+            "dataset": "dienhoa/adultdata-fastai",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "durgatejasanivarapu/big-sales-data",
+            "rows": 14204,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "jainaru/adult-income-census-dataset",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "joebeachcapital/steel-industry-energy-consumption",
+            "rows": 35040,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "gpreda/covid19-variants",
+            "rows": 100416,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "jasmeet0516/bird-flu-dataset-avian-influenza",
+            "rows": 16304,
+            "columns": 17,
+            "datetime": true
+        },
+        {
+            "dataset": "akelsayed/churn-bank-customers-ak",
+            "rows": 10000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "mexwell/synthetic-fraud-detection-dataset",
+            "rows": 10127,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "xiangdongyuan/battery-temperature-analysis",
+            "rows": 29480,
+            "columns": 12,
+            "datetime": false
+        },
+        {
+            "dataset": "waqi786/worldwide-coffee-habits-dataset",
+            "rows": 10000,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "sahandakramipour/data-labels-fashion-product-images-small",
+            "rows": 44072,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "meetnagadia/walmart-stock-price-from-19722022",
+            "rows": 12491,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "arnavsmayan/climate-metrics-dataset-temp-precipitation-wind",
+            "rows": 20000,
+            "columns": 7,
+            "datetime": true
+        },
+        {
+            "dataset": "waqi786/most-used-beauty-cosmetics-products-in-the-world",
+            "rows": 15000,
+            "columns": 14,
+            "datetime": false
+        },
+        {
+            "dataset": "datacertlaboratoria/projeto-3-segmentao-de-clientes-no-ecommerce",
+            "rows": 25953,
+            "columns": 6,
+            "datetime": true
+        },
+        {
+            "dataset": "shrutimechlearn/eye-movement-data-eeg-1",
+            "rows": 14980,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "mukuldeshantri/1mg-medicines-order-online-dataset",
+            "rows": 16944,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "mohammadbahmanabadi/ab-test-cookie-cats",
+            "rows": 90189,
+            "columns": 5,
+            "datetime": false
+        },
+        {
+            "dataset": "jacksondivakarr/house-price-prediction-dataset",
+            "rows": 29135,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "ghopkins/nba-injuries-2010-2018",
+            "rows": 27105,
+            "columns": 5,
+            "datetime": true
+        },
+        {
+            "dataset": "kush1729/google-playstore-data",
+            "rows": 10841,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/world-indicators-19602022",
+            "rows": 16758,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "youssefaboelwafa/hotel-booking-cancellation-prediction",
+            "rows": 36285,
+            "columns": 17,
+            "datetime": false
+        },
+        {
+            "dataset": "ngallego/inputdata",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "frtgnn/rural-residents-daily-mobile-phone-data",
+            "rows": 14856,
+            "columns": 10,
+            "datetime": false
+        },
+        {
+            "dataset": "eduardopalmieri/brasileiro-player-stats-2024",
+            "rows": 11682,
+            "columns": 33,
+            "datetime": true
+        },
+        {
+            "dataset": "octopusteam/full-hulu-dataset",
+            "rows": 10179,
+            "columns": 8,
+            "datetime": false
+        },
+        {
+            "dataset": "hemachandiranmurugan/house-price-india-dataset",
+            "rows": 14620,
+            "columns": 23,
+            "datetime": false
+        },
+        {
+            "dataset": "malakodtalla/vgsales-dataset",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "amiteee12/crypto_amit_updated_on_may28",
+            "rows": 13648,
+            "columns": 8,
+            "datetime": true
+        },
+        {
+            "dataset": "open-flights/flight-route-database",
+            "rows": 67663,
+            "columns": 9,
+            "datetime": false
+        },
+        {
+            "dataset": "mariyamalshatta/inn-hotels-group",
+            "rows": 36275,
+            "columns": 19,
+            "datetime": false
+        },
+        {
+            "dataset": "caiodouglas/dados-csv-clientes-banco-stone",
+            "rows": 10127,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "dbthapa/suicide-data-with-continent",
+            "rows": 27820,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "meeratif/diabetes-specific-data-all-countries",
+            "rows": 13650,
+            "columns": 7,
+            "datetime": false
+        },
+        {
+            "dataset": "h13380436001/h-lung-cancer",
+            "rows": 55394,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "awais8765/survey-lung-cancer",
+            "rows": 55394,
+            "columns": 16,
+            "datetime": false
+        },
+        {
+            "dataset": "julienjta/twitter-mentions-volumes",
+            "rows": 15902,
+            "columns": 11,
+            "datetime": true
+        },
+        {
+            "dataset": "humagonen/adult-income-censusincome-clean-data",
+            "rows": 28778,
+            "columns": 13,
+            "datetime": false
+        },
+        {
+            "dataset": "imakash3011/online-shoppers-purchasing-intention-dataset",
+            "rows": 12330,
+            "columns": 18,
+            "datetime": false
+        },
+        {
+            "dataset": "shivamb/vehicle-claim-fraud-detection",
+            "rows": 15420,
+            "columns": 33,
+            "datetime": false
+        },
+        {
+            "dataset": "megalaabimen/income",
+            "rows": 32561,
+            "columns": 15,
+            "datetime": false
+        },
+        {
+            "dataset": "titustitus/h1n1-new-york-2009",
+            "rows": 57846,
+            "columns": 30,
+            "datetime": true
+        },
+        {
+            "dataset": "lydia888/real-updated-meta",
+            "rows": 29352,
+            "columns": 6,
+            "datetime": false
+        },
+        {
+            "dataset": "bhararthshiviah/monthly-list-of-legal-entities-registered-in-india",
+            "rows": 12554,
+            "columns": 10,
+            "datetime": true
+        },
+        {
+            "dataset": "jeremiahmendoza/video-game-dataset",
+            "rows": 16598,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "samanfatima7/cleaned-global-video-game-sales-dataset",
+            "rows": 11470,
+            "columns": 11,
+            "datetime": false
+        },
+        {
+            "dataset": "willianoliveiragibin/covid-19-on-working-professionals",
+            "rows": 10000,
+            "columns": 15,
+            "datetime": false
+        }
+    ],
+    "stats": {
+        "num_datasets": 1000,
+        "num_with_datetime": 237,
+        "max_rows": 119968,
+        "min_rows": 10000,
+        "max_columns": 50,
+        "min_columns": 5,
+        "avg_rows": 23121.648,
+        "avg_columns": 13.166,
+        "stdev_rows": 15946.232957147578,
+        "stdev_columns": 6.468251872204907
+    }
+}
