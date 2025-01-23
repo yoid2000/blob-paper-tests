@@ -43,7 +43,7 @@ def get_stats(parquet_path, blob_path):
             kaggle_dataset = filename[:-8]
             # change '_slash_' to '/'
             kaggle_dataset = kaggle_dataset.replace('_slash_', '/')
-            info['datasets'].append({'dataset': kaggle_dataset, 'rows': num_rows, 'columns': num_columns, 'datetime': has_datetime}, 'col_info': col_info)
+            info['datasets'].append({'dataset': kaggle_dataset, 'rows': num_rows, 'columns': num_columns, 'datetime': has_datetime, 'col_info': col_info})
     
     # Convert the stats to a DataFrame for easier plotting
     df_stats = pd.DataFrame(stats, columns=['Rows', 'Columns', 'HasDatetime'])
