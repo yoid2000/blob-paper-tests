@@ -62,6 +62,17 @@ def list_datasets(page=1, min_size=None, max_size=None, search=None):
 
 authenticate_kaggle()
 
+def is_datetime_column(series):
+    if series.dtype == 'object':  # Check if the column is of type object (string)
+        try:
+            # Attempt to convert the entire series to datetime
+            converted_series = pd.to_datetime(series, errors='raise')
+            # Check if the conversion was successful for all elements
+            return not converted_series.isnull().any()
+        except (ValueError, TypeError):
+            return False
+    return False
+
 while num_gathered_tables < num_tables_to_gather:
     datasets = list_datasets(page=last_page, min_size = min_file_size, max_size = max_file_size)
     if len(datasets) == 0:
@@ -101,6 +112,14 @@ while num_gathered_tables < num_tables_to_gather:
         if df.shape[0] < min_rows or df.shape[0] > max_rows or df.shape[1] < min_columns or df.shape[1] > max_columns:
             print(f"Skipping {file_name} because it has {df.shape[0]} rows and {df.shape[1]} columns")
             continue
+        num_nan_rows = len(df[df.isnull().any(axis=1)])
+        if num_nan_rows > len(df)/2:
+            print(f"Skipping {file_name} because it has {num_nan_rows} rows with NaN values")
+            continue
+        for column in df.columns:
+            if is_datetime_column(df[column]):
+                df[column] = pd.to_datetime(df[column])
+
         path_df = os.path.join(kaggle_parquet_path, file_name + '.parquet')
         print(f"Saving {file_name} to {path_df}")
         # save df as a parquet file at path_df
