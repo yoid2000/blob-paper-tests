@@ -27,7 +27,13 @@ def get_stats(parquet_path, blob_path):
 
             # determine if any columns are datetime
             has_datetime = False
+            col_info = []
             for column in df.columns:
+                # get the column type
+                col_type = df[column].dtype
+                # get the number of distinct values in the column
+                num_unique = df[column].nunique()
+                col_info.append({'column': column, 'type': str(col_type), 'num_unique': num_unique})
                 if pd.api.types.is_datetime64_any_dtype(df[column]):
                     has_datetime = True
             # Add the stats to the array
@@ -37,7 +43,7 @@ def get_stats(parquet_path, blob_path):
             kaggle_dataset = filename[:-8]
             # change '_slash_' to '/'
             kaggle_dataset = kaggle_dataset.replace('_slash_', '/')
-            info['datasets'].append({'dataset': kaggle_dataset, 'rows': num_rows, 'columns': num_columns, 'datetime': has_datetime})
+            info['datasets'].append({'dataset': kaggle_dataset, 'rows': num_rows, 'columns': num_columns, 'datetime': has_datetime}, 'col_info': col_info)
     
     # Convert the stats to a DataFrame for easier plotting
     df_stats = pd.DataFrame(stats, columns=['Rows', 'Columns', 'HasDatetime'])
