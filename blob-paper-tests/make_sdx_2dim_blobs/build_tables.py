@@ -52,7 +52,7 @@ blob_dir_path = os.path.join(sdx_2dim_path, blob_name)
 # check if a directory at blob_dir_path already exists
 print(f"Checking if {blob_dir_path} exists")
 if os.path.exists(blob_dir_path):
-    blob_full_path = os.path.join(blob_dir_path, blob_name + 'sdxblob.zip')
+    blob_full_path = os.path.join(blob_dir_path, blob_name + '.sdxblob.zip')
     print(f"Checking if {blob_full_path} exists")
     if os.path.exists(blob_full_path):
         print(f"Skipping {blob_full_path} already exists")
