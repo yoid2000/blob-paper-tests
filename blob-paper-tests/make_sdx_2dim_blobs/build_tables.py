@@ -46,18 +46,26 @@ if len(filenames) < job_num+1:
     sys.exit(1)
 filename = filenames[job_num]
 file_path = os.path.join(kaggle_parquet_path, filename)
+
+blob_name = filename.replace('.parquet', '')
+blob_dir_path = os.path.join(sdx_2dim_path, blob_name)
+# check if a directory at blob_dir_path already exists
+if os.path.exists(blob_dir_path):
+    blob_full_path = os.path.join(blob_dir_path, blob_name + 'sdxblob.zip')
+    if os.path.exists(blob_full_path):
+        print(f"Skipping {blob_full_path} already exists")
+        sys.exit(1)
+
 print(f"Build synthetic tables for:\n{file_path}")
 
 df_orig = pd.read_parquet(file_path)
 print(df_orig.head())
 print(df_orig.columns)
 # remove .parquet from filename
-blob_name = filename.replace('.parquet', '')
-blob_path = os.path.join(sdx_2dim_path, blob_name)
-os.makedirs(blob_path, exist_ok=True)
+os.makedirs(blob_dir_path, exist_ok=True)
 
-print(f"Make blob for {blob_name} at {blob_path}")
+print(f"Make blob for {blob_name} at {blob_dir_path}")
 sbb = SyndiffixBlobBuilder(blob_name=blob_name,
-                           path_to_dir=blob_path,
+                           path_to_dir=blob_dir_path,
                            max_cluster_size=2)
 sbb.write(df_raw=df_orig)

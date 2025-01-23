@@ -8,9 +8,7 @@ The datasets collected by kaggle are placed in blob_tests/datasets/kaggle_parque
 
 get_tables.py retrieves the tables. You will need to setup a kaggle authorization code to use this. See kaggle documentation. You can modify parameters inside get_tables.py to change the number of datasets collected, as well as filter out the datasets you don't want (by number of rows and columns).
 
-change_to_datetime.py reads in all of the collected datasets, modifies the columns that look like datetime columns to dataframe datetime type. The so-modified .parquet files are placed in blob_tests/datasets/kaggle_parquet_out. They are put here so that you can make a manual check that everything looks kosher. If so, you can move them over to kaggle_parquet.
-
 get_stats.py reads in all of the collected datasets, and generates the file blob_tests/datesets_info.json. This contains the kaggle name for each dataset along with the number of rows and columns. It also contains general statistics about the data. It also generates two scatterplots showing the number of rows and columns per dataset. These files are pre-loaded with the 1000 datasets used for the blob paper.
 
-You can ignore check_zips.py.
+You can ignore check_zips.py and change_to_datetime.py.
 
