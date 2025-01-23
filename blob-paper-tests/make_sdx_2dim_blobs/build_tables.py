@@ -57,6 +57,9 @@ if os.path.exists(blob_dir_path):
     if os.path.exists(blob_full_path):
         print(f"Skipping {blob_full_path} already exists")
         sys.exit(1)
+    # remove directory blob_dir_path
+    print(f"Removing {blob_dir_path}")
+    os.system(f"rm -rf {blob_dir_path}")
 
 print(f"Build synthetic tables for:\n{file_path}")
 
