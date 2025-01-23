@@ -25,6 +25,8 @@ def get_stats(parquet_path, blob_path):
                 os.remove(file_path)
                 continue
 
+            # count the number of rows where any column is NaN
+            num_nan_rows = len(df[df.isnull().any(axis=1)])
             # determine if any columns are datetime
             has_datetime = False
             col_info = []
@@ -33,6 +35,7 @@ def get_stats(parquet_path, blob_path):
                 col_type = df[column].dtype
                 # get the number of distinct values in the column
                 num_unique = df[column].nunique()
+                # count the number of rows with NaN values
                 col_info.append({'column': column, 'type': str(col_type), 'num_unique': num_unique})
                 if pd.api.types.is_datetime64_any_dtype(df[column]):
                     has_datetime = True
@@ -43,7 +46,7 @@ def get_stats(parquet_path, blob_path):
             kaggle_dataset = filename[:-8]
             # change '_slash_' to '/'
             kaggle_dataset = kaggle_dataset.replace('_slash_', '/')
-            info['datasets'].append({'dataset': kaggle_dataset, 'rows': num_rows, 'columns': num_columns, 'datetime': has_datetime, 'col_info': col_info})
+            info['datasets'].append({'dataset': kaggle_dataset, 'rows': num_rows, 'columns': num_columns, 'num_nan_rows': num_nan_rows, 'datetime': has_datetime, 'col_info': col_info})
     
     # Convert the stats to a DataFrame for easier plotting
     df_stats = pd.DataFrame(stats, columns=['Rows', 'Columns', 'HasDatetime'])
