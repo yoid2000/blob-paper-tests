@@ -36,7 +36,7 @@ def get_stats(parquet_path, blob_path):
                 # get the number of distinct values in the column
                 num_unique = df[column].nunique()
                 # count the number of rows with NaN values for this column
-                num_nan = df[column].isnull().sum()
+                num_nan = int(df[column].isnull().sum())
                 col_info.append({'column': column, 'type': str(col_type), 'num_unique': num_unique, 'num_nan': num_nan})
                 if pd.api.types.is_datetime64_any_dtype(df[column]):
                     has_datetime = True
