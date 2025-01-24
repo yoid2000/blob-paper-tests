@@ -25,6 +25,18 @@ def get_stats(parquet_path, blob_path):
                 os.remove(file_path)
                 continue
 
+            # Due to a bug in syndiffix, we need to remove datasets where an illegal filename
+            # character is present in the column name
+            illegal_chars = ['<','>',':','"','/','\\','|','?','*',]
+            found_bad_col = False
+            for column in df.columns:
+                if any(char in column for char in illegal_chars):
+                    found_bad_col = True
+                    break
+            if found_bad_col:
+                os.remove(file_path)
+                continue
+
             # count the number of rows where any column is NaN
             num_nan_rows = len(df[df.isnull().any(axis=1)])
             if num_nan_rows > num_rows/2:
