@@ -47,7 +47,7 @@ def check_file(filename):
         except Exception as e:
             #traceback.print_exc()
             print(f"Error: {e}")
-            print(f"Error: couldn't read {blob_name} {col1} {col2}")
+            print(f"Error: couldn't read {blob_name} '{col1}' '{col2}'")
             pp.pprint(sbr.catalog.catalog.keys())
             quit()
 
