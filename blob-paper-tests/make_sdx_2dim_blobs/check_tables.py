@@ -1,8 +1,10 @@
 import os
-import json
 import sys
 import itertools
 import traceback
+import shutil
+import subprocess
+import stat
 import pandas as pd
 from syndiffix import SyndiffixBlobReader
 import pprint
@@ -35,6 +37,11 @@ for filename in filenames:
     file_path = os.path.join(kaggle_parquet_path, filename)
     blob_name = filename.replace('.parquet', '')
     blob_dir_path = os.path.join(sdx_2dim_path, blob_name)
+    blob_temp_path = os.path.join(blob_dir_path, '.sdx_blob_' + blob_name)
+    print(f"Checking {blob_name}")
+    if os.path.exists(blob_temp_path):
+        print(f"Removing {blob_temp_path}")
+        shutil.rmtree(blob_temp_path)
     if not os.path.exists(blob_dir_path):
         print(f"Error: {blob_dir_path} does not exist")
         continue
@@ -60,7 +67,6 @@ for filename in filenames:
         continue
     all_combs = list(itertools.combinations(cols_org, 2))
     for col1, col2 in all_combs:
-        print(f"Try {col1}, {col2}")
         try:
             df_temp = sbr.read(columns=[col1, col2])
         except Exception as e:
