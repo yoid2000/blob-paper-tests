@@ -19,11 +19,11 @@ def check_file(filename):
         shutil.rmtree(blob_temp_path)
     if not os.path.exists(blob_dir_path):
         print(f"Error: {blob_dir_path} does not exist")
-        continue
+        return
     blob_full_path = os.path.join(blob_dir_path, blob_name + '.sdxblob.zip')
     if not os.path.exists(blob_full_path):
         print(f"Error: {blob_full_path} does not exist")
-        continue
+        return
     # This is the original dataset
     df_orig = pd.read_parquet(file_path)
     try:
@@ -32,18 +32,18 @@ def check_file(filename):
                                   force=True)
     except Exception as e:
         print(f"Error: {e}")
-        continue
+        return
     cols_org = sorted(list(df_orig.columns))
     cols_sbr = sorted(sbr.col_names_all)
     if cols_org != cols_sbr:
         print(f"Error: {blob_name} columns do not match")
         print(cols_org)
         print(cols_sbr)
-        continue
+        return
     all_combs = list(itertools.combinations(cols_org, 2))
     for col1, col2 in all_combs:
         try:
-            df_temp = sbr.read(columns=[col1, col2])
+            _ = sbr.read(columns=[col1, col2])
         except Exception as e:
             #traceback.print_exc()
             print(f"Error: {e}")
