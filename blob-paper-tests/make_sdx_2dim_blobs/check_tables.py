@@ -10,30 +10,7 @@ from syndiffix import SyndiffixBlobReader
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
 
-# check if there is an environment variable called BLOB_TEST_DIR
-if 'BLOB_TEST_DIR' in os.environ:
-    blob_path = os.environ['BLOB_TEST_DIR']
-    blob_code_path = os.environ['BLOB_TEST_CODE']
-else:
-    blob_path = os.path.join(os.path.dirname(os.getcwd()), 'blob_tests')
-
-print(f"Blob path: {blob_path}")
-
-datasets_path = os.path.join(blob_path, 'datasets')
-kaggle_parquet_path = os.path.join(datasets_path, 'kaggle_parquet')
-# make sure kaggle_parquet_path exists
-if not os.path.exists(kaggle_parquet_path):
-    print(f"Error: {kaggle_parquet_path} does not exist")
-    print("You need to gather the Kaggle datasets first")
-    sys.exit(1)
-sdx_2dim_path = os.path.join(datasets_path, 'sdx_2dim')
-if not os.path.exists(sdx_2dim_path):
-    print(f"Error: {sdx_2dim_path} does not exist")
-    print("You need to run build_tables.py first")
-    sys.exit(1)
-
-filenames = os.listdir(kaggle_parquet_path)
-for filename in filenames:
+def check_file(filename):
     file_path = os.path.join(kaggle_parquet_path, filename)
     blob_name = filename.replace('.parquet', '')
     blob_dir_path = os.path.join(sdx_2dim_path, blob_name)
@@ -73,3 +50,37 @@ for filename in filenames:
             print(f"Error: couldn't read {blob_name} {col1} {col2}")
             pp.pprint(sbr.catalog.catalog.keys())
             quit()
+
+#do_these_checks = []
+do_these_checks = ['ahmedwadood_slash_adulttest']
+
+# check if there is an environment variable called BLOB_TEST_DIR
+if 'BLOB_TEST_DIR' in os.environ:
+    blob_path = os.environ['BLOB_TEST_DIR']
+    blob_code_path = os.environ['BLOB_TEST_CODE']
+else:
+    blob_path = os.path.join(os.path.dirname(os.getcwd()), 'blob_tests')
+
+print(f"Blob path: {blob_path}")
+
+datasets_path = os.path.join(blob_path, 'datasets')
+kaggle_parquet_path = os.path.join(datasets_path, 'kaggle_parquet')
+# make sure kaggle_parquet_path exists
+if not os.path.exists(kaggle_parquet_path):
+    print(f"Error: {kaggle_parquet_path} does not exist")
+    print("You need to gather the Kaggle datasets first")
+    sys.exit(1)
+sdx_2dim_path = os.path.join(datasets_path, 'sdx_2dim')
+if not os.path.exists(sdx_2dim_path):
+    print(f"Error: {sdx_2dim_path} does not exist")
+    print("You need to run build_tables.py first")
+    sys.exit(1)
+
+if len(do_these_checks) > 0:
+    for this_check in do_these_checks:
+        check_file(this_check)
+    sys.exit(0)
+
+filenames = os.listdir(kaggle_parquet_path)
+for filename in filenames:
+    check_file(filename)
