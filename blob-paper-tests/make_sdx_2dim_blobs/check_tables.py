@@ -38,9 +38,7 @@ for filename in filenames:
     blob_name = filename.replace('.parquet', '')
     blob_dir_path = os.path.join(sdx_2dim_path, blob_name)
     blob_temp_path = os.path.join(blob_dir_path, '.sdx_blob_' + blob_name)
-    print(f"Checking {blob_name}")
     if os.path.exists(blob_temp_path):
-        print(f"Removing {blob_temp_path}")
         shutil.rmtree(blob_temp_path)
     if not os.path.exists(blob_dir_path):
         print(f"Error: {blob_dir_path} does not exist")
