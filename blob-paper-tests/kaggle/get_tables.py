@@ -118,7 +118,7 @@ while num_gathered_tables < num_tables_to_gather:
             continue
         for column in df.columns:
             if is_datetime_column(df[column]):
-                df[column] = pd.to_datetime(df[column])
+                df[column] = pd.to_datetime(df[column]).dt.tz_localize(None)
 
         path_df = os.path.join(kaggle_parquet_path, file_name + '.parquet')
         print(f"Saving {file_name} to {path_df}")

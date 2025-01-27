@@ -51,8 +51,8 @@ def check_file(filename):
             pp.pprint(sbr.catalog.catalog.keys())
             quit()
 
-#do_these_checks = []
-do_these_checks = ['ahmedwadood_slash_adulttest.parquet']
+do_these_checks = []
+#do_these_checks = ['ahmedwadood_slash_adulttest.parquet']
 
 # check if there is an environment variable called BLOB_TEST_DIR
 if 'BLOB_TEST_DIR' in os.environ:

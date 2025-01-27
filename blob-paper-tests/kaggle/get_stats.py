@@ -55,9 +55,12 @@ def get_stats(parquet_path, blob_path):
                 num_nan = int(df[column].isnull().sum())
                 col_info.append({'column': column, 'type': str(col_type), 'num_unique': num_unique, 'num_nan': num_nan})
                 if pd.api.types.is_datetime64_any_dtype(df[column]):
+                    df[column] = pd.to_datetime(df[column]).dt.tz_localize(None)
                     has_datetime = True
             # Add the stats to the array
             stats.append((num_rows, num_columns, has_datetime))
+            # write the possibly-modified dataframe back to the parquet file
+            df.to_parquet(file_path)
 
             # strip off the .parquet extension
             kaggle_dataset = filename[:-8]
