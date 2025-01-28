@@ -33,7 +33,23 @@ def plot_mutual_info(path_to_dir):
     axes[1].set_ylabel('Difference in Mutual Information')
     
     plt.tight_layout()
-    plt.show()
+    return(plt)
 
-# Example usage
-# plot_mutual_info('/path/to/your/directory')
+
+blob_code_path = '.'
+# check if there is an environment variable called BLOB_TEST_DIR
+if 'BLOB_TEST_DIR' in os.environ:
+    blob_path = os.environ['BLOB_TEST_DIR']
+    blob_code_path = os.environ['BLOB_TEST_CODE']
+else:
+    blob_path = os.path.join(os.path.dirname(os.getcwd()), 'blob_tests')
+
+print(f"Blob path: {blob_path}")
+
+os.makedirs(blob_path, exist_ok=True)
+results_path = os.path.join(blob_path, 'results')
+mi_results_path = os.path.join(results_path, 'mutual_info')
+
+plt = plot_mutual_info(mi_results_path)
+plot_path = os.path.join(results_path, 'mutual_info_plot.png')
+plt.savefig(plot_path)
