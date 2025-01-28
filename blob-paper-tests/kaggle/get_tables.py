@@ -62,6 +62,8 @@ def list_datasets(page=1, min_size=None, max_size=None, search=None):
 
 authenticate_kaggle()
 
+print(f"We have {num_gathered_tables}. We need {num_tables_to_gather-num_gathered_tables} more tables.")
+
 def is_datetime_column(series):
     if series.dtype == 'object':  # Check if the column is of type object (string)
         try:
@@ -121,6 +123,7 @@ while num_gathered_tables < num_tables_to_gather:
                 df[column] = pd.to_datetime(df[column]).dt.tz_localize(None)
 
         path_df = os.path.join(kaggle_parquet_path, file_name + '.parquet')
+        print("##########################################################")
         print(f"Saving {file_name} to {path_df}")
         # save df as a parquet file at path_df
         try:
@@ -129,6 +132,8 @@ while num_gathered_tables < num_tables_to_gather:
             print(f"An error occurred while writing to parquet: {e}")
             continue
         num_gathered_tables += 1
+        print(f"We have {num_gathered_tables}. We need {num_tables_to_gather-num_gathered_tables} more tables.")
+        print("##########################################################")
     # Update status
     last_page += 1
     status['last_page'] = last_page
