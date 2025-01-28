@@ -19,11 +19,11 @@ def plot_mutual_info(path_to_dir):
     fig, axes = plt.subplots(2, 1, figsize=(12, 10))
     
     # First subplot: plot mi_orig and mi_syn
-    sns.lineplot(ax=axes[0], data=df[['mi_orig', 'mi_syn']])
+    sns.lineplot(ax=axes[0], data=df[['mi_syn', 'mi_orig']])
     axes[0].set_title('Mutual Information: Original vs Synthetic')
     axes[0].set_xlabel('Index')
     axes[0].set_ylabel('Mutual Information')
-    axes[0].legend(['mi_orig', 'mi_syn'])
+    axes[0].legend(['mi_syn', 'mi_orig'])
     
     # Second subplot: plot mi_orig - mi_syn
     df['mi_diff'] = df['mi_orig'] - df['mi_syn']
