@@ -51,7 +51,7 @@ def compute_mutual_information(df_in, col1, col2):
         
     normalized_mi = mi / min(h_col1, h_col2)
     
-    return normalized_mi
+    return normalized_mi, h_col1, h_col2
 
 def check_pairs(file_path, blob_name, blob_dir_path):
     # This is the original dataset
@@ -81,8 +81,8 @@ def check_pairs(file_path, blob_name, blob_dir_path):
             print(f"Error: couldn't read {blob_name} '{col1}' '{col2}'")
             pp.pprint(sbr.catalog.catalog.keys())
             return
-        mi_syn = compute_mutual_information(df_syn, col1, col2)
-        mi_orig = compute_mutual_information(df_orig, col1, col2)
+        mi_syn, ent_col1_syn, ent_col2_syn = compute_mutual_information(df_syn, col1, col2)
+        mi_orig, ent_col1_orig, ent_col2_orig = compute_mutual_information(df_orig, col1, col2)
         # get the number of discinct values in col1 and col2 for both df_syn and df_orig
         num_unique_syn_col1 = df_syn[col1].nunique()
         num_unique_syn_col2 = df_syn[col2].nunique()
@@ -101,6 +101,10 @@ def check_pairs(file_path, blob_name, blob_dir_path):
                         'column2':col2,
                         'mi_syn':mi_syn,
                         'mi_orig':mi_orig,
+                        'entropy_col1_syn':ent_col1_syn,
+                        'entropy_col2_syn':ent_col2_syn,
+                        'entropy_col1_orig':ent_col1_orig,
+                        'entropy_col2_orig':ent_col2_orig,
                         'num_unique_orig_col1':num_unique_orig_col1,
                         'num_unique_syn_col1':num_unique_syn_col1,
                         'num_unique_orig_col2':num_unique_orig_col2,
