@@ -26,8 +26,6 @@ def compute_mutual_information(df_in, col1, col2):
     df = df_in[[col1, col2]].dropna()
     col1_processed = preprocess_column(df[col1])
     col2_processed = preprocess_column(df[col2])
-    print(f"{len(df_in)-len(df)} NaN values of {len(df_in)} removed from {col1} and {col2}")
-
 
     # Discretize continuous columns
     if pd.api.types.is_numeric_dtype(col1_processed):
@@ -91,10 +89,10 @@ def check_pairs(file_path, blob_name, blob_dir_path):
         num_unique_orig_col1 = df_orig[col1].nunique()
         num_unique_orig_col2 = df_orig[col2].nunique()
         # get the column type for col1 and col2 for both df_syn and df_orig
-        col1_type_syn = df_syn[col1].dtype
-        col2_type_syn = df_syn[col2].dtype
-        col1_type_orig = df_orig[col1].dtype
-        col2_type_orig = df_orig[col2].dtype
+        col1_type_syn = str(df_syn[col1].dtype)
+        col2_type_syn = str(df_syn[col2].dtype)
+        col1_type_orig = str(df_orig[col1].dtype)
+        col2_type_orig = str(df_orig[col2].dtype)
         results.append({'blob_name':blob_name,
                         'column1':col1,
                         'column2':col2,
