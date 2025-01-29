@@ -85,11 +85,29 @@ def check_pairs(file_path, blob_name, blob_dir_path):
             return
         mi_syn = compute_mutual_information(df_syn, col1, col2)
         mi_orig = compute_mutual_information(df_orig, col1, col2)
+        # get the number of discinct values in col1 and col2 for both df_syn and df_orig
+        num_unique_syn_col1 = df_syn[col1].nunique()
+        num_unique_syn_col2 = df_syn[col2].nunique()
+        num_unique_orig_col1 = df_orig[col1].nunique()
+        num_unique_orig_col2 = df_orig[col2].nunique()
+        # get the column type for col1 and col2 for both df_syn and df_orig
+        col1_type_syn = df_syn[col1].dtype
+        col2_type_syn = df_syn[col2].dtype
+        col1_type_orig = df_orig[col1].dtype
+        col2_type_orig = df_orig[col2].dtype
         results.append({'blob_name':blob_name,
                         'column1':col1,
                         'column2':col2,
                         'mi_syn':mi_syn,
-                        'mi_orig':mi_orig})
+                        'mi_orig':mi_orig,
+                        'num_unique_syn_col1':num_unique_syn_col1,
+                        'num_unique_syn_col2':num_unique_syn_col2,
+                        'num_unique_orig_col1':num_unique_orig_col1,
+                        'num_unique_orig_col2':num_unique_orig_col2,
+                        'col1_type_syn':col1_type_syn,
+                        'col2_type_syn':col2_type_syn,
+                        'col1_type_orig':col1_type_orig,
+                        'col2_type_orig':col2_type_orig})
     # convert results to a dataframe
     df_results = pd.DataFrame(results)
     return df_results
