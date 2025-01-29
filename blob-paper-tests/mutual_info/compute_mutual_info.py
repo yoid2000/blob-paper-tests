@@ -96,7 +96,7 @@ def check_pairs(file_path, blob_name, blob_dir_path):
         col2_type_syn = str(df_syn[col2].dtype)
         col1_type_orig = str(df_orig[col1].dtype)
         col2_type_orig = str(df_orig[col2].dtype)
-        results.append({'blob_name':blob_name,
+        this_result = {'blob_name':blob_name,
                         'column1':col1,
                         'column2':col2,
                         'mi_syn':mi_syn,
@@ -111,7 +111,17 @@ def check_pairs(file_path, blob_name, blob_dir_path):
                         'col1_type_syn':col1_type_syn,
                         'col2_type_orig':col2_type_orig,
                         'col2_type_syn':col2_type_syn,
-        })
+                        'job_num':job_num,
+        }
+        results.append(this_result)
+        if abs(mi_syn - mi_orig) > 0.5:
+            pp.pprint(this_result)
+            if max(num_unique_pairs_orig, num_unique_pairs_syn) < 20:
+                # print the distinct value pairs and counts of of col1 and col2 for both syn and orig
+                print(f"Distinct value pairs for {col1} and {col2} in original dataset")
+                print(df_orig[[col1, col2]].value_counts())
+                print(f"Distinct value pairs for {col1} and {col2} in synthetic dataset")
+                print(df_syn[[col1, col2]].value_counts())
     # convert results to a dataframe
     df_results = pd.DataFrame(results)
     return df_results
