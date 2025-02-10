@@ -139,6 +139,6 @@ results_path = os.path.join(blob_path, 'results')
 os.makedirs(results_path, exist_ok=True)
 all_results_path = os.path.join(results_path, 'all_tests')
 os.makedirs(all_results_path, exist_ok=True)
-results_filename = os.path.join(all_results_path, f'{blob_name}_{test_type}.parquet')
+results_filename = os.path.join(all_results_path, f'{blob_name}__{test_type}__{dataset_type}.parquet')
 # write results to a parquet file
 df_results.to_parquet(results_filename, index=False)
