@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from stat_tests import StatTests
 
 '''
-This creates simpl 2-column dataframes with increasing amounts of randomness, and therefore
+This creates simple 2-column dataframes with increasing amounts of randomness, and therefore
 decreasing amounts of correlation, and runs a series of statistical tests on them.
 '''
 

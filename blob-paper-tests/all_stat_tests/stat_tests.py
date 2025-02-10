@@ -2,7 +2,7 @@ import pandas as pd
 import time
 import numpy as np
 from sklearn.metrics import mutual_info_score
-from sklearn.preprocessing import LabelEncoder, KBinsDiscretizer
+from sklearn.preprocessing import LabelEncoder, KBinsDiscretizer, StandardScaler
 from sklearn.metrics.cluster import entropy
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
@@ -57,16 +57,21 @@ class StatTests:
         return {'score': score, 'elapsed_time': elapsed_time, 'other_names': other_names, 'other_vals': other_vals}
 
     def _discretize_columns(self, strategy = 'quantile'):
+
         # Another possible strategy is 'uniform'
         if self.col2_type == 'numeric' and self.col2_processed.nunique() >= 20:
+            scaler = StandardScaler()
+            col2_scaled = scaler.fit_transform(self.col2_processed.values.reshape(-1, 1))
             discretizer = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy=strategy)
-            self.col2_discretized = pd.Series(discretizer.fit_transform(self.col2_processed.values.reshape(-1, 1)).flatten())
+            self.col2_discretized = pd.Series(discretizer.fit_transform(col2_scaled).flatten())
         else:
             self.col2_discretized = self.col2_processed
 
         if self.col1_type == 'numeric' and self.col1_processed.nunique() >= 20:
+            scaler = StandardScaler()
+            col1_scaled = scaler.fit_transform(self.col1_processed.values.reshape(-1, 1))
             discretizer = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy=strategy)
-            self.col1_discretized = pd.Series(discretizer.fit_transform(self.col1_processed.values.reshape(-1, 1)).flatten())
+            self.col1_discretized = pd.Series(discretizer.fit_transform(col1_scaled).flatten())
         else:
             self.col1_discretized = self.col1_processed
 
