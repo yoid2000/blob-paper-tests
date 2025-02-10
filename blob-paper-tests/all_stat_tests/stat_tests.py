@@ -1,6 +1,7 @@
 import pandas as pd
 import time
 import numpy as np
+import warnings
 from sklearn.metrics import mutual_info_score
 from sklearn.preprocessing import LabelEncoder, KBinsDiscretizer, StandardScaler
 from sklearn.metrics.cluster import entropy
@@ -56,21 +57,38 @@ class StatTests:
         elapsed_time = end_time - start_time
         return {'score': score, 'elapsed_time': elapsed_time, 'other_names': other_names, 'other_vals': other_vals}
 
-    def _discretize_columns(self, strategy = 'uniform'):
+    def _discretize_with_fallback(self, col_processed, initial_bins=10):
+        try:
+            with warnings.catch_warnings(record=True) as w:
+                warnings.simplefilter("always")
+                
+                # Attempt discretization with quantile strategy
+                discretizer = KBinsDiscretizer(n_bins=initial_bins, encode='ordinal', strategy='quantile')
+                col_discretized = pd.Series(discretizer.fit_transform(col_processed.values.reshape(-1, 1)).flatten())
+
+                # Check if the specific warning was raised
+                if any("Bins whose width are too small" in str(warning.message) for warning in w):
+                    raise ValueError("Bins too small")
+
+                return col_discretized
+
+        except ValueError:
+            # If quantile strategy fails, scale the data and use uniform strategy
+            scaler = StandardScaler()
+            col_scaled = scaler.fit_transform(col_processed.values.reshape(-1, 1))
+            discretizer = KBinsDiscretizer(n_bins=initial_bins, encode='ordinal', strategy='uniform')
+            col_discretized = pd.Series(discretizer.fit_transform(col_scaled).flatten())
+            return col_discretized
+
+    def _discretize_columns(self):
         # Possible strategy are 'uniform' and 'quantile'
         if self.col2_type == 'numeric' and self.col2_processed.nunique() >= 20:
-            scaler = StandardScaler()
-            col2_scaled = scaler.fit_transform(self.col2_processed.values.reshape(-1, 1))
-            discretizer = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy=strategy)
-            self.col2_discretized = pd.Series(discretizer.fit_transform(col2_scaled).flatten())
+            self.col2_discretized = self._discretize_with_fallback(self.col2_processed)
         else:
             self.col2_discretized = self.col2_processed
 
         if self.col1_type == 'numeric' and self.col1_processed.nunique() >= 20:
-            scaler = StandardScaler()
-            col1_scaled = scaler.fit_transform(self.col1_processed.values.reshape(-1, 1))
-            discretizer = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy=strategy)
-            self.col1_discretized = pd.Series(discretizer.fit_transform(col1_scaled).flatten())
+            self.col1_discretized = self._discretize_with_fallback(self.col1_processed)
         else:
             self.col1_discretized = self.col1_processed
 
