@@ -56,9 +56,8 @@ class StatTests:
         elapsed_time = end_time - start_time
         return {'score': score, 'elapsed_time': elapsed_time, 'other_names': other_names, 'other_vals': other_vals}
 
-    def _discretize_columns(self, strategy = 'quantile'):
-
-        # Another possible strategy is 'uniform'
+    def _discretize_columns(self, strategy = 'uniform'):
+        # Possible strategy are 'uniform' and 'quantile'
         if self.col2_type == 'numeric' and self.col2_processed.nunique() >= 20:
             scaler = StandardScaler()
             col2_scaled = scaler.fit_transform(self.col2_processed.values.reshape(-1, 1))
