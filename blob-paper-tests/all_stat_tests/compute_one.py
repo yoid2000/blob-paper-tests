@@ -135,6 +135,9 @@ if not os.path.exists(blob_full_path):
     sys.exit(1)
 
 df_results = check_pairs(file_path, blob_name, blob_dir_path, test_type, dataset_type)
+if df_results is None:
+    print("Error: check_pairs failed to return a result")
+    sys.exit(1)
 results_path = os.path.join(blob_path, 'results')
 os.makedirs(results_path, exist_ok=True)
 all_results_path = os.path.join(results_path, 'all_tests')
