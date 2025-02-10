@@ -18,6 +18,8 @@ from sklearn.dummy import DummyClassifier, DummyRegressor
 from sklearn.metrics import r2_score, accuracy_score
 from sklearn.model_selection import cross_val_score
 from scipy.stats import pearsonr, spearmanr, chi2_contingency, ks_2samp
+import os
+os.environ['NUMBA_DISABLE_JIT'] = '1'
 from dcor import distance_correlation
 
 
