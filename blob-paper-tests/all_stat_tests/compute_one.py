@@ -38,7 +38,7 @@ def check_pairs(file_path, blob_name, blob_dir_path, test_type, dataset_type):
         try:
             sbr = SyndiffixBlobReader(blob_name=blob_name,
                                     path_to_dir=blob_dir_path,
-                                    force=True)
+                                    force=False)
         except Exception as e:
             print(f"Error: {e}")
             return
