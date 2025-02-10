@@ -60,6 +60,9 @@ class StatTests:
         return {'score': score, 'elapsed_time': elapsed_time, 'other_names': other_names, 'other_vals': other_vals}
 
     def _discretize_with_fallback(self, col_processed, initial_bins=10):
+        ''' I want to discretize with quantile, but it can fail when bins are too small, so we
+            fallback to a uniform strategy.
+        '''
         try:
             with warnings.catch_warnings(record=True) as w:
                 warnings.simplefilter("always")

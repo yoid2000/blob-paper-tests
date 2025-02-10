@@ -46,6 +46,7 @@ def check_pairs(file_path, blob_name, blob_dir_path, test_type, dataset_type):
     all_combs = list(itertools.combinations(cols, 2))
     results = []
     for col1, col2 in all_combs:
+        print(f"Try columns {col1} and {col2}")
         df_temp = df
         if sbr is not None:
             try:
@@ -142,6 +143,11 @@ results_path = os.path.join(blob_path, 'results')
 os.makedirs(results_path, exist_ok=True)
 all_results_path = os.path.join(results_path, 'all_tests')
 os.makedirs(all_results_path, exist_ok=True)
-results_filename = os.path.join(all_results_path, f'{blob_name}__{test_type}__{dataset_type}.parquet')
+# make a directory path consisting of first letter of blob_name
+level1_dir_path = os.path.join(all_results_path, blob_name[0])
+os.makedirs(level1_dir_path, exist_ok=True)
+results_dir_path = os.path.join(level1_dir_path, blob_name)
+os.makedirs(results_dir_path, exist_ok=True)
+results_filename = os.path.join(results_dir_path, f'{test_type}__{dataset_type}.parquet')
 # write results to a parquet file
 df_results.to_parquet(results_filename, index=False)
