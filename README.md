@@ -1,7 +1,8 @@
 # blob-paper-tests
+
 Contains all of the software for the blob paper
 
-kaggle contains the code for downloading kaggle files. See corresponding README.md.
+Directory `kaggle` contains the code for downloading Kaggle files. See corresponding README.md.
 
 
 

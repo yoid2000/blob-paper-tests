@@ -4,4 +4,4 @@ the command `python build_tables.py <job_num>` generates the synthetic tables fo
 
 The file `build_tables.slurm` is a slurm script that can be used to run the `build_tables.py` job. (You may need to replace the env variables with the corresponding full paths).
 
-The command `python check_tables.py` zzzz
+The command `python check_tables.py` checks to see that every column pair has been produced.
