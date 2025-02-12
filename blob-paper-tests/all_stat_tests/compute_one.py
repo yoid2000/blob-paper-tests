@@ -108,7 +108,9 @@ if not os.path.exists(sdx_2dim_path):
     sys.exit(1)
 
 filenames = os.listdir(kaggle_parquet_path)
-filenames.sort()
+# Sort filenames according to the size of the file. This somewhat avoids files
+# with more columns (only somewhat)
+filenames = sorted(filenames, key=lambda x: os.path.getsize(os.path.join(kaggle_parquet_path, x)))
 total_jobs = len(filenames) * num_tests
 
 dataset_type_index = job_num % len(dataset_types)

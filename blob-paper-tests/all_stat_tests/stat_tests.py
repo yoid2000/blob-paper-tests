@@ -119,7 +119,7 @@ class StatTests:
 
     def _compute_distance_correlation(self):
         score = distance_correlation(self.col1_processed, self.col2_processed)
-        return round(float(score), 3), None, None  # Distance correlation is already in [0, 1]
+        return round(float(score), 3), None, None
 
     def _cramers_v(self, chi2, n, min_dim):
         return np.sqrt(chi2 / (n * (min_dim - 1)))
