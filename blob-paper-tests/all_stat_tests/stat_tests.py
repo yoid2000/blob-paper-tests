@@ -298,17 +298,7 @@ class StatTests:
     def _compute_mutual_information(self):
         self._discretize_columns()
 
-        # Compute mutual information
-        mi = mutual_info_score(self.col1_discretized, self.col2_discretized)
+        # Compute adjusted mutual information
+        ami = adjusted_mutual_info_score(self.col1_discretized, self.col2_discretized)
 
-        # Compute entropy for normalization
-        h_col1 = entropy(self.col1_discretized)
-        h_col2 = entropy(self.col2_discretized)
-        
-        # Check for zero entropy to avoid division by zero
-        if h_col1 == 0 or h_col2 == 0:
-            return 0  # or handle this case as needed
-            
-        normalized_mi = mi / min(h_col1, h_col2)
-        
-        return round(float(normalized_mi), 3), ('entropy_col1', 'entropy_col2'), (h_col1, h_col2)
+        return round(float(ami), 3), None, None
