@@ -11,18 +11,7 @@ pp = pprint.PrettyPrinter(indent=4)
 dataset_types = ['orig', 'syn']
 test_types = [
     'mutual_information',
-    'pearson_correlation',
-    'spearman_rank_correlations',
     'distance_correlation',
-    'chi_square',
-    'linear_regression',
-    'decision_tree_regressor',
-    'random_forest_regressor',
-    'gradient_boosting_regressor',
-    'support_vector_regressor',
-    'decision_tree_classifier',
-    'gradient_boosting_classifier',
-    'random_forest_classifier',
 ]
 num_tests = len(test_types)
 
