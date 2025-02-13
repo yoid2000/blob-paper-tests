@@ -117,7 +117,6 @@ file_path = os.path.join(kaggle_parquet_path, filename)
 blob_name = filename.replace('.parquet', '')
 blob_dir_path = os.path.join(sdx_2dim_path, blob_name)
 # check if a directory at blob_dir_path already exists
-print(f"Checking if {blob_dir_path} exists")
 if not os.path.exists(blob_dir_path):
     print(f"Error: {blob_dir_path} does not exist")
     sys.exit(1)
@@ -126,10 +125,6 @@ if not os.path.exists(blob_full_path):
     print(f"Error {blob_full_path} does not exist")
     sys.exit(1)
 
-df_results = check_pairs(file_path, blob_name, blob_dir_path, test_type, dataset_type)
-if df_results is None:
-    print("Error: check_pairs failed to return a result")
-    sys.exit(1)
 results_path = os.path.join(blob_path, 'results')
 os.makedirs(results_path, exist_ok=True)
 all_results_path = os.path.join(results_path, 'all_tests')
@@ -140,5 +135,14 @@ os.makedirs(level1_dir_path, exist_ok=True)
 results_dir_path = os.path.join(level1_dir_path, blob_name)
 os.makedirs(results_dir_path, exist_ok=True)
 results_filename = os.path.join(results_dir_path, f'{test_type}__{dataset_type}.parquet')
+# check if results_filename exists, and if so, exit
+if os.path.exists(results_filename):
+    print(f"Skip job: {results_filename} already exists")
+    sys.exit(1)
+
+df_results = check_pairs(file_path, blob_name, blob_dir_path, test_type, dataset_type)
+if df_results is None:
+    print("Error: check_pairs failed to return a result")
+    sys.exit(1)
 # write results to a parquet file
 df_results.to_parquet(results_filename, index=False)

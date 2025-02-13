@@ -5,18 +5,7 @@ import matplotlib.pyplot as plt
 
 test_types = [
     'mutual_information',
-    'pearson_correlation',
-    'spearman_rank_correlations',
     'distance_correlation',
-    'chi_square',
-    'linear_regression',
-    'decision_tree_regressor',
-    'random_forest_regressor',
-    'gradient_boosting_regressor',
-    'support_vector_regressor',
-    'decision_tree_classifier',
-    'gradient_boosting_classifier',
-    'random_forest_classifier',
 ]
 test_colors = {
     'mutual_information': 'blue',
@@ -82,7 +71,7 @@ def plot_sorted_scores(df):
     df_sorted = df.sort_values(by='score_orig').reset_index(drop=True)
     
     # Create the subplots
-    fig, axes = plt.subplots(3, 5, figsize=(20, 12))
+    fig, axes = plt.subplots(1, 3, figsize=(20, 12))
     axes = axes.flatten()
     
     # Plot the first subplot with all rows
@@ -93,13 +82,10 @@ def plot_sorted_scores(df):
     axes[0].set_ylabel('Score')
     axes[0].legend()
     
-    # Leave the second subplot blank
-    axes[1].axis('off')
-    
     # Plot the remaining subplots for each test_type
     test_types = df['test_type'].unique()
     for i, test_type in enumerate(test_types):
-        ax = axes[i + 2]
+        ax = axes[i + 1]
         df_test_type = df_sorted[df_sorted['test_type'] == test_type]
         ax.plot(df_test_type.index, df_test_type['score_syn'], label='score_syn', color='red')
         ax.plot(df_test_type.index, df_test_type['score_orig'], label='score_orig', color='blue')
@@ -126,12 +112,9 @@ def plot_basic_per_test(df):
     '''
     fig, ax = plt.subplots(1, 3, figsize=(11, 4))
     
-    # Create a palette based on test_colors
-    palette = {test_type: test_colors[test_type] for test_type in test_types}
-   
-    sns.boxplot(x='score_syn', y='test_type', data=df, ax=ax[0], hue='test_type', palette=palette, order=test_types, legend=False)
-    sns.boxplot(x='score_diff', y='test_type', data=df, ax=ax[1], hue='test_type', palette=palette, order=test_types, legend=False)
-    sns.boxplot(x='elapsed_time_syn', y='test_type', data=df, ax=ax[2], hue='test_type', palette=palette, order=test_types, legend=False)
+    sns.boxplot(x='score_syn', y='test_type', data=df, ax=ax[0], hue='test_type', order=test_types, legend=False)
+    sns.boxplot(x='score_diff', y='test_type', data=df, ax=ax[1], hue='test_type', order=test_types, legend=False)
+    sns.boxplot(x='elapsed_time_syn', y='test_type', data=df, ax=ax[2], hue='test_type', order=test_types, legend=False)
         
     ax[1].set_yticks([])
     ax[1].set_ylabel('')
