@@ -126,7 +126,12 @@ class StatTests:
         return round(float(normalized_score), 3), None, None
 
     def _compute_distance_correlation(self):
-        score = distance_correlation(self.col1_processed, self.col2_processed)
+       # Standardize the data to reduce numerical instability
+        scaler = StandardScaler()
+        col1_scaled = scaler.fit_transform(self.col1_processed.values.reshape(-1, 1)).flatten()
+        col2_scaled = scaler.fit_transform(self.col2_processed.values.reshape(-1, 1)).flatten()
+        #score = distance_correlation(self.col1_processed, self.col2_processed)
+        score = distance_correlation(col1_scaled, col2_scaled)
         return round(float(score), 3), None, None
 
     def _cramers_v(self, chi2, n, min_dim):
