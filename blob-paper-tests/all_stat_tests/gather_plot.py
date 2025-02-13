@@ -7,51 +7,29 @@ test_types = [
     'mutual_information',
     'distance_correlation',
 ]
+import pandas as pd
 
 def create_merged_dataframe(df):
-    """
-    Create a new DataFrame where each row is a unique combination of 'test_type', 'blob_name', 'col1', and 'col2'.
-    The new DataFrame has columns 'score_orig', 'score_syn', 'elapsed_time_orig', and 'elapsed_time_syn' containing the scores and elapsed times for 'dataset_type=orig' and 'dataset_type=syn'.
-    
-    Parameters:
-    df (pd.DataFrame): Input DataFrame containing the columns 'test_type', 'blob_name', 'col1', 'col2', 'dataset_type', 'score', and 'elapsed_time'.
-    
-    Returns:
-    pd.DataFrame: Merged DataFrame with columns 'test_type', 'blob_name', 'col1', 'col2', 'score_orig', 'score_syn', 'elapsed_time_orig', and 'elapsed_time_syn'.
-    """
-    # Pivot the DataFrame to separate the scores for 'dataset_type=orig' and 'dataset_type=syn'
-    score_pivot_df = df.pivot_table(index=['test_type', 'blob_name', 'col1', 'col2'], columns='dataset_type', values='score')
-    
-    # Rename the columns for clarity
-    score_pivot_df = score_pivot_df.rename(columns={'orig': 'score_orig', 'syn': 'score_syn'})
-    
-    # Pivot the DataFrame to separate the elapsed times for 'dataset_type=orig' and 'dataset_type=syn'
-    elapsed_time_pivot_df = df.pivot_table(index=['test_type', 'blob_name', 'col1', 'col2'], columns='dataset_type', values='elapsed_time')
-    
-    # Rename the columns for clarity
-    elapsed_time_pivot_df = elapsed_time_pivot_df.rename(columns={'orig': 'elapsed_time_orig', 'syn': 'elapsed_time_syn'})
-    
-    # Merge the score and elapsed time pivot tables
-    df_merged = pd.merge(score_pivot_df, elapsed_time_pivot_df, on=['test_type', 'blob_name', 'col1', 'col2'])
-    
+    columns_to_pivot = ['score', 'elapsed_time', 'n_dist_col1', 'n_dist_col2', 'd_type_col1', 'd_type_col2']
+    df_merged = df[['test_type', 'blob_name', 'col1', 'col2']].drop_duplicates().set_index(['test_type', 'blob_name', 'col1', 'col2'])
+
+    for column in columns_to_pivot:
+        # Pivot the DataFrame to separate the values for 'dataset_type=orig' and 'dataset_type=syn'
+        pivot_df = df.pivot_table(index=['test_type', 'blob_name', 'col1', 'col2'], columns='dataset_type', values=column)
+        
+        # Rename the columns for clarity
+        pivot_df = pivot_df.rename(columns={'orig': f'{column}_orig', 'syn': f'{column}_syn'})
+        
+        # Merge the pivot table into the merged DataFrame
+        df_merged = df_merged.join(pivot_df)
+
     # Reset the index to convert the MultiIndex to columns
     df_merged = df_merged.reset_index()
     
     return df_merged
 
+
 def plot_sorted_scores(df):
-    """
-    Create 15 subplots organized as 3 rows and 5 columns.
-    In each subplot, there are two lines, one for score_orig and one for score_syn.
-    The y axis is score. Before plotting, sort the df by score_orig ascending.
-    The x axis for each subplot is the row index after sorting, and has no tick labels.
-    The first subplot includes all rows (x axis labeled "All").
-    The second subplot is blank. The remaining 13 subplots contain the rows for each of the test_types,
-    and the x label is the test_type.
-    
-    Parameters:
-    df (pd.DataFrame): Input DataFrame containing the columns 'test_type', 'score_orig', and 'score_syn'.
-    """
     # Sort the DataFrame by score_orig ascending
     df_sorted = df.sort_values(by='score_orig').reset_index(drop=True)
     
@@ -156,6 +134,7 @@ print(f"Count of each test type:")
 print(df['test_type'].value_counts())
 # For each value of test_type, show the count of rows where score > 1.0
 df_filtered = df[df['score'] > 1.0]
+print("Number of rows per test_type where score > 1.0")
 print(df_filtered.groupby('test_type').size())
 # Some distance_correlation tests have score > 1.0, so for now let's just clean them out
 df = df[df['score'] <= 1.0]
@@ -167,9 +146,7 @@ df_merged = create_merged_dataframe(df)
 # make a new column called 'score_diff' that is the difference between score_orig and score_syn
 df_merged['score_diff'] = df_merged['score_orig'] - df_merged['score_syn']
 print(df_merged.describe())
-
-# Ok, this represents an apples-to-apples comparison of the different stat tests
-
+print("Columns after merge:")
 print(df_merged.columns)
 
 plot_sorted_scores(df_merged)

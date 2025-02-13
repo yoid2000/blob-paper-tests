@@ -2,7 +2,6 @@ import pandas as pd
 import time
 import numpy as np
 import warnings
-from sklearn.metrics import mutual_info_score
 from sklearn.metrics.cluster import adjusted_mutual_info_score
 from sklearn.preprocessing import LabelEncoder, KBinsDiscretizer, StandardScaler
 from sklearn.metrics.cluster import entropy
@@ -94,16 +93,26 @@ class StatTests:
                 return discretize(pd.Series(col_scaled.flatten()), self.fallback_bins, 'uniform')
 
     def _discretize_columns(self):
-        # Possible strategy are 'uniform' and 'quantile'
-        if self.col2_type == 'numeric' and self.col2_processed.nunique() >= self.initial_bins:
-            self.col2_discretized = self._discretize_with_fallback(self.col2_processed)
-        else:
-            self.col2_discretized = self.col2_processed
-
-        if self.col1_type == 'numeric' and self.col1_processed.nunique() >= self.initial_bins:
-            self.col1_discretized = self._discretize_with_fallback(self.col1_processed)
+        if self.col1_type == 'numeric':
+            if self.col1_processed.nunique() >= self.initial_bins:
+                self.col1_discretized = self._discretize_with_fallback(self.col1_processed)
+            else:
+                # Assign a distinct integer to each unique value
+                label_encoder = LabelEncoder()
+                self.col1_discretized = pd.Series(label_encoder.fit_transform(self.col1_processed))
         else:
             self.col1_discretized = self.col1_processed
+
+        # Discretize col2
+        if self.col2_type == 'numeric':
+            if self.col2_processed.nunique() >= self.initial_bins:
+                self.col2_discretized = self._discretize_with_fallback(self.col2_processed)
+            else:
+                # Assign a distinct integer to each unique value
+                label_encoder = LabelEncoder()
+                self.col2_discretized = pd.Series(label_encoder.fit_transform(self.col2_processed))
+        else:
+            self.col2_discretized = self.col2_processed
 
 
     def _preprocess_column(self, column):
