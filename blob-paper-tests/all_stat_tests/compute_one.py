@@ -136,7 +136,7 @@ results_path = os.path.join(blob_path, 'results')
 os.makedirs(results_path, exist_ok=True)
 all_results_path = os.path.join(results_path, 'all_tests')
 os.makedirs(all_results_path, exist_ok=True)
-results_filename = os.path.join(all_results_path, f'{test_type}__{dataset_type}.parquet')
+results_filename = os.path.join(all_results_path, f'{blob_name}__{test_type}__{dataset_type}.parquet')
 # check if results_filename exists, and if so, exit
 if os.path.exists(results_filename):
     print(f"Skip job: {results_filename} already exists")
