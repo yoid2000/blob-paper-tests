@@ -7,21 +7,6 @@ test_types = [
     'mutual_information',
     'distance_correlation',
 ]
-test_colors = {
-    'mutual_information': 'blue',
-    'pearson_correlation': 'blue',
-    'spearman_rank_correlations': 'blue',
-    'distance_correlation': 'blue',
-    'chi_square': 'blue',
-    'linear_regression': 'green',
-    'decision_tree_regressor': 'green',
-    'random_forest_regressor': 'green',
-    'gradient_boosting_regressor': 'green',
-    'support_vector_regressor': 'green',
-    'decision_tree_classifier': 'red',
-    'gradient_boosting_classifier': 'red',
-    'random_forest_classifier': 'red',
-}
 
 def create_merged_dataframe(df):
     """
@@ -71,7 +56,7 @@ def plot_sorted_scores(df):
     df_sorted = df.sort_values(by='score_orig').reset_index(drop=True)
     
     # Create the subplots
-    fig, axes = plt.subplots(1, 3, figsize=(20, 12))
+    fig, axes = plt.subplots(1, 3, figsize=(11, 4))
     axes = axes.flatten()
     
     # Plot the first subplot with all rows
@@ -162,8 +147,8 @@ else:
                 num_files_read += 1
                 if num_files_read % 100 == 0:
                     print(f"Read {num_files_read} files")
+    df = df.reset_index(drop=True)
     df.to_parquet(results_file_path)
-df = df.reset_index(drop=True)
 
 print(df.head())
 print(f"Number of rows: {len(df)}")
@@ -176,7 +161,7 @@ print(df_filtered.groupby('test_type').size())
 df = df[df['score'] <= 1.0]
 # Remove all rows where the combination of 'blob_name', 'col1', 'col2', and
 # 'dataset_type' does not have 13 rows
-df = df.groupby(['blob_name', 'col1', 'col2', 'dataset_type']).filter(lambda x: len(x) == 13)
+df = df.groupby(['blob_name', 'col1', 'col2', 'dataset_type']).filter(lambda x: len(x) == len(test_types))
 
 df_merged = create_merged_dataframe(df)
 # make a new column called 'score_diff' that is the difference between score_orig and score_syn
