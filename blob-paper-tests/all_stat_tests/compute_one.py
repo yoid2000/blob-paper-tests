@@ -46,6 +46,9 @@ def check_pairs(file_path, blob_name, blob_dir_path, test_type, dataset_type):
                 print(f"Error: couldn't read {blob_name} '{col1}' '{col2}'")
                 pp.pprint(sbr.catalog.catalog.keys())
                 return
+        # Get the number of distinct values in col1 and col2
+        num_distinct_col1 = len(df_temp[col1].unique())
+        num_distinct_col2 = len(df_temp[col2].unique())
         stat_tests = StatTests(df_temp, col1, col2)
         result = stat_tests.run_stat_test(test_type)
         if result is not None:
@@ -55,6 +58,10 @@ def check_pairs(file_path, blob_name, blob_dir_path, test_type, dataset_type):
                 'blob_name': blob_name,
                 'col1': col1,
                 'col2': col2,
+                'n_dist_col1': num_distinct_col1,
+                'n_dist_col2': num_distinct_col2,
+                'd_type_col1': str(df_temp[col1].dtype),
+                'd_type_col2': str(df_temp[col2].dtype),
                 'score': result['score'],
                 'elapsed_time': result['elapsed_time']
             })
@@ -129,12 +136,7 @@ results_path = os.path.join(blob_path, 'results')
 os.makedirs(results_path, exist_ok=True)
 all_results_path = os.path.join(results_path, 'all_tests')
 os.makedirs(all_results_path, exist_ok=True)
-# make a directory path consisting of first letter of blob_name
-level1_dir_path = os.path.join(all_results_path, blob_name[0])
-os.makedirs(level1_dir_path, exist_ok=True)
-results_dir_path = os.path.join(level1_dir_path, blob_name)
-os.makedirs(results_dir_path, exist_ok=True)
-results_filename = os.path.join(results_dir_path, f'{test_type}__{dataset_type}.parquet')
+results_filename = os.path.join(all_results_path, f'{test_type}__{dataset_type}.parquet')
 # check if results_filename exists, and if so, exit
 if os.path.exists(results_filename):
     print(f"Skip job: {results_filename} already exists")

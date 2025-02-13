@@ -60,8 +60,8 @@ def plot_sorted_scores(df):
     axes = axes.flatten()
     
     # Plot the first subplot with all rows
-    axes[0].plot(df_sorted.index, df_sorted['score_orig'], label='score_orig', color='blue')
     axes[0].plot(df_sorted.index, df_sorted['score_syn'], label='score_syn', color='red')
+    axes[0].plot(df_sorted.index, df_sorted['score_orig'], label='score_orig', color='blue')
     axes[0].set_title('All')
     axes[0].set_xlabel('All')
     axes[0].set_ylabel('Score')
