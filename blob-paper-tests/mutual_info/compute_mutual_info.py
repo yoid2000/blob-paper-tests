@@ -3,7 +3,7 @@ import os
 import sys
 import itertools
 import pprint
-from sklearn.metrics import mutual_info_score
+from sklearn.metrics.cluster import adjusted_mutual_info_score
 from sklearn.preprocessing import LabelEncoder, KBinsDiscretizer
 from sklearn.metrics.cluster import entropy
 from syndiffix import SyndiffixBlobReader
@@ -38,20 +38,9 @@ def compute_mutual_information(df_in, col1, col2):
             col2_processed = col2_processed.values
         col2_processed = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='uniform').fit_transform(col2_processed.reshape(-1, 1)).flatten()
 
-    # Compute mutual information
-    mi = mutual_info_score(col1_processed, col2_processed)
-
-    # Compute entropy for normalization
-    h_col1 = entropy(col1_processed)
-    h_col2 = entropy(col2_processed)
-    
-    # Check for zero entropy to avoid division by zero
-    if h_col1 == 0 or h_col2 == 0:
-        return 0  # or handle this case as needed
-        
-    normalized_mi = mi / min(h_col1, h_col2)
-    
-    return normalized_mi, h_col1, h_col2
+    # Compute adjusted mutual information
+    ami = adjusted_mutual_info_score(col1_processed, col2_processed)
+    return ami
 
 def check_pairs(file_path, blob_name, blob_dir_path):
     # This is the original dataset

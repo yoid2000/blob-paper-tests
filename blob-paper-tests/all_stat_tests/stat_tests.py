@@ -28,7 +28,7 @@ class StatTests:
         'mutual_information': {'type': 'mixed', 'routine': '_compute_mutual_information'},
         'pearson_correlation': {'type': 'continuous', 'routine': '_compute_pearson_correlation'},
         'spearman_rank_correlations': {'type': 'mixed', 'routine': '_compute_spearman_rank_correlations'},
-        'distance_correlation': {'type': 'continuous', 'routine': '_compute_distance_correlation'},
+        'distance_correlation': {'type': 'mixed', 'routine': '_compute_distance_correlation'},
         'chi_square': {'type': 'categorical', 'routine': '_compute_chi_square'},
         'kolmogorov_smirnov': {'type': 'continuous', 'routine': '_compute_kolmogorov_smirnov'},
         'linear_regression': {'type': 'continuous', 'routine': '_compute_linear_regression'},
