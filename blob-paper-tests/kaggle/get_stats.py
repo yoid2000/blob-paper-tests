@@ -2,6 +2,7 @@ import os
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
+from check_onehot import find_onehot_encoded_sets
 
 def get_stats(parquet_path, blob_path):
 
@@ -41,6 +42,13 @@ def get_stats(parquet_path, blob_path):
             num_nan_rows = len(df[df.isnull().any(axis=1)])
             if num_nan_rows > num_rows/2:
                 os.remove(file_path)
+                continue
+
+            onehot_sets = find_onehot_encoded_sets(df)
+            if len(onehot_sets) > 0:
+                print(f"Found one-hot encoded sets in {filename} with {len(df.columns)} columns:")
+                print(onehot_sets)
+                #os.remove(file_path)
                 continue
 
             # determine if any columns are datetime

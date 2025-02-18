@@ -9,6 +9,153 @@ test_types = [
     'distance_correlation',
 ]
 
+def compute_order_error(mi_id_list, dc_id_list):
+    # Compute the order error
+    errors = []
+    for mi_id in mi_id_list:
+        mi_index = mi_id_list.index(mi_id)
+        dc_index = dc_id_list.index(mi_id)
+        errors.append(abs(mi_index - dc_index))
+    return errors
+
+def plot_order_error(df, measure_type):
+    median_errors = []
+    avg_errors = []
+    norm_median_errors = []
+    norm_avg_errors = []
+    for index, row in df.iterrows():
+        # Create dataframes from the lists
+        mi_df = pd.DataFrame({
+            'value': row[f'{measure_type}_syn_mi_list'],
+            'id': row[f'{measure_type}_syn_mi_id_list']
+        })
+        dc_df = pd.DataFrame({
+            'value': row[f'{measure_type}_syn_dc_list'],
+            'id': row[f'{measure_type}_syn_dc_id_list']
+        })
+        
+        # Sort the dataframes
+        mi_df = mi_df.sort_values(by=['value', 'id'], ascending=[False, True])
+        dc_df = dc_df.sort_values(by=['value', 'id'], ascending=[False, True])
+        
+        # Compare the resulting id lists
+        mi_id_list = mi_df['id'].tolist()
+        dc_id_list = dc_df['id'].tolist()
+        
+        # Compute the order error
+        errors = compute_order_error(mi_id_list, dc_id_list)
+        avg_errors.append(np.mean(errors))
+        median_errors.append(np.median(errors))
+        norm_avg_errors.append(np.mean(errors) / len(errors))
+        norm_median_errors.append(np.median(errors) / len(errors))
+    
+    # Create a DataFrame for both the avg_error and median_errors
+    error_df = pd.DataFrame({
+        'Average': avg_errors,
+        'Median': median_errors
+    })
+    norm_error_df = pd.DataFrame({
+        'Average': norm_avg_errors,
+        'Median': norm_median_errors
+    })
+    # Create a plot with two subplots, one for error_df and one for norm_error_df
+    fig, ax = plt.subplots(1, 2, figsize=(10, 4))
+    # Plot error_df as two boxplots, horizontally oriented in the first subplot
+    sns.boxplot(data=error_df, orient='h', ax=ax[0])
+    # set x axis to log scale
+    ax[0].set_xscale('log')
+    ax[0].set_xlabel(f'{measure_type} Order Error MI versus DC (log scale)')
+    # Plot norm_error_df as two boxplots, horizontally oriented in the second subplot
+    sns.boxplot(data=norm_error_df, orient='h', ax=ax[1])
+    ax[1].set_xlabel(f'Normalized {measure_type} Order Error MI versus DC')
+    plt.tight_layout()
+    plt.savefig(os.path.join('real_results', f'{measure_type}_order_error_boxplot.png'))
+    plt.savefig(os.path.join('real_results', f'{measure_type}_order_error_boxplot.pdf'))
+    plt.close()
+
+def mean_absolute_error(list1, list2):
+    return np.mean(np.abs(np.array(list1) - np.array(list2)))
+
+def mismatch_fraction(list1, list2):
+    return np.mean(np.array(list1) != np.array(list2))
+
+def plot_cat_compare(df):
+    # Compute the error between the two lists for each row
+    mae_errors = []
+    mismatch_fractions = []
+    for index, row in df.iterrows():
+        mae_error = mean_absolute_error(row['cat_syn_mi_list'], row['cat_syn_dc_list'])
+        mismatch_fraction_value = mismatch_fraction(row['cat_syn_mi_list'], row['cat_syn_dc_list'])
+        if False and mismatch_fraction_value > 0.95:
+            # print the blob_name, col1, col2, 'cat_syn_mi_list, and 'cat_syn_dc_list'
+            print(f"{row['count']}:{row['blob_name']}\n{row['cat_syn_mi_list']}\n{row['cat_syn_dc_list']}")
+        mae_errors.append(mae_error)
+        mismatch_fractions.append(mismatch_fraction_value)
+    
+    # Create DataFrames for the errors and mismatch fractions
+    mae_error_df = pd.DataFrame({'MAE': mae_errors})
+    mismatch_fraction_df = pd.DataFrame({'Mismatch Fraction': mismatch_fractions})
+    
+    # Create the plot with 2 subplots
+    fig, ax = plt.subplots(1, 2, figsize=(16, 6))
+    
+    # Plot the MAE errors as a box plot
+    sns.boxplot(data=mae_error_df, y='MAE', ax=ax[0])
+    ax[0].set_title('Mean Absolute Error')
+    ax[0].set_ylabel('MAE')
+    
+    # Plot the mismatch fractions as a box plot
+    sns.boxplot(data=mismatch_fraction_df, y='Mismatch Fraction', ax=ax[1])
+    ax[1].set_title('Mismatch Fraction')
+    ax[1].set_ylabel('Mismatch Fraction')
+    
+    plt.tight_layout()
+    plt.savefig(os.path.join('real_results', 'cat_compare_boxplot.png'))
+    plt.savefig(os.path.join('real_results', 'cat_compare_boxplot.pdf'))
+    plt.close()
+
+def set_id(df):
+    # Create a mapping for blob_name to blob_id
+    blob_name_to_id = {name: idx + 1 for idx, name in enumerate(df['blob_name'].unique())}
+    df['blob_id'] = df['blob_name'].map(blob_name_to_id)
+    
+    # Create a mapping for (col1, col2) pairs to col_pair_id
+    col_pair_to_id = {pair: idx + 1 for idx, pair in enumerate(df[['col1', 'col2']].drop_duplicates().apply(tuple, axis=1))}
+    df['col_pair_id'] = df.apply(lambda row: col_pair_to_id[(row['col1'], row['col2'])], axis=1)
+    
+    # Create the blob_col_id column
+    df['blob_col_id'] = df['blob_id'].astype(str) + '_' + df['col_pair_id'].astype(str)
+    return df
+
+import pandas as pd
+
+def make_listed_data(df):
+    # Define the columns to be processed
+    columns_to_process = [
+        'score_orig_mi', 'score_orig_dc', 'cat_orig_mi', 'cat_orig_dc',
+        'score_syn_mi', 'score_syn_dc', 'cat_syn_mi', 'cat_syn_dc'
+    ]
+    
+    new_rows = []
+    grouped = df.groupby('blob_name')
+    for blob_name, group in grouped:
+        new_row = {'blob_name': blob_name}
+        for column in columns_to_process:
+            # Create a temporary DataFrame with the column and blob_col_id
+            temp_df = group[[column, 'blob_col_id']].copy()
+            # Sort the temporary DataFrame by the column values from largest to smallest
+            temp_df = temp_df.sort_values(by=column, ascending=False)
+            # Generate the lists for the sorted values and blob_col_id
+            sorted_values = temp_df[column].tolist()
+            sorted_ids = temp_df['blob_col_id'].tolist()
+            new_row[f'{column}_list'] = sorted_values
+            new_row[f'{column}_id_list'] = sorted_ids
+        new_row['count'] = len(new_row['score_orig_mi_list'])
+        new_rows.append(new_row)
+    df_new = pd.DataFrame(new_rows)
+    return df_new
+
+
 def create_merged_dataframe(df):
     """
     Create a new DataFrame where each row is a unique combination of 'test_type', 'blob_name', 'col1', and 'col2'.
@@ -25,18 +172,21 @@ def create_merged_dataframe(df):
     df_syn = df[df['dataset_type'] == 'syn'].drop(columns=['dataset_type']).add_suffix('_syn')
     
     # Join the two DataFrames on the specified columns
-    df_merged = df_orig.merge(df_syn, left_on=['test_type_orig', 'blob_name_orig', 'col1_orig', 'col2_orig'],
-                              right_on=['test_type_syn', 'blob_name_syn', 'col1_syn', 'col2_syn'])
+    df_merged = df_orig.merge(df_syn, left_on=['test_type_orig', 'blob_name_orig', 'col1_orig', 'col2_orig', 'blob_id_orig', 'col_pair_id_orig', 'blob_col_id_orig'],
+                              right_on=['test_type_syn', 'blob_name_syn', 'col1_syn', 'col2_syn', 'blob_id_syn', 'col_pair_id_syn', 'blob_col_id_syn'])
     
     # Drop duplicate columns from the join
-    df_merged = df_merged.drop(columns=['test_type_syn', 'blob_name_syn', 'col1_syn', 'col2_syn'])
+    df_merged = df_merged.drop(columns=['test_type_syn', 'blob_name_syn', 'col1_syn', 'col2_syn', 'blob_id_syn', 'col_pair_id_syn', 'blob_col_id_syn'])
     
     # Rename columns to remove suffixes from the join keys
     df_merged = df_merged.rename(columns={
         'test_type_orig': 'test_type',
         'blob_name_orig': 'blob_name',
         'col1_orig': 'col1',
-        'col2_orig': 'col2'
+        'col2_orig': 'col2',
+        'blob_id_orig': 'blob_id',
+        'col_pair_id_orig': 'col_pair_id',
+        'blob_col_id_orig': 'blob_col_id'
     })
     
     return df_merged
@@ -126,57 +276,73 @@ def plot_orig_syn_diff(df):
     score_diff_dc_abs = np.maximum(np.abs(score_diff_dc_sorted), 0.001)
     score_diff_mi_dc_orig_abs = np.maximum(np.abs(score_diff_mi_dc_orig_sorted), 0.001)
     score_diff_mi_dc_syn_abs = np.maximum(np.abs(score_diff_mi_dc_syn_sorted), 0.001)
+
+    lines = {
+        'Max(MI,DC) Orig-Syn': {'sort': max_score_diff_sorted, 'abs': max_score_diff_abs}, 
+        'Min(MI,DC) Orig-Syn': {'sort': min_score_diff_sorted, 'abs': min_score_diff_abs}, 
+        'MI Orig-Syn': {'sort': score_diff_mi_sorted, 'abs': score_diff_mi_abs}, 
+        'DC Orig-Syn': {'sort': score_diff_dc_sorted, 'abs': score_diff_dc_abs}, 
+        'MI-DC Orig': {'sort': score_diff_mi_dc_orig_sorted, 'abs': score_diff_mi_dc_orig_abs}, 
+        'MI-DC Syn': {'sort': score_diff_mi_dc_syn_sorted, 'abs': score_diff_mi_dc_syn_abs}, 
+    }
     
     # Create the plot
     fig, ax = plt.subplots(1, 3, figsize=(15, 4))
     
-    # First subplot: line plots with dots at the first and last data points
-    lines = [
-        (max_score_diff_sorted, 'Max(MI,DC) Orig-Syn'),
-        (min_score_diff_sorted, 'Min(MI,DC) Orig-Syn'),
-        (score_diff_mi_sorted, 'MI Orig-Syn'),
-        (score_diff_dc_sorted, 'DC Orig-Syn'),
-        (score_diff_mi_dc_orig_sorted, 'MI-DC Orig'),
-        (score_diff_mi_dc_syn_sorted, 'MI-DC Syn')
-    ]
-    
-    # Third subplot: boxplots
+    # First subplot: boxplots
     ax[0].boxplot([score_diff_mi_dc_syn_sorted, score_diff_mi_dc_orig_sorted, score_diff_dc_sorted, score_diff_mi_sorted, min_score_diff_sorted, max_score_diff_sorted], vert=False)
     ax[0].set_yticklabels(['MI-DC Syn', 'MI-DC Orig', 'DC Orig-Syn', 'MI Orig-Syn', 'Min(MI,DC) Orig-Syn', 'Max(MI,DC) Orig-Syn'])
     
-    
-    for line_data, label in lines:
-        line, = ax[1].plot(line_data, label=label)
-        ax[1].plot(0, line_data[0], 'o', color=line.get_color())  # First data point
-        ax[1].plot(len(line_data) - 1, line_data[-1], 'o', color=line.get_color())  # Last data point
-
+    # Second subplot, lines with dots at the edges
+    for label, dat in lines.items():
+        line, = ax[1].plot(dat['sort'], label=label)
+        ax[1].plot(0, dat['sort'][0], 'o', color=line.get_color())  # First data point
+        ax[1].plot(len(dat['sort']) - 1, dat['sort'][-1], 'o', color=line.get_color())  # Last data point
     ax[1].set_xlabel('')
     ax[1].set_xticks([])
     ax[1].legend()
     
-    # Second subplot: line plots with absolute values and log scale
-    abs_lines = [
-        (max_score_diff_abs, 'Max(MI,DC) Orig-Syn'),
-        (min_score_diff_abs, 'Min(MI,DC) Orig-Syn'),
-        (score_diff_mi_abs, 'MI Orig-Syn'),
-        (score_diff_dc_abs, 'DC Orig-Syn'),
-        (score_diff_mi_dc_orig_abs, 'MI-DC Orig'),
-        (score_diff_mi_dc_syn_abs, 'MI-DC Syn')
-    ]
-    
-    for line_data, label in abs_lines:
-        line, = ax[2].plot(line_data, label=label)
-        ax[2].plot(0, line_data[0], 'o', color=line.get_color())  # First data point
-        ax[2].plot(len(line_data) - 1, line_data[-1], 'o', color=line.get_color())  # Last data point
-
+    for label, dat in lines.items():
+        line, = ax[2].plot(dat['abs'], label=label)
+        ax[2].plot(0, dat['abs'][0], 'o', color=line.get_color())  # First data point
+        ax[2].plot(len(dat['abs']) - 1, dat['abs'][-1], 'o', color=line.get_color())  # Last data point
     ax[2].set_yscale('log')
     ax[2].set_xlabel('')
     ax[2].set_xticks([])
 
     plt.tight_layout()
-    plt.savefig(os.path.join('real_results', 'orig_syn_diff.png'))
-    plt.savefig(os.path.join('real_results', 'orig_syn_diff.pdf'))
+    plt.savefig(os.path.join('real_results', 'all_diff.png'))
+    plt.savefig(os.path.join('real_results', 'all_diff.pdf'))
     plt.close()
+
+    def run_double_plot(use_labels, file_name):
+        fig, ax = plt.subplots(2, figsize=(3, 4))
+        for label in use_labels:
+            line, = ax[0].plot(lines[label]['sort'], label=label)
+            ax[0].plot(0, lines[label]['sort'][0], 'o', color=line.get_color())  # First data point
+            ax[0].plot(len(lines[label]['sort']) - 1, lines[label]['sort'][-1], 'o', color=line.get_color())  # Last data point
+        ax[0].set_xlabel('Sorted by score difference')
+        ax[0].set_xticks([])
+        ax[0].legend()
+        
+        for label in use_labels:
+            line, = ax[1].plot(lines[label]['abs'], label=label)
+            ax[1].plot(0, lines[label]['abs'][0], 'o', color=line.get_color())  # First data point
+            ax[1].plot(len(lines[label]['abs']) - 1, lines[label]['abs'][-1], 'o', color=line.get_color())  # Last data point
+        ax[1].set_yscale('log')
+        ax[1].set_xlabel('Absolute value after sorting')
+        ax[1].set_xticks([])
+        plt.tight_layout()
+        plt.savefig(os.path.join('real_results', f'{file_name}.png'))
+        plt.savefig(os.path.join('real_results', f'{file_name}.pdf'))
+        plt.close()
+
+    runs_stuff = [
+        {'labels': ['MI Orig-Syn', 'DC Orig-Syn',], 'file_name': 'orig_syn_diff'},
+        {'labels': ['MI-DC Orig', 'MI-DC Syn',], 'file_name': 'mi_dc_diff'},
+    ]
+    for run in runs_stuff:
+        run_double_plot(run['labels'], run['file_name'])
 
 def plot_basic_per_test(df):
     fig, ax = plt.subplots(3, 1, figsize=(4, 8))
@@ -227,13 +393,14 @@ def plot_by_num_distinct(df):
     df = df[df['range_label'].notna()]
     
     # Create the plot
-    fig, ax = plt.subplots(2, 2, figsize=(7, 5))
+    fig, ax = plt.subplots(3, 2, figsize=(8, 7))
     
-    sns.boxplot(x='score', y='range_label', data=df[df['test_type'] == 'distance_correlation'], ax=ax[0, 0], order=range_labels)
+    df_neither_object = df[(df['test_type'] == 'distance_correlation') & (df['d_type_col1'] != 'object') & (df['d_type_col2'] != 'object')]
+    sns.boxplot(x='score', y='range_label', data=df_neither_object, ax=ax[0, 0], order=range_labels)
     ax[0, 0].set_xlabel('Score (Distance Correlation, No Text)')
     ax[0, 0].set_ylabel('')
     ax[0, 0].set_xlim(-0.05, 1.05)
-    
+
     df_neither_object = df[(df['test_type'] == 'mutual_information') & (df['d_type_col1'] != 'object') & (df['d_type_col2'] != 'object')]
     sns.boxplot(x='score', y='range_label', data=df_neither_object, ax=ax[0, 1], order=range_labels)
     ax[0, 1].set_xlabel('Score (Mutual Information, No Text)')
@@ -241,18 +408,31 @@ def plot_by_num_distinct(df):
     ax[0, 1].set_yticks([])
     ax[0, 1].set_xlim(-0.05, 1.05)
     
-    df_both_object = df[(df['test_type'] == 'mutual_information') & (df['d_type_col1'] == 'object') & (df['d_type_col2'] == 'object')]
+    df_both_object = df[(df['test_type'] == 'distance_correlation') & (df['d_type_col1'] == 'object') & (df['d_type_col2'] == 'object')]
     sns.boxplot(x='score', y='range_label', data=df_both_object, ax=ax[1, 0], order=range_labels)
-    ax[1, 0].set_xlabel('Score (Mutual Information, Both Text)')
+    ax[1, 0].set_xlabel('Score (Distance Correlation, Both Text)')
     ax[1, 0].set_ylabel('')
     ax[1, 0].set_xlim(-0.05, 1.05)
     
-    df_one_object = df[(df['test_type'] == 'mutual_information') & ((df['d_type_col1'] == 'object') | (df['d_type_col2'] == 'object')) & ~((df['d_type_col1'] == 'object') & (df['d_type_col2'] == 'object'))]
-    sns.boxplot(x='score', y='range_label', data=df_one_object, ax=ax[1, 1], order=range_labels)
-    ax[1, 1].set_xlabel('Score (Mutual Information, One Text)')
+    df_both_object = df[(df['test_type'] == 'mutual_information') & (df['d_type_col1'] == 'object') & (df['d_type_col2'] == 'object')]
+    sns.boxplot(x='score', y='range_label', data=df_both_object, ax=ax[1, 1], order=range_labels)
+    ax[1, 1].set_xlabel('Score (Mutual Information, Both Text)')
     ax[1, 1].set_ylabel('')
-    ax[1, 1].set_yticks([])
+    ax[0, 1].set_yticks([])
     ax[1, 1].set_xlim(-0.05, 1.05)
+    
+    df_one_object = df[(df['test_type'] == 'distance_correlation') & ((df['d_type_col1'] == 'object') | (df['d_type_col2'] == 'object')) & ~((df['d_type_col1'] == 'object') & (df['d_type_col2'] == 'object'))]
+    sns.boxplot(x='score', y='range_label', data=df_one_object, ax=ax[2, 0], order=range_labels)
+    ax[2, 0].set_xlabel('Score (Distance Correlation, One Text)')
+    ax[2, 0].set_ylabel('')
+    ax[2, 0].set_xlim(-0.05, 1.05)
+    
+    df_one_object = df[(df['test_type'] == 'mutual_information') & ((df['d_type_col1'] == 'object') | (df['d_type_col2'] == 'object')) & ~((df['d_type_col1'] == 'object') & (df['d_type_col2'] == 'object'))]
+    sns.boxplot(x='score', y='range_label', data=df_one_object, ax=ax[2, 1], order=range_labels)
+    ax[2, 1].set_xlabel('Score (Mutual Information, One Text)')
+    ax[2, 1].set_ylabel('')
+    ax[2, 1].set_yticks([])
+    ax[2, 1].set_xlim(-0.05, 1.05)
     
     plt.tight_layout()
     plt.savefig(os.path.join('real_results', 'by_num_distinct.png'))
@@ -279,16 +459,42 @@ def split_and_join_on_test_type(df):
                             right_on=['blob_name_dc', 'col1_dc', 'col2_dc'])
     
     # Drop duplicate columns from the join
-    df_joined = df_joined.drop(columns=['blob_name_dc', 'col1_dc', 'col2_dc'])
+    df_joined = df_joined.drop(columns=['blob_name_dc', 'col1_dc', 'col2_dc', 'blob_id_dc', 'col_pair_id_dc', 'blob_col_id_dc'])
     
     # Rename columns to remove suffixes from the join keys
     df_joined = df_joined.rename(columns={
         'blob_name_mi': 'blob_name',
         'col1_mi': 'col1',
-        'col2_mi': 'col2'
+        'col2_mi': 'col2',
+        'blob_id_mi': 'blob_id',
+        'col_pair_id_mi': 'col_pair_id',
+        'blob_col_id_mi': 'blob_col_id',
     })
     return df_joined
 
+def plot_score_list_lines(df, tag):
+    # Define the columns to be plotted
+    columns_to_plot = [
+        'score_orig_mi_list', 'score_syn_mi_list', 'score_orig_dc_list', 'score_syn_dc_list',
+        'cat_orig_mi_list', 'cat_syn_mi_list', 'cat_orig_dc_list', 'cat_syn_dc_list'
+    ]
+    
+    # Create the plot
+    fig, ax = plt.subplots(4, 2, figsize=(12, 16))
+    ax = ax.flatten()  # Flatten the 2D array of axes to 1D for easier indexing
+    
+    for i, column in enumerate(columns_to_plot):
+        for row in df[column]:
+            ax[i].plot(range(1, len(row) + 1), row)
+        ax[i].set_title(f'{column} ({tag})')
+        ax[i].set_xscale('log')
+        ax[i].set_xlabel('')
+        ax[i].set_ylabel('Score')
+    
+    plt.tight_layout()
+    plt.savefig(os.path.join('real_results', f'score_list_lines_{tag}.png'))
+    plt.savefig(os.path.join('real_results', f'score_list_lines_{tag}.pdf'))
+    plt.close()
 
 blob_code_path = '.'
 # check if there is an environment variable called BLOB_TEST_DIR
@@ -304,8 +510,10 @@ results_path = os.path.join(blob_path, 'results')
 all_results_path = os.path.join(results_path, 'all_tests')
 
 results_file_path = os.path.join(results_path, 'all_results.parquet')
+processed_results_file_path = os.path.join(results_path, 'all_results_processed.parquet')
 merged_results_file_path = os.path.join(results_path, 'all_results_merged.parquet')
 merged_mi_dc_results_file_path = os.path.join(results_path, 'all_results_merged_mi_dc.parquet')
+listed_mi_dc_results_file_path = os.path.join(results_path, 'all_results_listed_mi_dc.parquet')
 if os.path.exists(results_file_path):
     # read file as df
     df = pd.read_parquet(results_file_path)
@@ -327,6 +535,7 @@ else:
     df.to_parquet(results_file_path)
 
 print(df.head())
+df = set_id(df)
 print(f"Number of rows: {len(df)}")
 print(f"Count of each test type:")
 print(df['test_type'].value_counts())
@@ -338,13 +547,14 @@ print(df_filtered.groupby('test_type').size())
 if len(df_filtered) > 0:
     print(f"Removing {len(df_filtered)} rows with score > 1.0")
     df = df[df['score'] <= 1.0]
+df.to_parquet(processed_results_file_path)
 # Remove all rows where the combination of 'blob_name', 'col1', 'col2', and
 # 'dataset_type' does not have both measures
 print(f"Prior to removing rows that do not have both measures there are {len(df)} rows")
 df_both = df.groupby(['blob_name', 'col1', 'col2', 'dataset_type']).filter(lambda x: len(x) == len(test_types))
 print(f"After removing rows there are {len(df_both)} rows")
 # Add a new column 'cat'. Set cat to 0 if score < 0.1, to 1 if score between 0.1 and 0.25, and 2 otherwise
-df_both['cat'] = pd.cut(df_both['score'], bins=[-1, 0.1, 0.25, 1], labels=[0, 1, 2])
+df_both['cat'] = pd.cut(df_both['score'], bins=[-10, 0.1, 0.25, 0.6, 1], labels=[0, 1, 2, 3])
 
 df_merged = create_merged_dataframe(df_both)
 # make a new column called 'score_diff' that is the difference between score_orig and score_syn
@@ -381,6 +591,10 @@ print("Count of rows for every combination of cat_orig_mi and cat_syn_mi:")
 print(df_merged_mi_dc.groupby(['cat_orig_mi', 'cat_syn_mi']).size())
 print("Count of rows for every combination of cat_orig_dc and cat_syn_dc:")
 print(df_merged_mi_dc.groupby(['cat_orig_dc', 'cat_syn_dc']).size())
+df_mi_dc_listed = make_listed_data(df_merged_mi_dc)
+# sort df_mi_dc_listed by count ascending
+df_mi_dc_listed = df_mi_dc_listed.sort_values(by='count')
+df_mi_dc_listed.to_parquet(listed_mi_dc_results_file_path)
 
 
 print("Initial collected data columns:")
@@ -389,9 +603,19 @@ print("Columns after merge:")
 print(df_merged.columns)
 print("Columns after MI/DC split and join:")
 print(df_merged_mi_dc.columns)
+print("Columns after making listed data:")
+print(df_mi_dc_listed.columns)
 
+plot_order_error(df_mi_dc_listed, 'score')
+plot_order_error(df_mi_dc_listed, 'cat')
+plot_cat_compare(df_mi_dc_listed)
+plot_score_list_lines(df_mi_dc_listed, 'all')
+# call plot_score_list_lines with the first 100 rows of df_mi_dc_listed
+plot_score_list_lines(df_mi_dc_listed.head(100), 'first_100')
+# call plot_score_list_lines with the last 100 rows of df_mi_dc_listed
+plot_score_list_lines(df_mi_dc_listed.tail(100), 'last_100')
+plot_orig_syn_diff(df_merged_mi_dc)
 plot_by_num_distinct(df)
 plot_basic_per_test(df_merged)
-plot_orig_syn_diff(df_merged_mi_dc)
 plot_mi_vs_dc_orig(df_merged)
 plot_sorted_scores(df_merged)
