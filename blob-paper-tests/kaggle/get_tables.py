@@ -4,6 +4,7 @@ import os
 import shutil
 import pandas as pd
 import pprint
+from check_onehot import find_onehot_encoded_sets
 pp = pprint.PrettyPrinter(indent=4)
 
 min_bytes_per_cell = 1.0
@@ -118,6 +119,12 @@ while num_gathered_tables < num_tables_to_gather:
         if num_nan_rows > len(df)/2:
             print(f"Skipping {file_name} because it has {num_nan_rows} rows with NaN values")
             continue
+
+        onehot_sets = find_onehot_encoded_sets(df)
+        if len(onehot_sets) > 0:
+            print(f"Skipping {file_name} because it has onehot encoded columns")
+            continue
+
         for column in df.columns:
             if is_datetime_column(df[column]):
                 df[column] = pd.to_datetime(df[column]).dt.tz_localize(None)
