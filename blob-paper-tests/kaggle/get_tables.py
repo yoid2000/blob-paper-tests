@@ -125,11 +125,16 @@ while num_gathered_tables < num_tables_to_gather:
             print(f"Skipping {file_name} because it has onehot encoded columns")
             continue
 
+        path_df = os.path.join(kaggle_parquet_path, file_name + '.parquet')
+        # check if path_df already exists
+        if os.path.exists(path_df):
+            print(f"Skipping {file_name} because {path_df} already exists")
+            continue
+
         for column in df.columns:
             if is_datetime_column(df[column]):
                 df[column] = pd.to_datetime(df[column]).dt.tz_localize(None)
 
-        path_df = os.path.join(kaggle_parquet_path, file_name + '.parquet')
         print("##########################################################")
         print(f"Saving {file_name} to {path_df}")
         # save df as a parquet file at path_df
