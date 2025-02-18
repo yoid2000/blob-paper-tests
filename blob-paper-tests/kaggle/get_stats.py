@@ -48,7 +48,7 @@ def get_stats(parquet_path, blob_path):
             if len(onehot_sets) > 0:
                 print(f"Found one-hot encoded sets in {filename} with {len(df.columns)} columns:")
                 print(onehot_sets)
-                #os.remove(file_path)
+                os.remove(file_path)
                 continue
 
             # determine if any columns are datetime
