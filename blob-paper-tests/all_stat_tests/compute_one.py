@@ -15,6 +15,19 @@ test_types = [
 ]
 num_tests = len(test_types)
 
+def get_df(sbr, df, cols):
+    df_temp = df
+    if sbr is not None:
+        try:
+            df_temp = sbr.read(columns=cols)
+        except Exception as e:
+            #traceback.print_exc()
+            print(f"Error: {e}")
+            print(f"Error: couldn't read {blob_name} '{col1}' '{col2}'")
+            pp.pprint(sbr.catalog.catalog.keys())
+            return None
+    return df_temp
+
 def check_pairs(file_path, blob_name, blob_dir_path, test_type, dataset_type):
     print(f"Running {test_type} on {blob_name} with dataset type {dataset_type}")
     # This is the original dataset
@@ -33,24 +46,26 @@ def check_pairs(file_path, blob_name, blob_dir_path, test_type, dataset_type):
             return
         cols = sorted(sbr.col_names_all)
     all_combs = list(itertools.combinations(cols, 2))
+    force_zero_cols = []
+    for col in cols:
+        df_temp = get_df(sbr, df, [col])
+        # Check if there is only one value in df_temp[col]
+        if len(df_temp[col].unique()) == 1:
+            force_zero_cols.append(col)
     results = []
     for col1, col2 in all_combs:
         print(f"Try columns {col1} and {col2}")
-        df_temp = df
-        if sbr is not None:
-            try:
-                df_temp = sbr.read(columns=[col1, col2])
-            except Exception as e:
-                #traceback.print_exc()
-                print(f"Error: {e}")
-                print(f"Error: couldn't read {blob_name} '{col1}' '{col2}'")
-                pp.pprint(sbr.catalog.catalog.keys())
-                return
+        df_temp = get_df(sbr, df, [col1, col2])
         # Get the number of distinct values in col1 and col2
         num_distinct_col1 = len(df_temp[col1].unique())
         num_distinct_col2 = len(df_temp[col2].unique())
         stat_tests = StatTests(df_temp, col1, col2)
-        result = stat_tests.run_stat_test(test_type)
+        if col1 in force_zero_cols or col2 in force_zero_cols:
+            result = {'score': 0.0, 'elapsed_time': None}
+            forced = 1
+        else:
+            result = stat_tests.run_stat_test(test_type)
+            forced = 0
         if result is not None:
             results.append({
                 'dataset_type': dataset_type,
@@ -63,6 +78,7 @@ def check_pairs(file_path, blob_name, blob_dir_path, test_type, dataset_type):
                 'd_type_col1': str(df_temp[col1].dtype),
                 'd_type_col2': str(df_temp[col2].dtype),
                 'score': result['score'],
+                'forced_zero': forced,
                 'elapsed_time': result['elapsed_time']
             })
     df_results = pd.DataFrame(results)
