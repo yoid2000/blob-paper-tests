@@ -1,9 +1,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='blob-paper-tests',
+    name='blob_paper_tests',
     version='0.1',
-    packages=find_packages(),
+    packages=find_packages(where='blob-paper-tests'),
+    package_dir={'': 'blob-paper-tests'},
     install_requires=[],
     author='Paul Francis',
     author_email='francis@mpi-sws.org',

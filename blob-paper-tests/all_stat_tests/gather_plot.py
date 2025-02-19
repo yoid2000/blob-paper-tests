@@ -609,13 +609,19 @@ df_mi_dc_listed = make_listed_data(df_merged_mi_dc)
 df_mi_dc_listed = df_mi_dc_listed.sort_values(by='count')
 df_mi_dc_listed.to_parquet(listed_mi_dc_results_file_path)
 
-# for every row in df_mi_dc_listed, print blob_name where the first 50 entries in score_syn_mi_list are 1.0
-print("Blob names where the first 50 entries in score_syn_mi_list are 1.0:")
-bad_blob_names = df_mi_dc_listed[df_mi_dc_listed['score_syn_mi_list'].apply(lambda x: x[:50] == [1.0] * 50)]['blob_name']
-# For each blob_name in bad_blob_names, list col1 and col2 from 20 rows in df_merged_mi_dc with that blob_name where score_syn_mi == 1.0
+c_thresh = 20
+v_thresh = 0.99
+print(f"Blob names where the first {c_thresh} entries in score_syn_mi_list are >= {v_thresh}:")
+bad_blob_names = df_mi_dc_listed[df_mi_dc_listed['score_syn_mi_list'].apply(lambda x: all(val >= v_thresh for val in x[:c_thresh]))]['blob_name']
 for blob_name in bad_blob_names:
     print(f"{blob_name}:")
-    print(df_merged_mi_dc[(df_merged_mi_dc['blob_name'] == blob_name) & (df_merged_mi_dc['score_syn_mi'] == 1.0)].head(20)[['col1', 'col2', 'score_syn_mi']])
+    print(df_merged_mi_dc[(df_merged_mi_dc['blob_name'] == blob_name) & (df_merged_mi_dc['score_syn_mi'] >= v_thresh)].head(20)[['col1', 'col2', 'score_syn_mi']])
+
+print(f"Blob names where the first {c_thresh} entries in score_syn_dc_list are >= {v_thresh}:")
+bad_blob_names = df_mi_dc_listed[df_mi_dc_listed['score_syn_dc_list'].apply(lambda x: all(val >= v_thresh for val in x[:c_thresh]))]['blob_name']
+for blob_name in bad_blob_names:
+    print(f"{blob_name}:")
+    print(df_merged_mi_dc[(df_merged_mi_dc['blob_name'] == blob_name) & (df_merged_mi_dc['score_syn_dc'] >= v_thresh)].head(20)[['col1', 'col2', 'score_syn_dc']])
 
 print("Initial collected data columns:")
 print(df.columns)

@@ -1,9 +1,10 @@
 import pandas as pd
 import numpy as np
 import pprint
-from stat_tests import StatTests
-
+import sys
 pp = pprint.PrettyPrinter(indent=4)
+from common.stat_tests import StatTests
+
 num_rows = 1000
 
 def run_tests():

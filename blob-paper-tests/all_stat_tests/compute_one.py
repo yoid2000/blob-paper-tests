@@ -4,7 +4,7 @@ import sys
 import itertools
 import pprint
 from syndiffix import SyndiffixBlobReader
-from stat_tests import StatTests
+from common.stat_tests import StatTests
 
 pp = pprint.PrettyPrinter(indent=4)
 
