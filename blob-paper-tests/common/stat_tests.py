@@ -52,15 +52,17 @@ class StatTests:
         self.fallback_bins = 10
         self.fms = {
             'elapsed_time': None,
-            'mode_freqs': [None,None],   # frequency of the most frequent value (max 1.0)
-            'n_uniques': [None,None],    # number of distinct values in the column
-            'scores': {'forced': None,
-                       'chi_square': None,
-                       'spearman': None,
-                       'AMI': None,     # adjusted mutual information
-                       'DC': None,      # distance correlation
-                       'reverse_spearmans': [None, None],
-                       }
+            'mode_freq_col1': None,
+            'mode_freq_col2': None,
+            'n_uniques_col1': None,
+            'n_uniques_col2': None,
+            'forced': None,
+            'chi_square': None,
+            'spearman': None,
+            'AMI': None,     # adjusted mutual information
+            'DC': None,      # distance correlation
+            'reverse_spearmans_col1': None,
+            'reverse_spearmans_col2': None,
         }
         self.df = df_in[[col1, col2]].dropna()
         self.col_processed = [None, None]
@@ -74,28 +76,31 @@ class StatTests:
 
     def run_full_measure(self):
         start_time = time.time()
-        for col_i, col in enumerate(self.columns):
-            # Determine the mode frequency
-            mode_freq = self.df[col].value_counts(normalize=True).max()
-            self.fms['mode_freqs'][col_i] = mode_freq
-            # Count the number of distinct values in the column
-            num_distinct = len(self.df[col].unique())
-            self.fms['n_uniques'][col_i] = num_distinct
+        self.fms['mode_freq_col1'] = self.df[self.col1].value_counts(normalize=True).max()
+        self.fms['mode_freq_col2'] = self.df[self.col2].value_counts(normalize=True).max()
+        self.fms['n_uniques_col1'] = len(self.df[self.col1].unique())
+        self.fms['n_uniques_col2'] = len(self.df[self.col2].unique())
+        if self.fms['n_uniques_col1'] == 1 or self.fms['n_uniques_col2'] == 1:
+            self.fms['forced'] = 0.0
+            return 0.0
         result = self.run_stat_test('chi_square')
-        self.fms['scores']['chi_square'] = result['score']
+        self.fms['chi_square'] = result['score']
         result = self.run_stat_test('spearman_rank_correlations')
-        self.fms['scores']['spearman'] = result['score']
+        self.fms['spearman'] = result['score']
         result = self.run_stat_test('mutual_information')
-        self.fms['scores']['AMI'] = result['score']
+        self.fms['AMI'] = result['score']
         result = self.run_stat_test('distance_correlation')
-        self.fms['scores']['DC'] = result['score']
+        self.fms['DC'] = result['score']
         for col_i, col in enumerate(self.columns):
             df_new = self._scramble_column(col)
             # ok, this is swap of self.df is admittedly ugly:
             df_old = self.df
             self.df = df_new
             result = self.run_stat_test('spearman_rank_correlations')
-            self.fms['scores']['reverse_spearmans'][col_i] = result['score']
+            if col_i == 0:
+                self.fms['reverse_spearmans_col1'] = result['score']
+            else:
+                self.fms['reverse_spearmans_col2'] = result['score']
             self.df = df_old
         end_time = time.time()
         self.fms['elapsed_time'] = end_time - start_time

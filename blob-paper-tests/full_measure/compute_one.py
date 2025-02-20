@@ -49,6 +49,11 @@ def check_pairs(blob_name, blob_dir_path):
         stat_tests = StatTests(df_temp, col1, col2)
         _ = stat_tests.run_full_measure()
         result = stat_tests.get_full_measure_stats()
+        result['col1'] = col1
+        result['col2'] = col2
+        result['type_col1'] = str(df_temp[col1].dtype)
+        result['type_col2'] = str(df_temp[col2].dtype)
+        result['dataset'] = blob_name
         results.append(result)
     df_results = pd.DataFrame(results)
     return df_results
