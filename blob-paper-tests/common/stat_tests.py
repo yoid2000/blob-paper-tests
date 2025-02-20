@@ -61,8 +61,8 @@ class StatTests:
             'spearman': None,
             'AMI': None,     # adjusted mutual information
             'DC': None,      # distance correlation
-            'reverse_spearmans_col1': None,
-            'reverse_spearmans_col2': None,
+            'reverse_spearman_col1': None,
+            'reverse_spearman_col2': None,
         }
         self.df = df_in[[col1, col2]].dropna()
         self.col_processed = [None, None]
@@ -93,15 +93,12 @@ class StatTests:
         self.fms['DC'] = result['score']
         for col_i, col in enumerate(self.columns):
             df_new = self._scramble_column(col)
-            # ok, this is swap of self.df is admittedly ugly:
-            df_old = self.df
-            self.df = df_new
-            result = self.run_stat_test('spearman_rank_correlations')
+            st = StatTests(df_new, self.col1, self.col2)
+            result = st.run_stat_test('spearman_rank_correlations')
             if col_i == 0:
-                self.fms['reverse_spearmans_col1'] = result['score']
+                self.fms['reverse_spearman_col1'] = result['score']
             else:
-                self.fms['reverse_spearmans_col2'] = result['score']
-            self.df = df_old
+                self.fms['reverse_spearman_col2'] = result['score']
         end_time = time.time()
         self.fms['elapsed_time'] = end_time - start_time
         return None

@@ -53,3 +53,9 @@ else:
     df.to_parquet(results_file_path)
 
 print(df.head())
+print(df.shape)
+df['reverse_col1'] = df['spearman'] - df['reverse_spearman_col1']
+print(df['reverse_col1'].describe())
+df['reverse_col2'] = df['spearman'] - df['reverse_spearman_col2']
+print(df['reverse_col2'].describe())
+
