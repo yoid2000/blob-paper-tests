@@ -57,6 +57,8 @@ class StatTests:
             'n_uniques_col1': None,
             'n_uniques_col2': None,
             'n_uniques_both': None,
+            'perfect_dependence': False,
+            'perfect_hierarchy': None,
             'forced': None,
             'chi_square': None,
             'spearman': None,
@@ -101,6 +103,18 @@ class StatTests:
                 self.fms['reverse_spearman_col1'] = result['score']
             else:
                 self.fms['reverse_spearman_col2'] = result['score']
+        if (self.fms['n_uniques_col1'] == self.fms['n_uniques_col2'] and
+            self.fms['n_uniques_col1'] == self.fms['n_uniques_both'] and
+            self._perfect_dependence()):
+            # with perfect dependence, it is only necessary to synthesize one of the
+            # two columns. The other can always be patched in from the 2dim subtable
+            self.fms['perfect_dependence'] = True
+        elif (self.fms['n_uniques_col1'] == self.fms['n_uniques_both'] or
+            self.fms['n_uniques_col2'] == self.fms['n_uniques_both']):
+            # The two columns may be hierarchically related
+            hierarchy = self._perfect_hierarchy():
+            if hierarchy is not None:
+                self.fms['perfect_hierarchy'] = hierarchy
         end_time = time.time()
         self.fms['elapsed_time'] = end_time - start_time
         return None
@@ -115,6 +129,29 @@ class StatTests:
         end_time = time.time()
         elapsed_time = end_time - start_time
         return {'score': score, 'elapsed_time': elapsed_time, 'other_names': other_names, 'other_vals': other_vals}
+
+
+    def _perfect_hierarchy(self):
+        # Check if every distinct value in col1 is always paired with a given value in col2
+        col1_to_col2 = self.df.groupby(self.col1)[self.col2].nunique()
+        if all(col1_to_col2 == 1):
+            return True
+        # Check if every distinct value in col2 is always paired with a given value in col1
+        col2_to_col1 = self.df.groupby(self.col2)[self.col1].nunique()
+        if all(col2_to_col1 == 1):
+            return True
+        return False
+
+    def _perfect_dependence(self):
+        # Check if every distinct value in col1 is always paired with a given value in col2
+        col1_to_col2 = self.df.groupby(self.col1)[self.col2].nunique()
+        if not all(col1_to_col2 == 1):
+            return False
+        # Check if every distinct value in col2 is always paired with a given value in col1
+        col2_to_col1 = self.df.groupby(self.col2)[self.col1].nunique()
+        if not all(col2_to_col1 == 1):
+            return False
+        return True
 
     def _scramble_column(self, col):
         # make a copy of self.df
