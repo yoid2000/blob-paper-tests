@@ -6,8 +6,14 @@ Directory `kaggle` contains the code for downloading Kaggle files. See correspon
 
 
 
-# Install and Dev
+# Install
 
 pip install git+https://github.com/yoid2000/blob-paper-tests.git
+
+To run, you must install the software in your local venv:
+
+`python -m pip install -e .`
+
+# Dev 
 
 pip freeze > requirements.txt

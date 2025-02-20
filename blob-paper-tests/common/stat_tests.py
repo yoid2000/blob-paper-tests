@@ -41,18 +41,69 @@ class StatTests:
         'gradient_boosting_classifier': {'type': 'mixed', 'routine': '_compute_gradient_boosting_classifier'},
         'random_forest_classifier': {'type': 'mixed', 'routine': '_compute_random_forest_classifier'},
     }
+
     def __init__(self, df_in, col1, col2):
+        # df_in is the 2dim synthetic dataframe that we are measuring
+        # col1 and col2 are the names of the columns we are measuring
+        self.columns = [col1, col2]
+        self.col1 = col1
+        self.col2 = col2
         self.initial_bins = 50
         self.fallback_bins = 10
+        self.fms = {
+            'elapsed_time': None,
+            'mode_freqs': [None,None],   # frequency of the most frequent value (max 1.0)
+            'n_uniques': [None,None],    # number of distinct values in the column
+            'scores': {'forced': None,
+                       'chi_square': None,
+                       'spearman': None,
+                       'AMI': None,     # adjusted mutual information
+                       'DC': None,      # distance correlation
+                       'reverse_spearmans': [None, None],
+                       }
+        }
         self.df = df_in[[col1, col2]].dropna()
-        self.col1_processed, self.col1_type = self._preprocess_column(self.df[col1])
-        self.col2_processed, self.col2_type = self._preprocess_column(self.df[col2])
+        self.col_processed = [None, None]
+        self.col_discretized = [None, None]
+        self.col_types = [None, None]
+        for col_i, col in enumerate(self.columns):
+            self.col_processed[col_i], self.col_types[col_i] = self._preprocess_column(self.df[col])
+
+    def get_full_measure_stats(self):
+        return self.fms
+
+    def run_full_measure(self):
+        start_time = time.time()
+        for col_i, col in enumerate(self.columns):
+            # Determine the mode frequency
+            mode_freq = self.df[col].value_counts(normalize=True).max()
+            self.fms['mode_freqs'][col_i] = mode_freq
+            # Count the number of distinct values in the column
+            num_distinct = len(self.df[col].unique())
+            self.fms['n_uniques'][col_i] = num_distinct
+        result = self.run_stat_test('chi_square')
+        self.fms['scores']['chi_square'] = result['score']
+        result = self.run_stat_test('spearman_rank_correlations')
+        self.fms['scores']['spearman'] = result['score']
+        result = self.run_stat_test('mutual_information')
+        self.fms['scores']['AMI'] = result['score']
+        result = self.run_stat_test('distance_correlation')
+        self.fms['scores']['DC'] = result['score']
+        for col_i, col in enumerate(self.columns):
+            df_new = self._scramble_column(col)
+            # ok, this is swap of self.df is admittedly ugly:
+            df_old = self.df
+            self.df = df_new
+            result = self.run_stat_test('spearman_rank_correlations')
+            self.fms['scores']['reverse_spearmans'][col_i] = result['score']
+            self.df = df_old
+        end_time = time.time()
+        self.fms['elapsed_time'] = end_time - start_time
+        return None
 
     def run_stat_test(self, test):
         if test not in self.test_types:
             raise ValueError('Invalid test name')
-        if self.test_types[test]['type'] == 'continuous' and (self.col1_type == 'text' or self.col2_type == 'text'):
-            return None
         start_time = time.time()
         routine_name = self.test_types[test]['routine']
         routine = getattr(self, routine_name)
@@ -60,6 +111,20 @@ class StatTests:
         end_time = time.time()
         elapsed_time = end_time - start_time
         return {'score': score, 'elapsed_time': elapsed_time, 'other_names': other_names, 'other_vals': other_vals}
+
+    def _scramble_column(self, col):
+        # make a copy of self.df
+        df_copy = self.df.copy()
+        distinct_vals = df_copy[col].unique().tolist()
+        # shuffle the values in distinct_vals
+        np.random.shuffle(distinct_vals)
+        # loop through distinct_valls two entries at a time
+        for i in range(0, len(distinct_vals)-1, 2):
+            val0 = distinct_vals[i]
+            val1 = distinct_vals[i+1]
+            # replace val0 with val1 and val1 with val0
+            df_copy[col] = df_copy[col].replace({val0: val1, val1: val0})
+        return df_copy
 
     def _discretize_with_fallback(self, col_processed):
         ''' I want to discretize with quantile, but it can fail when bins are too small, so we
@@ -93,27 +158,16 @@ class StatTests:
                 return discretize(pd.Series(col_scaled.flatten()), self.fallback_bins, 'uniform')
 
     def _discretize_columns(self):
-        if self.col1_type == 'numeric':
-            if self.col1_processed.nunique() >= self.initial_bins:
-                self.col1_discretized = self._discretize_with_fallback(self.col1_processed)
+        for col_i, _ in enumerate(self.columns):
+            if self.col_types[col_i] == 'numeric':
+                if self.col_processed[col_i].nunique() >= self.initial_bins:
+                    self.col_discretized[col_i] = self._discretize_with_fallback(self.col_processed[col_i])
+                else:
+                    # Assign a distinct integer to each unique value
+                    label_encoder = LabelEncoder()
+                    self.col_discretized[col_i] = pd.Series(label_encoder.fit_transform(self.col_processed[col_i]))
             else:
-                # Assign a distinct integer to each unique value
-                label_encoder = LabelEncoder()
-                self.col1_discretized = pd.Series(label_encoder.fit_transform(self.col1_processed))
-        else:
-            self.col1_discretized = self.col1_processed
-
-        # Discretize col2
-        if self.col2_type == 'numeric':
-            if self.col2_processed.nunique() >= self.initial_bins:
-                self.col2_discretized = self._discretize_with_fallback(self.col2_processed)
-            else:
-                # Assign a distinct integer to each unique value
-                label_encoder = LabelEncoder()
-                self.col2_discretized = pd.Series(label_encoder.fit_transform(self.col2_processed))
-        else:
-            self.col2_discretized = self.col2_processed
-
+                self.col_discretized[col_i] = self.col_processed[col_i]
 
     def _preprocess_column(self, column):
         if pd.api.types.is_numeric_dtype(column):
@@ -125,21 +179,20 @@ class StatTests:
             return pd.Series(le.fit_transform(column), index=column.index), 'text'
 
     def _compute_pearson_correlation(self):
-        score, _ = pearsonr(self.col1_processed, self.col2_processed)
+        score, _ = pearsonr(self.col_processed[0], self.col_processed[1])
         normalized_score = abs(score)  # Normalize to [0, 1] by taking the absolute value
         return round(float(normalized_score), 3), None, None
 
     def _compute_spearman_rank_correlations(self):
-        score, _ = spearmanr(self.col1_processed, self.col2_processed)
+        score, _ = spearmanr(self.col_processed[0], self.col_processed[1])
         normalized_score = abs(score)  # Normalize to [0, 1] by taking the absolute value
         return round(float(normalized_score), 3), None, None
 
     def _compute_distance_correlation(self):
        # Standardize the data to reduce numerical instability
         scaler = StandardScaler()
-        col1_scaled = scaler.fit_transform(self.col1_processed.values.reshape(-1, 1)).flatten()
-        col2_scaled = scaler.fit_transform(self.col2_processed.values.reshape(-1, 1)).flatten()
-        #score = distance_correlation(self.col1_processed, self.col2_processed)
+        col1_scaled = scaler.fit_transform(self.col_processed[0].values.reshape(-1, 1)).flatten()
+        col2_scaled = scaler.fit_transform(self.col_processed[1].values.reshape(-1, 1)).flatten()
         score = distance_correlation(col1_scaled, col2_scaled)
         return round(float(score), 3), None, None
 
@@ -150,7 +203,7 @@ class StatTests:
         # Discretize columns if they are continuous
         self._discretize_columns()
         # Create a contingency table
-        contingency_table = pd.crosstab(self.col1_discretized, self.col2_discretized)
+        contingency_table = pd.crosstab(self.col_discretized[0], self.col_discretized[1])
         # Perform the chi-square test
         chi2, p, _, _ = chi2_contingency(contingency_table)
 
@@ -165,7 +218,7 @@ class StatTests:
         return round(float(normalized_score), 3), None, None
 
     def _compute_kolmogorov_smirnov(self):
-        score, p_value = ks_2samp(self.col1_processed, self.col2_processed)
+        score, p_value = ks_2samp(self.col_processed[0], self.col_processed[1])
         normalized_score = 1 - float(score)  # Normalize to [0, 1]
         confidence_score = 1 - float(p_value)
         return normalized_score, confidence_score, None
@@ -173,15 +226,15 @@ class StatTests:
     def _compute_linear_regression(self):
         # Model 1: Predict col2 from col1
         model1 = LinearRegression()
-        model1.fit(self.col1_processed.values.reshape(-1, 1), self.col2_processed)
-        predictions1 = model1.predict(self.col1_processed.values.reshape(-1, 1))
-        score1 = r2_score(self.col2_processed, predictions1)
+        model1.fit(self.col_processed[0].values.reshape(-1, 1), self.col_processed[1])
+        predictions1 = model1.predict(self.col_processed[0].values.reshape(-1, 1))
+        score1 = r2_score(self.col_processed[1], predictions1)
 
         # Model 2: Predict col1 from col2
         model2 = LinearRegression()
-        model2.fit(self.col2_processed.values.reshape(-1, 1), self.col1_processed)
-        predictions2 = model2.predict(self.col2_processed.values.reshape(-1, 1))
-        score2 = r2_score(self.col1_processed, predictions2)
+        model2.fit(self.col_processed[1].values.reshape(-1, 1), self.col_processed[0])
+        predictions2 = model2.predict(self.col_processed[1].values.reshape(-1, 1))
+        score2 = r2_score(self.col_processed[0], predictions2)
 
         # Return the best score and normalize to [0, 1]
         best_score = max(score1, score2)
@@ -190,22 +243,22 @@ class StatTests:
     def _compute_regressor(self, model):
         # Model 1: Predict col2 from col1
         model1 = model()
-        scores1 = cross_val_score(model1, self.col1_processed.values.reshape(-1, 1), self.col2_processed, cv=5, scoring='r2')
+        scores1 = cross_val_score(model1, self.col_processed[0].values.reshape(-1, 1), self.col_processed[1], cv=5, scoring='r2')
         score1 = np.mean(scores1)
 
         # Model 2: Predict col1 from col2
         model2 = model()
-        scores2 = cross_val_score(model2, self.col2_processed.values.reshape(-1, 1), self.col1_processed, cv=5, scoring='r2')
+        scores2 = cross_val_score(model2, self.col_processed[1].values.reshape(-1, 1), self.col_processed[0], cv=5, scoring='r2')
         score2 = np.mean(scores2)
 
         # Determine baseline for col2
         dummy_reg1 = DummyRegressor(strategy='mean')
-        baseline_scores1 = cross_val_score(dummy_reg1, self.col1_processed.values.reshape(-1, 1), self.col2_processed, cv=5, scoring='r2')
+        baseline_scores1 = cross_val_score(dummy_reg1, self.col_processed[0].values.reshape(-1, 1), self.col_processed[1], cv=5, scoring='r2')
         baseline_score1 = np.mean(baseline_scores1)
 
         # Determine baseline for col1
         dummy_reg2 = DummyRegressor(strategy='mean')
-        baseline_scores2 = cross_val_score(dummy_reg2, self.col2_processed.values.reshape(-1, 1), self.col1_processed, cv=5, scoring='r2')
+        baseline_scores2 = cross_val_score(dummy_reg2, self.col_processed[1].values.reshape(-1, 1), self.col_processed[0], cv=5, scoring='r2')
         baseline_score2 = np.mean(baseline_scores2)
 
         # Normalize scores relative to the baseline
@@ -215,39 +268,6 @@ class StatTests:
         # Return the best normalized score
         best_normalized_score = max(normalized_score1, normalized_score2)
         return round(float(best_normalized_score), 3), None, None
-
-    def _compute_regressor_old(self, model):
-        # Model 1: Predict col2 from col1
-        model1 = model()
-        model1.fit(self.col1_processed.values.reshape(-1, 1), self.col2_processed)
-        predictions1 = model1.predict(self.col1_processed.values.reshape(-1, 1))
-        score1 = r2_score(self.col2_processed, predictions1)
-
-        # Model 2: Predict col1 from col2
-        model2 = model()
-        model2.fit(self.col2_processed.values.reshape(-1, 1), self.col1_processed)
-        predictions2 = model2.predict(self.col2_processed.values.reshape(-1, 1))
-        score2 = r2_score(self.col1_processed, predictions2)
-
-        # Determine baseline for col2
-        dummy_reg1 = DummyRegressor(strategy='mean')
-        dummy_reg1.fit(self.col1_processed.values.reshape(-1, 1), self.col2_processed)
-        dummy_predictions1 = dummy_reg1.predict(self.col1_processed.values.reshape(-1, 1))
-        baseline_score1 = r2_score(self.col2_processed, dummy_predictions1)
-
-        # Determine baseline for col1
-        dummy_reg2 = DummyRegressor(strategy='mean')
-        dummy_reg2.fit(self.col2_processed.values.reshape(-1, 1), self.col1_processed)
-        dummy_predictions2 = dummy_reg2.predict(self.col2_processed.values.reshape(-1, 1))
-        baseline_score2 = r2_score(self.col1_processed, dummy_predictions2)
-
-        # Normalize scores relative to the baseline
-        normalized_score1 = (score1 - baseline_score1) / (1 - baseline_score1) if baseline_score1 != 1 else score1
-        normalized_score2 = (score2 - baseline_score2) / (1 - baseline_score2) if baseline_score2 != 1 else score2
-
-        # Return the best normalized score
-        best_normalized_score = max(normalized_score1, normalized_score2)
-        return best_normalized_score, None, None
 
     def _compute_decision_tree_regressor(self):
         return self._compute_regressor(DecisionTreeRegressor)
@@ -267,27 +287,27 @@ class StatTests:
 
         # Model 1: Predict col2 from col1
         model1 = model()
-        model1.fit(self.col1_discretized.values.reshape(-1, 1), self.col2_discretized)
-        predictions1 = model1.predict(self.col1_discretized.values.reshape(-1, 1))
-        score1 = accuracy_score(self.col2_discretized, predictions1)
+        model1.fit(self.col_discretized[0].values.reshape(-1, 1), self.col_discretized[1])
+        predictions1 = model1.predict(self.col_discretized[0].values.reshape(-1, 1))
+        score1 = accuracy_score(self.col_discretized[1], predictions1)
 
         # Model 2: Predict col1 from col2
         model2 = model()
-        model2.fit(self.col2_discretized.values.reshape(-1, 1), self.col1_discretized)
-        predictions2 = model2.predict(self.col2_discretized.values.reshape(-1, 1))
-        score2 = accuracy_score(self.col1_discretized, predictions2)
+        model2.fit(self.col_discretized[1].values.reshape(-1, 1), self.col_discretized[0])
+        predictions2 = model2.predict(self.col_discretized[1].values.reshape(-1, 1))
+        score2 = accuracy_score(self.col_discretized[0], predictions2)
 
         # Determine baseline for col2
         dummy_clf1 = DummyClassifier(strategy='most_frequent')
-        dummy_clf1.fit(self.col1_discretized.values.reshape(-1, 1), self.col2_discretized)
-        dummy_predictions1 = dummy_clf1.predict(self.col1_discretized.values.reshape(-1, 1))
-        baseline_score1 = accuracy_score(self.col2_discretized, dummy_predictions1)
+        dummy_clf1.fit(self.col_discretized[0].values.reshape(-1, 1), self.col_discretized[1])
+        dummy_predictions1 = dummy_clf1.predict(self.col_discretized[0].values.reshape(-1, 1))
+        baseline_score1 = accuracy_score(self.col_discretized[1], dummy_predictions1)
 
         # Determine baseline for col1
         dummy_clf2 = DummyClassifier(strategy='most_frequent')
-        dummy_clf2.fit(self.col2_discretized.values.reshape(-1, 1), self.col1_discretized)
-        dummy_predictions2 = dummy_clf2.predict(self.col2_discretized.values.reshape(-1, 1))
-        baseline_score2 = accuracy_score(self.col1_discretized, dummy_predictions2)
+        dummy_clf2.fit(self.col_discretized[1].values.reshape(-1, 1), self.col_discretized[0])
+        dummy_predictions2 = dummy_clf2.predict(self.col_discretized[1].values.reshape(-1, 1))
+        baseline_score2 = accuracy_score(self.col_discretized[0], dummy_predictions2)
 
         # Normalize scores relative to the baseline
         normalized_score1 = (score1 - baseline_score1) / (1 - baseline_score1) if score1 > baseline_score1 else 0.0
@@ -313,6 +333,6 @@ class StatTests:
         self._discretize_columns()
 
         # Compute adjusted mutual information
-        ami = adjusted_mutual_info_score(self.col1_discretized, self.col2_discretized)
+        ami = adjusted_mutual_info_score(self.col_discretized[0], self.col_discretized[1])
 
         return round(float(ami), 3), None, None
