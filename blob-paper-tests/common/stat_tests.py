@@ -112,7 +112,7 @@ class StatTests:
         elif (self.fms['n_uniques_col1'] == self.fms['n_uniques_both'] or
             self.fms['n_uniques_col2'] == self.fms['n_uniques_both']):
             # The two columns may be hierarchically related
-            hierarchy = self._perfect_hierarchy():
+            hierarchy = self._perfect_hierarchy()
             if hierarchy is not None:
                 self.fms['perfect_hierarchy'] = hierarchy
         end_time = time.time()
@@ -135,12 +135,12 @@ class StatTests:
         # Check if every distinct value in col1 is always paired with a given value in col2
         col1_to_col2 = self.df.groupby(self.col1)[self.col2].nunique()
         if all(col1_to_col2 == 1):
-            return True
+            return 'col2_on_col1'
         # Check if every distinct value in col2 is always paired with a given value in col1
         col2_to_col1 = self.df.groupby(self.col2)[self.col1].nunique()
         if all(col2_to_col1 == 1):
-            return True
-        return False
+            return 'col1_on_col2'
+        return None
 
     def _perfect_dependence(self):
         # Check if every distinct value in col1 is always paired with a given value in col2
