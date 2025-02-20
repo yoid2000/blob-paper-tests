@@ -56,6 +56,7 @@ class StatTests:
             'mode_freq_col2': None,
             'n_uniques_col1': None,
             'n_uniques_col2': None,
+            'n_uniques_both': None,
             'forced': None,
             'chi_square': None,
             'spearman': None,
@@ -80,6 +81,7 @@ class StatTests:
         self.fms['mode_freq_col2'] = self.df[self.col2].value_counts(normalize=True).max()
         self.fms['n_uniques_col1'] = len(self.df[self.col1].unique())
         self.fms['n_uniques_col2'] = len(self.df[self.col2].unique())
+        self.fms['n_uniques_both'] = len(self.df[[self.col1, self.col2]].drop_duplicates())
         if self.fms['n_uniques_col1'] == 1 or self.fms['n_uniques_col2'] == 1:
             self.fms['forced'] = 0.0
             return 0.0
