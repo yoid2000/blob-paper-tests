@@ -103,9 +103,7 @@ class StatTests:
                 self.fms['reverse_spearman_col1'] = result['score']
             else:
                 self.fms['reverse_spearman_col2'] = result['score']
-        if (self.fms['n_uniques_col1'] == self.fms['n_uniques_col2'] and
-            self.fms['n_uniques_col1'] == self.fms['n_uniques_both'] and
-            self._perfect_dependence()):
+        if self._perfect_dependence():
             # with perfect dependence, it is only necessary to synthesize one of the
             # two columns. The other can always be patched in from the 2dim subtable
             self.fms['perfect_dependence'] = True
@@ -132,6 +130,11 @@ class StatTests:
 
 
     def _perfect_hierarchy(self):
+        if not ((self.fms['n_uniques_col1'] == self.fms['n_uniques_both'] or
+                self.fms['n_uniques_col2'] == self.fms['n_uniques_both']) and
+                self.fms['n_uniques_col1'] != self.fms['n_uniques_col2'] and
+                self.fms['n_uniques_both'] < (len(self.df)/10)):
+            return None
         # Check if every distinct value in col1 is always paired with a given value in col2
         col1_to_col2 = self.df.groupby(self.col1)[self.col2].nunique()
         if all(col1_to_col2 == 1):
@@ -143,6 +146,13 @@ class StatTests:
         return None
 
     def _perfect_dependence(self):
+        if not (self.fms['n_uniques_col1'] == self.fms['n_uniques_col2'] and
+                self.fms['n_uniques_col1'] == self.fms['n_uniques_both'] and
+                self.fms['n_uniques_col1'] < (len(self.df)/10)):
+            # It is possible that the two columns are perfectly dependent even if the
+            # number of distinct values is greater than 10% of the rows, but we ignore
+            # this possibility
+            return False
         # Check if every distinct value in col1 is always paired with a given value in col2
         col1_to_col2 = self.df.groupby(self.col1)[self.col2].nunique()
         if not all(col1_to_col2 == 1):

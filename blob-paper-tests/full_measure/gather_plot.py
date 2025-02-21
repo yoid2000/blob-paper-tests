@@ -12,6 +12,7 @@ def plot_reverse_scatter(df):
     '''
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6, 3))
 
+
     # Scatter plot
     sns.scatterplot(data=df, y='spearman', x='reverse_spearman_col1', ax=ax1, color='blue', alpha=0.4)
     sns.scatterplot(data=df, y='spearman', x='reverse_spearman_col2', ax=ax1, color='red', alpha=0.4)
@@ -27,7 +28,7 @@ def plot_reverse_scatter(df):
     })
 
     # Boxplots
-    sns.boxplot(data=boxplot_data, x='value', y='variable', ax=ax2, palette=['blue', 'red'], orient='h')
+    sns.boxplot(data=boxplot_data, x='value', y='variable', ax=ax2, hue='variable', palette=['blue', 'red'], orient='h', dodge=False, legend=False)
     ax2.set_xlabel('Spearman - Reversed')
     ax2.set_ylabel('')
     ax2.set_yticks([])
@@ -66,6 +67,7 @@ results_file_path = os.path.join(results_path, 'full_measure.parquet')
 os.makedirs('real_results', exist_ok=True)
 
 if what_to_do == 'gather':
+    print("Gathering results only.")
     # read all of the base kaggle file names in kaggle_path that end with .parquet, strip off the suffix, and put in a list called kaggle_files
     kaggle_files = [f[:-8] for f in os.listdir(kaggle_path) if f.endswith('.parquet')]
     # read all parquet files in all_results_path and sub directories
@@ -96,6 +98,17 @@ else:
 
 print(df.head())
 print(df.shape)
+num_perfect = df[df['perfect_dependence'] == True].shape[0]
+print(f"Number of perfect dependent columns: {num_perfect} ({num_perfect / df.shape[0] * 100:.2f}%)")
+# print the columns col1, col2, and dataset from the first 5 rows of the dataframe where perfect_dependence is True
+print(df[df['perfect_dependence'] == True][['col1', 'col2', 'dataset']].head(50).to_string())
+
+num_hier = df['perfect_hierarchy'].notna().sum()
+print(f"Number of hierarchical dependent columns: {num_hier} ({num_hier / df.shape[0] * 100:.2f}%)")
+# print the columns col1, col2, and dataset where the first 5 rows of the dataframe where perfect_hierarchy is not NaN
+print(df[df['perfect_hierarchy'].notna()][['col1', 'col2', 'dataset']].head(50).to_string())
+
+
 print(df['spearman'].describe())
 df['reverse_col1'] = df['spearman'] - df['reverse_spearman_col1']
 print(df['reverse_col1'].describe())
@@ -114,3 +127,6 @@ print(df.nsmallest(5, 'reverse_col1')[p_cols].to_string())
 '''
 
 plot_reverse_scatter(df)
+
+print("Columns in base dataframe:")
+print(df.columns)
